@@ -162,24 +162,24 @@ layers listed there.</li>
 <h4><tt class="docutils literal">dotspacemacs/config</tt></h4>
 <ul>
 <li><p class="first">change font:</p>
-<pre class="code clojure"><a name="rest_code_0d2a4bda78df41bdb9404444aad19b43-1"></a><span class="nv">dotspacemacs-default-font</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;Ubuntu Mono&quot;</span>
-<a name="rest_code_0d2a4bda78df41bdb9404444aad19b43-2"></a>                        <span class="ss">:size</span> <span class="mi">16</span>
-<a name="rest_code_0d2a4bda78df41bdb9404444aad19b43-3"></a>                        <span class="ss">:weight</span> <span class="nv">normal</span>
-<a name="rest_code_0d2a4bda78df41bdb9404444aad19b43-4"></a>                        <span class="ss">:width</span> <span class="nv">normal</span>
-<a name="rest_code_0d2a4bda78df41bdb9404444aad19b43-5"></a>                        <span class="ss">:powerline-scale</span> <span class="mf">1.1</span><span class="p">)</span>
+<pre class="code clojure"><a name="rest_code_ec3b31924c684c3cba0f4b7b526588fb-1"></a><span class="nv">dotspacemacs-default-font</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;Ubuntu Mono&quot;</span>
+<a name="rest_code_ec3b31924c684c3cba0f4b7b526588fb-2"></a>                        <span class="ss">:size</span> <span class="mi">16</span>
+<a name="rest_code_ec3b31924c684c3cba0f4b7b526588fb-3"></a>                        <span class="ss">:weight</span> <span class="nv">normal</span>
+<a name="rest_code_ec3b31924c684c3cba0f4b7b526588fb-4"></a>                        <span class="ss">:width</span> <span class="nv">normal</span>
+<a name="rest_code_ec3b31924c684c3cba0f4b7b526588fb-5"></a>                        <span class="ss">:powerline-scale</span> <span class="mf">1.1</span><span class="p">)</span>
 </pre></li>
 <li><p class="first">set key bindings:</p>
-<pre class="code clojure"><a name="rest_code_1ad4db0e01304aeb994ee79b8dd19ce7-1"></a><span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">&quot;C-+&quot;</span><span class="p">)</span> <span class="ss">&#39;text-scale-increase</span><span class="p">)</span>
-<a name="rest_code_1ad4db0e01304aeb994ee79b8dd19ce7-2"></a><span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">&quot;C--&quot;</span><span class="p">)</span> <span class="ss">&#39;text-scale-decrease</span><span class="p">)</span>
+<pre class="code clojure"><a name="rest_code_6483b0b41a0c49dba4c0db523c76c281-1"></a><span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">&quot;C-+&quot;</span><span class="p">)</span> <span class="ss">&#39;text-scale-increase</span><span class="p">)</span>
+<a name="rest_code_6483b0b41a0c49dba4c0db523c76c281-2"></a><span class="p">(</span><span class="nf">define-key</span> <span class="nv">global-map</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">&quot;C--&quot;</span><span class="p">)</span> <span class="ss">&#39;text-scale-decrease</span><span class="p">)</span>
 </pre><p><strong>***</strong> <tt class="docutils literal">dotspacemacs/init</tt></p>
 </li>
 <li><p class="first">full screen mode at startup</p>
-<pre class="code clojure"><a name="rest_code_5c5d559bcc674f07bd1da0a030ea1557-1"></a><span class="nv">dotspacemacs-fullscreen-at-startup</span> <span class="nv">t</span>
+<pre class="code clojure"><a name="rest_code_3b80534cda304551b5dbfeddec2f65c1-1"></a><span class="nv">dotspacemacs-fullscreen-at-startup</span> <span class="nv">t</span>
 </pre></li>
 <li><p class="first">Markdown preview install <tt class="docutils literal">pandoc</tt>, then add <tt class="docutils literal">pandoc</tt> layer to
 <tt class="docutils literal"><span class="pre">dotspacemacs-configuration-layers</span></tt> in <tt class="docutils literal"><span class="pre">~/.spacemacs</span></tt>.
 Additionally, add</p>
-<pre class="code clojure"><a name="rest_code_e35f81f2a8b840f4ba3c435852a0c17b-1"></a><span class="p">(</span><span class="nf">add-hook</span> <span class="ss">&#39;markdown-mode-hook</span> <span class="ss">&#39;pandoc-mode</span><span class="p">)</span>
+<pre class="code clojure"><a name="rest_code_31e56d3a0f7748feb043fb068d384e56-1"></a><span class="p">(</span><span class="nf">add-hook</span> <span class="ss">&#39;markdown-mode-hook</span> <span class="ss">&#39;pandoc-mode</span><span class="p">)</span>
 </pre><p>to the <tt class="docutils literal"><span class="pre">user-config</span></tt> to enable pandoc-mode when opening markdown
 files (see <a class="reference external" href="http://joostkremers.github.io/pandoc-mode/">http://joostkremers.github.io/pandoc-mode/</a>). Use menu
 <tt class="docutils literal"><span class="pre">Pandoc-&gt;Create</span> PDF</tt> to export <tt class="docutils literal">.pdf</tt> file. To export <tt class="docutils literal">.html</tt>

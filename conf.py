@@ -93,7 +93,7 @@ DEFAULT_LANG = "en"
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
     DEFAULT_LANG: "",
-    "zh_cn": "./zh_cn",
+    #"zh_cn": "./zh_cn",
 }
 
 # What will translated input files be named like?
@@ -141,14 +141,14 @@ NAVIGATION_LINKS = {
 		("/about/index.html", "About"),
     ),
 
-    "zh_cn": (
-		("/posts/", "文章"),
-        ("/categories/", "标签"),
-		("/notes/index.html", "便笺"),
-		("/archive.html", "存档"),
-        ("/rss.xml", "RSS"),
-		("/about/index.html", "关于"),
-    ),
+    # "zh_cn": (
+		# ("/posts/", "文章"),
+        # ("/categories/", "标签"),
+		# ("/notes/index.html", "便笺"),
+		# ("/archive.html", "存档"),
+        # ("/rss.xml", "RSS"),
+		# ("/about/index.html", "关于"),
+    # ),
 }
 
 # Name of the theme to use.
