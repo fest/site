@@ -9,8 +9,7 @@
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (zh_cn)" href="../../zh_cn/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://yongchen.org/notes/tool-tips/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="YONG">
 <meta property="og:site_name" content="Home">
@@ -24,7 +23,6 @@ com, net, org, edu, gov, biz, info, name, aero, arpa, asia, cat, coop, '>
 <meta property="article:tag" content="algorithm">
 <meta property="article:tag" content="software">
 <meta property="article:tag" content="web">
-<link rel="alternate" hreflang="zh_cn" href="../../zh_cn/notes/tool-tips/">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -69,14 +67,7 @@ com, net, org, edu, gov, biz, info, name, aero, arpa, asia, cat, coop, '>
                 
             </li>
 </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-            </li>
-<li><a href="http://yongchen.org/zh_cn/" rel="alternate" hreflang="zh_cn">简体中文</a></li>
-
-                
-                
-            </ul>
+<ul class="nav navbar-nav navbar-right"></ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
@@ -113,11 +104,11 @@ com, net, org, edu, gov, biz, info, name, aero, arpa, asia, cat, coop, int, jobs
 <div class="section" id="mathematica">
 <h2>Mathematica提高精度</h2>
 <p>一些算法如NMinimize, FindRoot都会受WorkingPrecision的影响. 可以在这些算法当中单独指定WorkingPrecision的值. 如果想要指定一个全局的工作精度值, 可以使用下面的方法(来自http://mathematica.stackexchange.com/questions/38114/how-to-set-the-working-precision-globally-minprecision-does-not-work):</p>
-<pre class="code text"><a name="rest_code_1bdb9203a0cb4aafa4ffdbd7298ad64f-1"></a>$PreRead = (# /.
-<a name="rest_code_1bdb9203a0cb4aafa4ffdbd7298ad64f-2"></a> s_String /;
-<a name="rest_code_1bdb9203a0cb4aafa4ffdbd7298ad64f-3"></a>   StringMatchQ[s, NumberString] &amp;&amp;
-<a name="rest_code_1bdb9203a0cb4aafa4ffdbd7298ad64f-4"></a>    Precision@ToExpression@s == MachinePrecision :&gt;
-<a name="rest_code_1bdb9203a0cb4aafa4ffdbd7298ad64f-5"></a>  s &lt;&gt; "`50." &amp;);
+<pre class="code text"><a name="rest_code_aca98ed93ee3470db67a656e9968bfae-1"></a>$PreRead = (# /.
+<a name="rest_code_aca98ed93ee3470db67a656e9968bfae-2"></a> s_String /;
+<a name="rest_code_aca98ed93ee3470db67a656e9968bfae-3"></a>   StringMatchQ[s, NumberString] &amp;&amp;
+<a name="rest_code_aca98ed93ee3470db67a656e9968bfae-4"></a>    Precision@ToExpression@s == MachinePrecision :&gt;
+<a name="rest_code_aca98ed93ee3470db67a656e9968bfae-5"></a>  s &lt;&gt; "`50." &amp;);
 </pre>
 <p>这样设置后, 之后的所有计算都会是指定的50位精度.</p>
 </div>

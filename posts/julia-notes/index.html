@@ -9,8 +9,7 @@
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (zh_cn)" href="../../zh_cn/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://yongchen.org/posts/julia-notes/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="YONG">
 <link rel="prev" href="../yu-ming-xiang-guan-chang-shi/" title="域名相关常识" type="text/html">
@@ -45,7 +44,6 @@ apropos(">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2016-05-24T12:22:41+08:00">
 <meta property="article:tag" content="Julia">
-<link rel="alternate" hreflang="zh_cn" href="../../zh_cn/posts/julia-notes/">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -90,14 +88,7 @@ apropos(">
                 
             </li>
 </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-            </li>
-<li><a href="http://yongchen.org/zh_cn/" rel="alternate" hreflang="zh_cn">简体中文</a></li>
-
-                
-                
-            </ul>
+<ul class="nav navbar-nav navbar-right"></ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
@@ -290,8 +281,8 @@ apropos(">
 <div class="section" id="arrays-and-tuples">
 <h2>Arrays and Tuples</h2>
 <p>Julia arrays are "column-major" (列主序). This means that you read down the columns:</p>
-<pre class="code shell"><a name="rest_code_92ce187a53fd4fdf84d37adc55fa3d09-1"></a><span class="m">1</span> 3
-<a name="rest_code_92ce187a53fd4fdf84d37adc55fa3d09-2"></a><span class="m">2</span> 4
+<pre class="code shell"><a name="rest_code_008c3e834c3f4530b1ca042733635541-1"></a><span class="m">1</span> 3
+<a name="rest_code_008c3e834c3f4530b1ca042733635541-2"></a><span class="m">2</span> 4
 </pre>
 <ul class="simple">
 <li>Column-major order: Fortran, R, Matlab, GNU Octave, BLAS, LAPACK, OpenGL/OpenGL ES, Julia</li>
@@ -355,15 +346,15 @@ apropos(">
 </tbody>
 </table>
 <p>在julia中, column vector是一维矩阵, 而row vector是二维矩阵, 大概julia也是偏好列向量的计算系统. 比如:</p>
-<pre class="code shell"><a name="rest_code_176711889cde4961aa90af65b4224728-1"></a>julia&gt; <span class="o">[</span>1,2,3<span class="o">]</span>
-<a name="rest_code_176711889cde4961aa90af65b4224728-2"></a>3-element Array<span class="o">{</span>Int64,1<span class="o">}</span>:
-<a name="rest_code_176711889cde4961aa90af65b4224728-3"></a> 1
-<a name="rest_code_176711889cde4961aa90af65b4224728-4"></a> 2
-<a name="rest_code_176711889cde4961aa90af65b4224728-5"></a> 3
-<a name="rest_code_176711889cde4961aa90af65b4224728-6"></a>
-<a name="rest_code_176711889cde4961aa90af65b4224728-7"></a>julia&gt; <span class="o">[</span><span class="m">1</span> <span class="m">2</span> 3<span class="o">]</span>
-<a name="rest_code_176711889cde4961aa90af65b4224728-8"></a>1x3 Array<span class="o">{</span>Int64,2<span class="o">}</span>:
-<a name="rest_code_176711889cde4961aa90af65b4224728-9"></a> <span class="m">1</span>  <span class="m">2</span>  3
+<pre class="code shell"><a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-1"></a>julia&gt; <span class="o">[</span>1,2,3<span class="o">]</span>
+<a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-2"></a>3-element Array<span class="o">{</span>Int64,1<span class="o">}</span>:
+<a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-3"></a> 1
+<a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-4"></a> 2
+<a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-5"></a> 3
+<a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-6"></a>
+<a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-7"></a>julia&gt; <span class="o">[</span><span class="m">1</span> <span class="m">2</span> 3<span class="o">]</span>
+<a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-8"></a>1x3 Array<span class="o">{</span>Int64,2<span class="o">}</span>:
+<a name="rest_code_d5ae7797ee5b46aea4750e6302e36d7c-9"></a> <span class="m">1</span>  <span class="m">2</span>  3
 </pre>
 <p>可以看出, 列向量是Array{Int64,1}类型而行向量是Array{Int64,2}</p>
 </div>
