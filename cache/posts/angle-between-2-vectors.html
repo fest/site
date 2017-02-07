@@ -1,0 +1,43 @@
+<div class="section" id="id1">
+<h1>两向量夹角问题</h1>
+<p>Given two vectors v1(x1,y1), v2(x2,y2) and they are not necessarily
+normalized, compute the angle beta between v1 and v2.</p>
+<!-- TEASER_END -->
+</div>
+<div class="section" id="id2">
+<h1>通常做法</h1>
+<p>A common way is using dot product (C++ version):</p>
+<pre class="code cpp"><a name="rest_code_d84dd7f5f66f4de2a03e390390758183-1"></a><span class="n">beta</span> <span class="o">=</span> <span class="n">acos</span><span class="p">((</span><span class="n">x1</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">y1</span> <span class="o">*</span> <span class="n">y2</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x1</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">y1</span><span class="o">*</span><span class="n">y1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x2</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">y2</span><span class="o">*</span><span class="n">y2</span><span class="p">)))</span>
+</pre><p>The resulting beta is within [0, Pi]. It is equivalent to using
+<tt class="docutils literal">VectorAngle[]</tt> function in <em>Mathmatica</em>. However, it seems
+inefficient due to the <tt class="docutils literal">acos()</tt> and <tt class="docutils literal">sqrt()</tt> function. Moreover, we
+lost the information of the sign of the angle.</p>
+</div>
+<div class="section" id="id3">
+<h1>改进</h1>
+<p>We can use <tt class="docutils literal">atan2()</tt> function instead:</p>
+<pre class="code cpp"><a name="rest_code_3e89e453cc5349c59a14cbbb3ed1ce60-1"></a><span class="n">beta</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">x1</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="o">*</span><span class="n">x2</span><span class="p">,</span> <span class="n">x1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">y1</span><span class="o">*</span><span class="n">y2</span><span class="p">)</span>
+</pre><p>The obtained beta is in range [-Pi, Pi].</p>
+</div>
+<div class="section" id="id4">
+<h1>完整代码</h1>
+<p>Source: <a class="reference external" href="http://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Vector.cs,102">Vector
+Angle</a></p>
+<pre class="code csharp"><a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-1"></a><span class="c1">/// &lt;summary&gt;</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-2"></a><span class="c1">/// AngleBetween - the angle between 2 vectors</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-3"></a><span class="c1">/// &lt;/summary&gt;</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-4"></a><span class="c1">/// &lt;returns&gt;</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-5"></a><span class="c1">/// Returns the the angle in degrees between vector1 and vector2</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-6"></a><span class="c1">/// &lt;/returns&gt;</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-7"></a><span class="c1">/// &lt;param name=&quot;vector1&quot;&gt; The first Vector &lt;/param&gt;</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-8"></a><span class="c1">/// &lt;param name=&quot;vector2&quot;&gt; The second Vector&lt;/param&gt;</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-9"></a><span class="k">public</span> <span class="k">static</span> <span class="kt">double</span> <span class="nf">AngleBetween</span><span class="p">(</span><span class="n">Vector</span> <span class="n">vector1</span><span class="p">,</span> <span class="n">Vector</span> <span class="n">vector2</span><span class="p">)</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-10"></a><span class="p">{</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-11"></a><span class="kt">double</span> <span class="n">sin</span> <span class="p">=</span> <span class="n">vector1</span><span class="p">.</span><span class="n">_x</span> <span class="p">*</span> <span class="n">vector2</span><span class="p">.</span><span class="n">_y</span> <span class="p">-</span> <span class="n">vector2</span><span class="p">.</span><span class="n">_x</span> <span class="p">*</span> <span class="n">vector1</span><span class="p">.</span><span class="n">_y</span><span class="p">;</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-12"></a><span class="kt">double</span> <span class="n">cos</span> <span class="p">=</span> <span class="n">vector1</span><span class="p">.</span><span class="n">_x</span> <span class="p">*</span> <span class="n">vector2</span><span class="p">.</span><span class="n">_x</span> <span class="p">+</span> <span class="n">vector1</span><span class="p">.</span><span class="n">_y</span> <span class="p">*</span> <span class="n">vector2</span><span class="p">.</span><span class="n">_y</span><span class="p">;</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-13"></a><span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">Atan2</span><span class="p">(</span><span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">)</span> <span class="p">*</span> <span class="p">(</span><span class="m">180</span> <span class="p">/</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="p">);</span>
+<a name="rest_code_aa59f0a4c3704d4db80f771c7cbae433-14"></a><span class="p">}</span>
+</pre><p>Since the <tt class="docutils literal">atan2()</tt> function in C++ is the same with the C# version:
+<tt class="docutils literal">atan2(y, x)</tt>. Notice that in <em>Mathematica</em>, <tt class="docutils literal">ArcTan[]</tt> can take 2
+arguments like <tt class="docutils literal">atan2()</tt>, but in a different order: <tt class="docutils literal">ArcTan[x, y]</tt>.</p>
+</div>

@@ -1,0 +1,95 @@
+<div class="section" id="git-project">
+<h1>Git Project</h1>
+<p>A git project can be thought of as having three parts in Figure
+<em>git-parts</em>:</p>
+<ul class="simple">
+<li>A <strong>Working Directory</strong>: creating, editing, deleting and organizing
+files</li>
+<li>A <strong>Staging Directory</strong>: list changes</li>
+<li>A <strong>Repository</strong>: Git permanently stores changes as different
+<em>versions</em>.</li>
+</ul>
+<!-- TEASER_END -->
+<div class="figure">
+<img alt="git-parts" src="/images/git-learning-notes-3parts.png" style="width: 480px;" />
+<p class="caption">3 parts of a Git project</p>
+</div>
+</div>
+<div class="section" id="basic">
+<h1>Basic</h1>
+<ul class="simple">
+<li><tt class="docutils literal">git init</tt></li>
+<li><tt class="docutils literal">git status</tt></li>
+<li><tt class="docutils literal">git add filename1, filename2, ...</tt></li>
+<li><tt class="docutils literal">git diff filename.txt</tt></li>
+<li><tt class="docutils literal">git commit <span class="pre">-m</span></tt> “some message”</li>
+<li><tt class="docutils literal">git log</tt></li>
+</ul>
+</div>
+<div class="section" id="backtrack">
+<h1>Backtrack</h1>
+<ul class="simple">
+<li><tt class="docutils literal">git show HEAD</tt>: see the most recently made commit</li>
+<li><tt class="docutils literal">git checkout HEAD filename</tt>: restore the file in your working
+directory to look exactly as it did when you last made a commit</li>
+<li><tt class="docutils literal">git reset HEAD filename</tt>: unstages file changes in the staging
+area. This command is used when you want to exclude a specific file
+before committing (it has been added to staging area though)</li>
+<li><tt class="docutils literal">git reset SHA(first 7 characters of the SHA of a previous commit)</tt>:
+reset to a previous commit in your commit history. You will lost the
+gray commits in Figure <em>git-reset</em>.</li>
+</ul>
+<div class="figure">
+<img alt="git-reset" src="/images/git-learning-notes-reset.png" style="width: 480px;" />
+<p class="caption">git reset diagram</p>
+</div>
+</div>
+<div class="section" id="branching">
+<h1>Branching</h1>
+<ul>
+<li><p class="first"><tt class="docutils literal">git branch</tt>: check what branch you are currently on. The branch
+with an asterisk is the branch you’re on</p>
+</li>
+<li><p class="first"><tt class="docutils literal">git branch branchname</tt>: create a branch</p>
+</li>
+<li><p class="first"><tt class="docutils literal">git checkout branchname</tt>: switch to a branch</p>
+</li>
+<li><p class="first"><tt class="docutils literal">git merge branchname</tt>: if u want to merge a branch <em>fencing</em>, you
+need to switch to <em>master</em> first</p>
+<p>Merge conflict will happen if you made commits on separate branches
+that alter the same line in conflicting ways. After merge, we can fix
+the merge conflict by hand and then <tt class="docutils literal">add</tt> and <tt class="docutils literal">commit</tt> again.</p>
+</li>
+<li><p class="first"><tt class="docutils literal">git branch <span class="pre">-d</span> branchname</tt> delete a branch</p>
+</li>
+</ul>
+</div>
+<div class="section" id="remotes-pulling-and-pushing">
+<h1>Remotes, Pulling, and Pushing</h1>
+<p>The remote address is referred to as <strong>origin</strong> by git.</p>
+<ul>
+<li><p class="first"><tt class="docutils literal">git clone remote_location clone_name</tt>: get your own replica (named
+clone-name) of a remote project</p>
+</li>
+<li><p class="first"><tt class="docutils literal">git remote <span class="pre">-v</span></tt>: see a list of git projects’ remotes</p>
+</li>
+<li><p class="first"><tt class="docutils literal">git fetch</tt>: fetch any new changes at the remote side (it does not
+merge changes from remote into your local repository. It brings those
+changes onto what’s called a remote branch.)</p>
+</li>
+<li><p class="first"><tt class="docutils literal">git merge origin/master</tt> merge with remote</p>
+<p>The typical workflow for git collaborations:</p>
+<ol class="arabic simple">
+<li>Fetch and merge changes from the remote</li>
+<li>Create a branch to work on a new project feature</li>
+<li>Develop the feature on your branch and commit your work</li>
+<li>Fetch and merge from the remote again (in case new commits were
+made while you were working)</li>
+<li>Push your branch up to the remote for review</li>
+</ol>
+</li>
+<li><p class="first"><tt class="docutils literal">git push origin <span class="pre">your-branch-name</span></tt>: push your branch up to the
+remote, <tt class="docutils literal">origin</tt>.</p>
+</li>
+</ul>
+</div>

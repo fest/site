@@ -1,0 +1,100 @@
+<div class="section" id="why-cryogen">
+<h1>Why Cryogen?</h1>
+<p>Cryogen是用Clojure写的一个static site generator. 它的优点在于:
+markdown支持良好(包括Clojure语法高亮, 也支持AsciiDoc), 支持RSS, toc,
+Disqus, Sitemap, 可以使用tags, 移动网页友好, 易上手等.
+最主要是我自己比较喜欢Clojure, 因此就没有考虑使用其它框架.</p>
+<!-- TEASER_END -->
+</div>
+<div class="section" id="id1">
+<h1>创建过程</h1>
+<p>首先参考Cryogen官方指导熟悉创建新页面的流程和设置: <a class="reference external" href="http://cryogenweb.org/docs/getting-started.html">Getting
+Started</a></p>
+<p>下来准备在Github上搭建一个静态博客:</p>
+<ul>
+<li><p class="first">在Github上创建两个空的repo, 名字分别叫 <tt class="docutils literal"><span class="pre">cryogen-blog</span></tt> 和
+<tt class="docutils literal">defnil.github.io</tt>, 其中 <tt class="docutils literal">defnil</tt> 是我Github的用户ID,
+使用时需要换成你自己的ID. 注意不要包含readme或gitignore等文件.</p>
+</li>
+<li><p class="first">打开命令行, <tt class="docutils literal">cd</tt> 到你想要创建项目的位置, 如 <tt class="docutils literal"><span class="pre">C:/home</span></tt>,
+下面语句将创建一个 <tt class="docutils literal"><span class="pre">C:/home/my-blog</span></tt> 的项目:</p>
+<pre class="code shell"><a name="rest_code_e2e992d49e784cc886d7cfc5a5102ae0-1"></a><span class="nb">cd</span> C:/home
+<a name="rest_code_e2e992d49e784cc886d7cfc5a5102ae0-2"></a>lein new cryogen my-blog
+</pre></li>
+<li><p class="first">运行server, 它会在发任何变化后重新编译</p>
+<pre class="code shell"><a name="rest_code_4bcdb33aba694f969f108062a4933a48-1"></a><span class="nb">cd</span> my-blog
+<a name="rest_code_4bcdb33aba694f969f108062a4933a48-2"></a>lein ring server
+</pre></li>
+<li><p class="first">编辑配置文件 <tt class="docutils literal"><span class="pre">my-blog/resources/templates/config.edn</span></tt>,
+修改以下几项, 其余可以保持默认值:</p>
+<ul class="simple">
+<li>:site-url “<a class="reference external" href="https://defnil.github.io">https://defnil.github.io</a>”</li>
+<li>:blog-prefix “”</li>
+<li>:site-title “My Awesome Blog”</li>
+<li>:author “defnil”</li>
+<li>:description “Nothing yet”</li>
+</ul>
+</li>
+<li><p class="first">打开一个新的terminal, 运行:</p>
+<pre class="code shell"><a name="rest_code_5fedd2aef89b4bd2b8c18267c2dd10b2-1"></a><span class="nb">cd</span> C:/home/my-blog
+<a name="rest_code_5fedd2aef89b4bd2b8c18267c2dd10b2-2"></a>git init
+<a name="rest_code_5fedd2aef89b4bd2b8c18267c2dd10b2-3"></a>git add .
+<a name="rest_code_5fedd2aef89b4bd2b8c18267c2dd10b2-4"></a>git commit -m <span class="s2">&quot;first commit&quot;</span>
+<a name="rest_code_5fedd2aef89b4bd2b8c18267c2dd10b2-5"></a>git remote add origin git@github.com:defnil/cryogen-blog.git
+<a name="rest_code_5fedd2aef89b4bd2b8c18267c2dd10b2-6"></a>git push -u origin master
+</pre></li>
+<li><p class="first">上面这些命令只是push到 <tt class="docutils literal"><span class="pre">cryogen-blog</span></tt> 这个repo里, 并没有创建blog.
+因此再运行下面命令将博客内容push到我们的blog site里, 即
+<tt class="docutils literal">defnil.github.io</tt> 这个repo.</p>
+<pre class="code shell"><a name="rest_code_4bd88bd9d0b64fed923e0a8f7accdf88-1"></a><span class="nb">cd</span> resources/public
+<a name="rest_code_4bd88bd9d0b64fed923e0a8f7accdf88-2"></a>git init
+<a name="rest_code_4bd88bd9d0b64fed923e0a8f7accdf88-3"></a>git add .
+<a name="rest_code_4bd88bd9d0b64fed923e0a8f7accdf88-4"></a>git commit -m <span class="s2">&quot;first blog commit&quot;</span>
+<a name="rest_code_4bd88bd9d0b64fed923e0a8f7accdf88-5"></a>git remote add origin git@github.com:defnil/defnil.github.io.git
+<a name="rest_code_4bd88bd9d0b64fed923e0a8f7accdf88-6"></a>git push -u origin master
+</pre></li>
+<li><p class="first">如果顺利的话, 现在使用流览器访问 <tt class="docutils literal">defnil.github.io</tt>
+就会出现建好的blog了.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="blog">
+<h1>编辑blog</h1>
+<p>关于如何写post请查看 <a class="reference external" href="http://cryogenweb.org/docs/writing-posts.html">Writing
+Posts</a>,
+发布前可以通过访问 <tt class="docutils literal">localhost:3000</tt> 查看效果.</p>
+</div>
+<div class="section" id="id2">
+<h1>发布更新</h1>
+<p>每次更新blog后, 运行以下命令:</p>
+<pre class="code shell"><a name="rest_code_06ef226243e54d4cb299f9d32dffcde2-1"></a><span class="nb">cd</span> C:/home/my-blog
+<a name="rest_code_06ef226243e54d4cb299f9d32dffcde2-2"></a>lein ring server
+<a name="rest_code_06ef226243e54d4cb299f9d32dffcde2-3"></a>git add . <span class="o">&amp;&amp;</span> git commit -am <span class="s2">&quot;WIP&quot;</span> <span class="o">&amp;&amp;</span> git push
+<a name="rest_code_06ef226243e54d4cb299f9d32dffcde2-4"></a><span class="nb">cd</span> resources/public <span class="o">&amp;&amp;</span> git add . <span class="o">&amp;&amp;</span> git commit -am <span class="s2">&quot;WIP&quot;</span> <span class="o">&amp;&amp;</span> git push <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ../../
+</pre></div>
+<div class="section" id="mathjax">
+<h1>MathJax 支持</h1>
+<p>将下面代码</p>
+<pre class="code html"><a name="rest_code_9cc75b3287194a96848c94f5fa78cf7b-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="p">&gt;</span>
+<a name="rest_code_9cc75b3287194a96848c94f5fa78cf7b-2"></a>    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span><span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span><span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span><span class="s1">&#39;\\)&#39;</span><span class="p">]],</span>
+<a name="rest_code_9cc75b3287194a96848c94f5fa78cf7b-3"></a>                       <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;\\[&#39;</span><span class="p">,</span><span class="s1">&#39;\\]&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;$$&#39;</span><span class="p">,</span><span class="s1">&#39;$$&#39;</span><span class="p">]]}});</span>
+<a name="rest_code_9cc75b3287194a96848c94f5fa78cf7b-4"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_9cc75b3287194a96848c94f5fa78cf7b-5"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span>
+<a name="rest_code_9cc75b3287194a96848c94f5fa78cf7b-6"></a>      <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="p">&gt;</span>
+<a name="rest_code_9cc75b3287194a96848c94f5fa78cf7b-7"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre><p>直接嵌入到模板文件中, 比如如果使用的是blue主题(默认主题), 则修改
+<tt class="docutils literal">templates/themes/blue/html/base.html</tt> 内容, 将上面内容放在该文件
+<tt class="docutils literal">head</tt> 部分即可. 参考
+<a class="reference external" href="https://github.com/cryogen-project/cryogen/issues/59">issue59</a></p>
+</div>
+<div class="section" id="read-more">
+<h1>Read More</h1>
+<ul class="simple">
+<li><a class="reference external" href="http://firesofmay.com/posts/2015-08-26-setup-cryogen.html">Referred
+Post</a></li>
+<li>To setup custom domain name with namecheap check this
+<a class="reference external" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/">link</a>.</li>
+<li>If you do add custom domain name make sure you add CNAME to
+:keep-files otherwise it’ll get deleted.</li>
+</ul>
+</div>

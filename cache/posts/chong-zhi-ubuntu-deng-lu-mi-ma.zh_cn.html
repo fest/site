@@ -1,0 +1,9 @@
+<p>经常在Windows上通过VirtualBox来使用Ubuntu, 很长一段时间没有登录, 居然把用户密码忘记了(或者是升级VirtualBox后的Bug?). 只能通过Grub重置密码了. 其本参照 <a class="reference external" href="https://help.ubuntu.com/community/LostPassword">https://help.ubuntu.com/community/LostPassword</a> 这里的方法, 步骤如下:</p>
+<ol class="arabic simple">
+<li>启动Ubuntu时长按Shift键进入Grub菜单</li>
+<li>选择recovery mode选项回车</li>
+<li>选择&quot;root Drop to root shell prompt&quot;选项</li>
+<li>在 <tt class="docutils literal">~#</tt> 符号后输入 <tt class="docutils literal">mount <span class="pre">-rw</span> <span class="pre">-o</span> remount /</tt> 使root盘获取读写权限. 如果略过此步执行下一步可能会提示&quot;Authentication token manipulation error&quot;</li>
+<li>在 <tt class="docutils literal">~#</tt> 符号后输入 <tt class="docutils literal">passwd [username]</tt> 按提示设置新的密码</li>
+<li>输入 <tt class="docutils literal">reboot</tt> 重启.</li>
+</ol>

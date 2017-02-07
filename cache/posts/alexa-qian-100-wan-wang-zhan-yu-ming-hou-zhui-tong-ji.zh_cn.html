@@ -1,0 +1,121 @@
+<p>记得前两天看到一篇 <a class="reference external" href="http://blog.park.io/articles/enormous-growth-of-io-domains/">文章</a>, 讲了 <tt class="docutils literal">.io</tt> 域名在 Alexa 网站排名中的一些事情. 我就很想知道在 Alexa 这个榜单里, 各种 domain extension 都占了多大的份额, 想看看最流行的这些网站的建设者都喜欢用哪些主流和非主流的域名后缀.</p>
+<!-- TEASER_END -->
+<p>第一步, 数据. Alexa 网站提供世界排名前100万的网站 <a class="reference external" href="https://support.alexa.com/hc/en-us/articles/200449834-Does-Alexa-have-a-list-of-its-top-ranked-websites-">榜单</a>, 但这个 <tt class="docutils literal">.csv</tt> 格式的榜单是每日更新的, 数据是根据近一个月的访问量而定.</p>
+<p>第二步, 排序. 主要还是依靠 Excel. 先将数据另存为 <tt class="docutils literal">.xlsx</tt> 格式, 如下图:</p>
+<p><img alt="Sample list" src="/images/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji-sample-list.png" style="width: 480px;" /></p>
+<p>原始数据只有A列和B列. 我们将后缀提取出来, 放在C列. 这里我们在C1中输入 <tt class="docutils literal"><span class="pre">=RIGHT(B1,LEN(B1)-SEARCH(&quot;.&quot;,B1))</span></tt>, 就会将B列中的网址按第一个 <tt class="docutils literal">.</tt> 做分割, 保留后面的域名后缀部分. 因为列很长, 所以用鼠标拖动的办法不是很好用, 因此可以使用下面的方法可以为整列应用公式, (出处: <a class="reference external" href="http://superuser.com/questions/180345/apply-formula-to-a-range-of-cells-without-drag-and-drop">superuser</a>):</p>
+<ol class="arabic simple">
+<li>Copy your formula <tt class="docutils literal">Ctrl + C</tt></li>
+<li>press <tt class="docutils literal">↓</tt></li>
+<li><tt class="docutils literal">Ctrl + Shift + ↓</tt> selects to the last nonblank cell</li>
+<li>paste <tt class="docutils literal">Ctrl + V</tt></li>
+</ol>
+<p>然后是统计C列的频率, 呈现在E, F列里. 操作:</p>
+<ol class="arabic simple">
+<li>先将B列中所有内容复制到E列，然后选中E列，在 <tt class="docutils literal">数据</tt> 标签中点击 <tt class="docutils literal">删除重复项</tt>, 在弹出窗口中选择 <tt class="docutils literal">以当前选定区域排序</tt> 按钮, 最后确定即可.</li>
+<li>在F1中输入 <tt class="docutils literal">=COUNTIFS(C:C,E1)</tt>, 并用上面的方法将这个公式应用到整个对应的F列</li>
+</ol>
+<p>有了F列的数据, 就可以按F列进行排序了. 这份2016年5月27日的100万个网址里, 共计使用了2040种不同的后缀(<tt class="docutils literal">.org.cn</tt> 与 <tt class="docutils literal">.cn</tt> 属不同后缀). 前100种如下:</p>
+<pre class="code text"><a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-1"></a>com 478452
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-2"></a>net 52342
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-3"></a>ru  47759
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-4"></a>org 45897
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-5"></a>de  23015
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-6"></a>jp  15089
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-7"></a>co.uk       12931
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-8"></a>ir  12750
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-9"></a>com.br      12367
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-10"></a>it  12028
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-11"></a>in  10255
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-12"></a>fr  10237
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-13"></a>info        10152
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-14"></a>pl  9293
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-15"></a>co.jp       8115
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-16"></a>nl  7295
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-17"></a>es  6446
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-18"></a>cn  6141
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-19"></a>com.au      5750
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-20"></a>gr  4901
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-21"></a>cz  4712
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-22"></a>co.kr       4704
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-23"></a>co  4442
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-24"></a>eu  4151
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-25"></a>tv  3978
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-26"></a>ca  3937
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-27"></a>me  3639
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-28"></a>ro  3499
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-29"></a>edu 3398
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-30"></a>se  3298
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-31"></a>biz 3270
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-32"></a>com.cn      3178
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-33"></a>tumblr.com  3158
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-34"></a>blogspot.com        3050
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-35"></a>hu  2897
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-36"></a>co.za       2880
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-37"></a>com.tr      2693
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-38"></a>tmall.com   2665
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-39"></a>com.tw      2565
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-40"></a>be  2510
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-41"></a>ch  2474
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-42"></a>io  2325
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-43"></a>wordpress.com       2300
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-44"></a>com.ua      2239
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-45"></a>dk  2200
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-46"></a>xyz 2174
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-47"></a>at  2087
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-48"></a>no  1988
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-49"></a>us  1978
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-50"></a>sk  1914
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-51"></a>com.ar      1913
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-52"></a>fi  1815
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-53"></a>co.in       1806
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-54"></a>com.mx      1790
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-55"></a>cc  1733
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-56"></a>vn  1638
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-57"></a>by  1573
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-58"></a>livejournal.com     1441
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-59"></a>gov.cn      1395
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-60"></a>kz  1387
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-61"></a>cl  1374
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-62"></a>co.il       1347
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-63"></a>pt  1310
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-64"></a>ua  1268
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-65"></a>org.uk      1244
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-66"></a>top 1217
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-67"></a>blogspot.co.id      1207
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-68"></a>or.jp       1192
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-69"></a>gov 1191
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-70"></a>ie  1142
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-71"></a>bg  1135
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-72"></a>kr  1113
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-73"></a>lt  1089
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-74"></a>su  1047
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-75"></a>co.id       1031
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-76"></a>gov.in      988
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-77"></a>blogspot.in 988
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-78"></a>mx  953
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-79"></a>club        937
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-80"></a>az  848
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-81"></a>xn--p1ai    812
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-82"></a>ac.in       791
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-83"></a>co.nz       768
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-84"></a>com.my      722
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-85"></a>pk  722
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-86"></a>nic.in      719
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-87"></a>edu.cn      705
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-88"></a>tw  698
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-89"></a>hr  696
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-90"></a>ne.jp       683
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-91"></a>pro 683
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-92"></a>or.kr       674
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-93"></a>org.br      671
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-94"></a>mobi        657
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-95"></a>lv  656
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-96"></a>com.sg      642
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-97"></a>ae  634
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-98"></a>pw  632
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-99"></a>com.hk      627
+<a name="rest_code_1a6fc1f13cdc4fe4993161d8f9edacef-100"></a>ac.jp       611
+</pre><p>排前面的几种 com, net, ru, org, de 都不出人所料, 都超过了2万个. 为画图方便, 我们在下面的统计图中把这前5个略去, 看一下这前100个后缀的分布情况:</p>
+<p><img alt="Domain share" src="/images/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji-domain-share.png" style="width: 480px;" /></p>
+<p>有一些现象也比较值得注意, 比如 <tt class="docutils literal">.biz</tt> 后缀越来越边缘化, 已排到了31名, 落后很多国别域名. 在注册商们的大力推广(忽悠)下, <tt class="docutils literal">.co</tt> 也的确越来越受到认可, 排在了23名. 其它近些年比较受初创企业欢迎的域名后缀也都表现不错, <tt class="docutils literal">.tv</tt> 25名, <tt class="docutils literal">.me</tt> 27名, <tt class="docutils literal">.io</tt> 42名, 而曾经被注册商大力忽悠的 <tt class="docutils literal">.cc</tt> 55名, 忽悠中的 <tt class="docutils literal">.pw</tt> 98名, 以及几年前一些国外初创企业偏好的 <tt class="docutils literal">.ly</tt> 253名. 一些 new gTLD 也慢慢受到认可, 比如 <tt class="docutils literal">.xyz</tt> 46名, <tt class="docutils literal">.top</tt> 66名, <tt class="docutils literal">.club</tt> 79名, <tt class="docutils literal">.pro</tt> 91名, <tt class="docutils literal">.tech</tt> 102名, 等等. 这份排名在注册非 <tt class="docutils literal">.com</tt> 域名后缀时也有一定的参考意义.</p>

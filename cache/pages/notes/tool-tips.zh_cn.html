@@ -1,0 +1,31 @@
+<div class="section" id="gtld">
+<h1>中国可备案的域名后缀(gTLD)</h1>
+<p>访问 <a class="reference external" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action">http://www.miitbeian.gov.cn/publish/query/indexFirst.action</a> 页面&quot;域名类型&quot;一栏可以查看可以备案的通用域名, 目前(2016.8.8)可备案的gTLD如下:
+com, net, org, edu, gov, biz, info, name, aero, arpa, asia, cat, coop, int, jobs, mil, mobi, museum, pro, tel, travel, wang, citic, ren, top, sohu, xin</p>
+</div>
+<div class="section" id="capitalize-the-first-letter">
+<h1>Capitalize The First Letter</h1>
+<p>将一个句子里所有单词首字母大写, 使用Excel中的 <tt class="docutils literal">PROPER()</tt> 函数即可.</p>
+</div>
+<div class="section" id="id1">
+<h1>视频只听声音不看画面(禁止画面播放)</h1>
+<p>使用VLC, Video-&gt;Video Track-&gt;Disable, 并且 Tools-&gt;Preferences-&gt;Video-&gt;Disable &quot;Enable Video&quot; option. 这样就可以听视频了.</p>
+</div>
+<div class="section" id="id2">
+<h1>拼音转汉字(批量)</h1>
+<p>大多数输入法可以做到单个拼音转汉字. 批量转换可借助爱词霸翻译 <a class="reference external" href="http://fy.iciba.com/">http://fy.iciba.com/</a> 等在线转换, 这种方法可以用于区别域名中的自然双拼. 后来尝试过其它几个在线翻译, 发现还是Google翻译最好用. 只用选择Chinese-&gt;Chinese就可以了. 因为Google翻译后的结果会粘成一行, 为了使结果按行排列, 可以在每个拼音后加上斜杠 <tt class="docutils literal">/</tt> 或反斜杠符号(或逗号等其它标点符号)再回车.</p>
+</div>
+<div class="section" id="mathematica">
+<h1>Mathematica提高精度</h1>
+<p>一些算法如NMinimize, FindRoot都会受WorkingPrecision的影响. 可以在这些算法当中单独指定WorkingPrecision的值. 如果想要指定一个全局的工作精度值, 可以使用下面的方法(来自http://mathematica.stackexchange.com/questions/38114/how-to-set-the-working-precision-globally-minprecision-does-not-work):</p>
+<pre class="code text"><a name="rest_code_7029f01faa24495183e08e218313484e-1"></a>$PreRead = (# /.
+<a name="rest_code_7029f01faa24495183e08e218313484e-2"></a> s_String /;
+<a name="rest_code_7029f01faa24495183e08e218313484e-3"></a>   StringMatchQ[s, NumberString] &amp;&amp;
+<a name="rest_code_7029f01faa24495183e08e218313484e-4"></a>    Precision@ToExpression@s == MachinePrecision :&gt;
+<a name="rest_code_7029f01faa24495183e08e218313484e-5"></a>  s &lt;&gt; &quot;`50.&quot; &amp;);
+</pre><p>这样设置后, 之后的所有计算都会是指定的50位精度.</p>
+</div>
+<div class="section" id="id3">
+<h1>测试网站是否被墙</h1>
+<p>测试网站是否可以被中国用户访问, 可以使用360奇云测 <a class="reference external" href="http://ce.cloud.360.cn">http://ce.cloud.360.cn</a>, 如果网速为0的地区就说明那个地方不能访问. 如果中国大部分地区都没有速度, 就极可能是被墙了.</p>
+</div>
