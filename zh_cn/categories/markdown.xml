@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Home (文章分类：markdown)</title><link>http://yongchen.org/</link><description></description><atom:link href="http://yongchen.org/zh_cn/categories/markdown.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><lastBuildDate>Tue, 07 Feb 2017 18:44:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Atom Markdown Settings</title><link>http://yongchen.org/zh_cn/posts/atom-markdown-settings/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="markdown-packages"&gt;
+&lt;h2&gt;Markdown Packages:&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;language-markdown&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;markdown-preview-plus&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;markdown-scroll-sync&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/atom-markdown-settings/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/atom-markdown-settings/</guid><pubDate>Mon, 25 Apr 2016 04:22:10 GMT</pubDate></item></channel></rss>

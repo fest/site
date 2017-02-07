@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Home (Posts about sage)</title><link>http://yongchen.org/</link><description></description><atom:link href="http://yongchen.org/categories/sage.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 07 Feb 2017 18:44:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>SageMath File Exchange with Windows via VirtualBox</title><link>http://yongchen.org/posts/sagemath-file-exchange-with-windows-via-virtualbox/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="sagemath-windows"&gt;
+&lt;h2&gt;SageMath Windows安装&lt;/h2&gt;
+&lt;p&gt;在win环境下SageMath以ova虚拟机应用的形式安装: &lt;a class="reference external" href="http://www.sagemath.org/download-windows.html"&gt;SageMath for
+Windows&lt;/a&gt; 在使用Virtual
+Box安装时将系统选择为自己比较熟悉的Ubuntu x64版本, 并按照 &lt;a class="reference external" href="https://wiki.sagemath.org/SageAppliance/SageMath-7"&gt;SageMath
+Installation&lt;/a&gt;
+中的步骤添加好共享文件夹后reset状态 (比如 C:/home/SageProjects).&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/sagemath-file-exchange-with-windows-via-virtualbox/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>sage</category><guid>http://yongchen.org/posts/sagemath-file-exchange-with-windows-via-virtualbox/</guid><pubDate>Mon, 25 Apr 2016 13:09:20 GMT</pubDate></item></channel></rss>

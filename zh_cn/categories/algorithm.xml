@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Home (文章分类：algorithm)</title><link>http://yongchen.org/</link><description></description><atom:link href="http://yongchen.org/zh_cn/categories/algorithm.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><lastBuildDate>Tue, 07 Feb 2017 18:44:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Wrap Angle to Given Range</title><link>http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/</link><dc:creator>YONG</dc:creator><description>&lt;div&gt;&lt;p&gt;问题: 如何将任一个角度值映射到给定范围, 比如[-pi, pi)?&lt;/p&gt;
+&lt;p&gt;方案: 参考 &lt;a class="reference external" href="http://stackoverflow.com/questions/4633177/c-how-to-wrap-a-float-to-the-interval-pi-pi"&gt;http://stackoverflow.com/questions/4633177/c-how-to-wrap-a-float-to-the-interval-pi-pi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;stackoverflow原文给出了cpp实现:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/</guid><pubDate>Wed, 20 Jul 2016 05:30:46 GMT</pubDate></item><item><title>Arc Length Reparameterization</title><link>http://yongchen.org/zh_cn/posts/arc-length-reparameterization/</link><dc:creator>YONG</dc:creator><description>&lt;div&gt;&lt;p&gt;reference: &lt;a class="reference external" href="https://services.math.duke.edu/~wka/math103/curvature.pdf"&gt;https://services.math.duke.edu/~wka/math103/curvature.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Suppose &lt;span class="math"&gt;\(I\)&lt;/span&gt; is an interval and &lt;span class="math"&gt;\(\mathbf{r} : I \mapsto \mathbb{R}^n\)&lt;/span&gt; is a curve in &lt;span class="math"&gt;\(\mathbb{R}^n\)&lt;/span&gt; whose speed is never zero. Suppose &lt;span class="math"&gt;\(t_0 \in I\)&lt;/span&gt; and let&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\sigma (t) = \int_{t_0}^t \| \vec{r}' (\tau) \| d\tau
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/arc-length-reparameterization/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/arc-length-reparameterization/</guid><pubDate>Tue, 28 Jun 2016 02:04:59 GMT</pubDate></item><item><title>Clothoid Approximation</title><link>http://yongchen.org/zh_cn/posts/clothoid-approximation/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;圆弧插值&lt;/h2&gt;
+&lt;p&gt;设basic clothoid上分布着多个点, 第 j 个圆弧穿过第 j 个与 j+1 个点. 它的半径由下式确定:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/clothoid-approximation/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/clothoid-approximation/</guid><pubDate>Thu, 26 May 2016 06:23:42 GMT</pubDate></item><item><title>Angle between 2 Vectors</title><link>http://yongchen.org/zh_cn/posts/angle-between-2-vectors/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;两向量夹角问题&lt;/h2&gt;
+&lt;p&gt;Given two vectors v1(x1,y1), v2(x2,y2) and they are not necessarily
+normalized, compute the angle beta between v1 and v2.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/angle-between-2-vectors/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/angle-between-2-vectors/</guid><pubDate>Mon, 25 Apr 2016 17:34:15 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install MonoDevelop on Ubuntu | Home</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (zh_cn)" href="../../zh_cn/rss.xml">
+<link rel="canonical" href="http://yongchen.org/posts/install-monodevelop-on-ubuntu/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="YONG">
+<link rel="prev" href="../visual-studio-auto-formatting-shortcut/" title="Visual Studio Auto Formatting Shortcut" type="text/html">
+<link rel="next" href="../angle-between-2-vectors/" title="Angle between 2 Vectors" type="text/html">
+<meta property="og:site_name" content="Home">
+<meta property="og:title" content="Install MonoDevelop on Ubuntu">
+<meta property="og:url" content="http://yongchen.org/posts/install-monodevelop-on-ubuntu/">
+<meta property="og:description" content="MonoDevelop不但可以用来写.Net程序，也可以用作C++的IDE，只是ubuntu软件中心的monodevelop版本非常陈旧，因此我们需要自己手动来安装(我使用的是
+Ubuntu 14.04 LTS, 安装之后的 monodevelop 版本为 5.10)。
+
+
+PPA
+我们首先尝试使用ppa安装，MonoDevelop
+PPA，在PPA页面搜索monodevelop，找到stable">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-04-26T01:17:23+08:00">
+<meta property="article:tag" content="cpp">
+<link rel="alternate" hreflang="zh_cn" href="../../zh_cn/posts/install-monodevelop-on-ubuntu/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://yongchen.org/">
+
+                <span id="blog-title">Home</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../">Posts</a>
+                </li>
+<li>
+<a href="../../categories/">Tags</a>
+                </li>
+<li>
+<a href="../../notes/index.html">Notes</a>
+                </li>
+<li>
+<a href="../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS</a>
+                </li>
+<li>
+<a href="../../about/index.html">About</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+            </li>
+<li><a href="http://yongchen.org/zh_cn/" rel="alternate" hreflang="zh_cn">简体中文</a></li>
+
+                
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Install MonoDevelop on Ubuntu</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    YONG
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-04-26T01:17:23+08:00" itemprop="datePublished" title="2016-04-26 01:17">2016-04-26 01:17</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/install-monodevelop-on-ubuntu.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>MonoDevelop不但可以用来写.Net程序，也可以用作C++的IDE，只是ubuntu软件中心的monodevelop版本非常陈旧，因此我们需要自己手动来安装(我使用的是
+Ubuntu 14.04 LTS, 安装之后的 monodevelop 版本为 5.10)。</p>
+<!-- TEASER_END -->
+<div class="section" id="ppa">
+<h2>PPA</h2>
+<p>我们首先尝试使用ppa安装，<a class="reference external" href="https://launchpad.net/ubuntu/+ppas?name_filter=monodevelop">MonoDevelop
+PPA</a>，在PPA页面搜索monodevelop，找到stable
+release版本，通过terminal安装得到提示：该PPA已不再支持:(</p>
+</div>
+<div class="section" id="via-official-site">
+<h2>via Official Site</h2>
+<p>因此我们推荐按照官方安装流程，即：<a class="reference external" href="http://www.mono-project.com/docs/getting-started/install/linux/">Official
+Guide</a>
+按照流程：</p>
+<ol class="arabic simple">
+<li>依次完成 Add the Mono Project GPG signing key and the package
+repository, enable mod_mono installation, enable libgdiplus
+installation 这三个部分。</li>
+<li>转到该页面 Usage 部分，安装 mono-devel. 可能会因为一些依赖的 package
+无法安装而失败。通过 synaptic 安装需要的各个 package 发现失败原因是
+ubuntu 不提供 &gt;= 1.31 版本的 libjpeg62-turbo 包。</li>
+</ol>
+<p>解决方法： 直接去 Debian 网站下载最新版的 .deb 文件（已提供
+1.4.1版本）安装: <a class="reference external" href="https://packages.debian.org/sid/libjpeg62-turbo">https://packages.debian.org/sid/libjpeg62-turbo</a>, x64
+系统选择 amd64 链接下载即可。</p>
+<ol class="arabic" start="3">
+<li>
+<p class="first">完成上面这些只是安装了 mono 框架。接着安装 monodevelop
+程序：<a class="reference external" href="http://www.monodevelop.com/download/linux/">http://www.monodevelop.com/download/linux/</a> 这里主要安装
+monodevelop, 其它的如 monodevelop-nunit 等组件可视情况安装。</p>
+</li>
+<li>
+<p class="first">安装完成后，terminal 中输入 monodevelop 运行，创建一个 hello world 的
+C# 程序，验证安装成功。附程序界面和运行截图：</p>
+<p><img alt="GUI" src="../../images/install-monodevelop-on-ubuntu-gui.png" style="width: 480px;"></p>
+<p><img alt="CMD" src="../../images/install-monodevelop-on-ubuntu-cmd.png" style="width: 480px;"></p>
+</li>
+</ol>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/cpp/" rel="tag">cpp</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../visual-studio-auto-formatting-shortcut/" rel="prev" title="Visual Studio Auto Formatting Shortcut">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../angle-between-2-vectors/" rel="next" title="Angle between 2 Vectors">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="yongchen",
+            disqus_url="http://yongchen.org/posts/install-monodevelop-on-ubuntu/",
+        disqus_title="Install MonoDevelop on Ubuntu",
+        disqus_identifier="cache/posts/install-monodevelop-on-ubuntu.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="yongchen";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:author@yongchen.org">Yong Chen</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

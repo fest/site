@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home (Posts about web)</title><link>http://yongchen.org/</link><description></description><atom:link rel="self" href="http://yongchen.org/categories/web.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 07 Feb 2017 19:05:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Alexa 前100万网站域名后缀统计</title><link>http://yongchen.org/posts/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji/</link><dc:creator>YONG</dc:creator><description>&lt;div&gt;&lt;p&gt;记得前两天看到一篇 &lt;a class="reference external" href="http://blog.park.io/articles/enormous-growth-of-io-domains/"&gt;文章&lt;/a&gt;, 讲了 &lt;tt class="docutils literal"&gt;.io&lt;/tt&gt; 域名在 Alexa 网站排名中的一些事情. 我就很想知道在 Alexa 这个榜单里, 各种 domain extension 都占了多大的份额, 想看看最流行的这些网站的建设者都喜欢用哪些主流和非主流的域名后缀.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>domain</category><category>web</category><guid>http://yongchen.org/posts/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji/</guid><pubDate>Sat, 28 May 2016 17:18:51 GMT</pubDate></item><item><title>Build Github Pages with Nikola</title><link>http://yongchen.org/posts/build-github-pages-with-nikola/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;静态网站生成工具(static site generator)非常多,
+在&lt;a class="reference external" href="https://www.staticgen.com/"&gt;这里&lt;/a&gt;
+就可以看到开源的众多静态网站生成工具. 不少工具都有它们各自的特点,
+比如Hugo用golang编写, 在编译网页时速度比其它框架更快, 但缺点也比较明显,
+做个性化扩展比较麻烦. 这里选择Nikola是考虑到它是由Python编写,
+编译速度也比常见的Jekyll等要快不少, 且开发活跃,
+被很多科研人员选作博客工具. 我比较看重的Nikola特性有:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/build-github-pages-with-nikola/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>github</category><category>python</category><category>web</category><guid>http://yongchen.org/posts/build-github-pages-with-nikola/</guid><pubDate>Tue, 26 Apr 2016 04:56:35 GMT</pubDate></item><item><title>Org to rst Notes</title><link>http://yongchen.org/posts/org-to-rst-notes/</link><dc:creator>YONG</dc:creator><description>&lt;div&gt;&lt;p&gt;I’m using &lt;tt class="docutils literal"&gt;Nikola&lt;/tt&gt; for site generating, which supports various types
+of input formats: &lt;tt class="docutils literal"&gt;.rst&lt;/tt&gt; natively, &lt;tt class="docutils literal"&gt;.md&lt;/tt&gt; partially, &lt;tt class="docutils literal"&gt;.org&lt;/tt&gt; via
+&lt;tt class="docutils literal"&gt;orgmode&lt;/tt&gt; plug-in, .., etc. No one seems perfect for me:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/org-to-rst-notes/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>org-mode</category><category>web</category><guid>http://yongchen.org/posts/org-to-rst-notes/</guid><pubDate>Mon, 25 Apr 2016 10:43:39 GMT</pubDate></item><item><title>Build Github Pages with Cryogen</title><link>http://yongchen.org/posts/build-github-pages-with-cryogen/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="why-cryogen"&gt;
+&lt;h2&gt;Why Cryogen?&lt;/h2&gt;
+&lt;p&gt;Cryogen是用Clojure写的一个static site generator. 它的优点在于:
+markdown支持良好(包括Clojure语法高亮, 也支持AsciiDoc), 支持RSS, toc,
+Disqus, Sitemap, 可以使用tags, 移动网页友好, 易上手等.
+最主要是我自己比较喜欢Clojure, 因此就没有考虑使用其它框架.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/build-github-pages-with-cryogen/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>clojure</category><category>github</category><category>web</category><guid>http://yongchen.org/posts/build-github-pages-with-cryogen/</guid><pubDate>Mon, 25 Apr 2016 04:22:27 GMT</pubDate></item></channel></rss>

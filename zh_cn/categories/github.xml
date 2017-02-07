@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home (文章分类：github)</title><link>http://yongchen.org/</link><description></description><atom:link rel="self" href="http://yongchen.org/zh_cn/categories/github.xml" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Tue, 07 Feb 2017 19:05:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>关于GitHub的使用思考</title><link>http://yongchen.org/zh_cn/posts/guan-yu-github-de-shi-yong-si-kao/</link><dc:creator>YONG</dc:creator><description>&lt;div&gt;&lt;p&gt;之前一直对使用GitHub存放博客(静态网站)很痴迷, 后来又发现Gist的好处, 最近又开始频繁使用普通的Repo来存放一些东西. GitHub光是文字记录功能的产品不止这几样, 比如评论和Wiki等等. 这就让我开始思考, 到底哪些东西适合用对应的哪一项功能来完成或是存放.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/guan-yu-github-de-shi-yong-si-kao/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/guan-yu-github-de-shi-yong-si-kao/</guid><pubDate>Tue, 23 Aug 2016 03:41:45 GMT</pubDate></item><item><title>Build Github Pages with Nikola</title><link>http://yongchen.org/zh_cn/posts/build-github-pages-with-nikola/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;静态网站生成工具(static site generator)非常多,
+在&lt;a class="reference external" href="https://www.staticgen.com/"&gt;这里&lt;/a&gt;
+就可以看到开源的众多静态网站生成工具. 不少工具都有它们各自的特点,
+比如Hugo用golang编写, 在编译网页时速度比其它框架更快, 但缺点也比较明显,
+做个性化扩展比较麻烦. 这里选择Nikola是考虑到它是由Python编写,
+编译速度也比常见的Jekyll等要快不少, 且开发活跃,
+被很多科研人员选作博客工具. 我比较看重的Nikola特性有:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/build-github-pages-with-nikola/"&gt;更多…&lt;/a&gt; (剩余 6 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/build-github-pages-with-nikola/</guid><pubDate>Tue, 26 Apr 2016 04:56:35 GMT</pubDate></item><item><title>Git Learning Notes</title><link>http://yongchen.org/zh_cn/posts/git-learning-notes/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="git-project"&gt;
+&lt;h2&gt;Git Project&lt;/h2&gt;
+&lt;p&gt;A git project can be thought of as having three parts in Figure
+&lt;em&gt;git-parts&lt;/em&gt;:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;A &lt;strong&gt;Working Directory&lt;/strong&gt;: creating, editing, deleting and organizing
+files&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;Staging Directory&lt;/strong&gt;: list changes&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;Repository&lt;/strong&gt;: Git permanently stores changes as different
+&lt;em&gt;versions&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/git-learning-notes/"&gt;更多…&lt;/a&gt; (剩余 2 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/git-learning-notes/</guid><pubDate>Mon, 25 Apr 2016 08:07:58 GMT</pubDate></item><item><title>Build Github Pages with Cryogen</title><link>http://yongchen.org/zh_cn/posts/build-github-pages-with-cryogen/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="why-cryogen"&gt;
+&lt;h2&gt;Why Cryogen?&lt;/h2&gt;
+&lt;p&gt;Cryogen是用Clojure写的一个static site generator. 它的优点在于:
+markdown支持良好(包括Clojure语法高亮, 也支持AsciiDoc), 支持RSS, toc,
+Disqus, Sitemap, 可以使用tags, 移动网页友好, 易上手等.
+最主要是我自己比较喜欢Clojure, 因此就没有考虑使用其它框架.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/build-github-pages-with-cryogen/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/build-github-pages-with-cryogen/</guid><pubDate>Mon, 25 Apr 2016 04:22:27 GMT</pubDate></item></channel></rss>

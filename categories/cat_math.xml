@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Home (Posts about math)</title><link>http://yongchen.org/</link><description></description><atom:link href="http://yongchen.org/categories/cat_math.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 07 Feb 2017 18:44:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Arc Length Reparameterization</title><link>http://yongchen.org/posts/arc-length-reparameterization/</link><dc:creator>YONG</dc:creator><description>&lt;div&gt;&lt;p&gt;reference: &lt;a class="reference external" href="https://services.math.duke.edu/~wka/math103/curvature.pdf"&gt;https://services.math.duke.edu/~wka/math103/curvature.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Suppose &lt;span class="math"&gt;\(I\)&lt;/span&gt; is an interval and &lt;span class="math"&gt;\(\mathbf{r} : I \mapsto \mathbb{R}^n\)&lt;/span&gt; is a curve in &lt;span class="math"&gt;\(\mathbb{R}^n\)&lt;/span&gt; whose speed is never zero. Suppose &lt;span class="math"&gt;\(t_0 \in I\)&lt;/span&gt; and let&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\sigma (t) = \int_{t_0}^t \| \vec{r}' (\tau) \| d\tau
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/arc-length-reparameterization/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>algorithm</category><category>mathjax</category><guid>http://yongchen.org/posts/arc-length-reparameterization/</guid><pubDate>Tue, 28 Jun 2016 02:04:59 GMT</pubDate></item><item><title>Clothoid Approximation</title><link>http://yongchen.org/posts/clothoid-approximation/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;圆弧插值&lt;/h2&gt;
+&lt;p&gt;设basic clothoid上分布着多个点, 第 j 个圆弧穿过第 j 个与 j+1 个点. 它的半径由下式确定:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/clothoid-approximation/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>algorithm</category><category>clothoid</category><category>mathjax</category><guid>http://yongchen.org/posts/clothoid-approximation/</guid><pubDate>Thu, 26 May 2016 06:23:42 GMT</pubDate></item></channel></rss>

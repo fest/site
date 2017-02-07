@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Sage notebooks, images can be stored in Windows">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SageMath File Exchange with Windows via VirtualBox | Home</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (zh_cn)" href="../../zh_cn/rss.xml">
+<link rel="canonical" href="http://yongchen.org/posts/sagemath-file-exchange-with-windows-via-virtualbox/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="Sage notebooks, images can be stored in Windows">
+<meta name="author" content="YONG">
+<link rel="prev" href="../org-to-rst-notes/" title="Org to rst Notes" type="text/html">
+<link rel="next" href="../install-textext-plugin-for-inkscape/" title="Install Textext Plugin for Inkscape" type="text/html">
+<meta property="og:site_name" content="Home">
+<meta property="og:title" content="SageMath File Exchange with Windows via VirtualBox">
+<meta property="og:url" content="http://yongchen.org/posts/sagemath-file-exchange-with-windows-via-virtualbox/">
+<meta property="og:description" content="Sage notebooks, images can be stored in Windows">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-04-25T21:09:20+08:00">
+<meta property="article:tag" content="sage">
+<link rel="alternate" hreflang="zh_cn" href="../../zh_cn/posts/sagemath-file-exchange-with-windows-via-virtualbox/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://yongchen.org/">
+
+                <span id="blog-title">Home</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../">Posts</a>
+                </li>
+<li>
+<a href="../../categories/">Tags</a>
+                </li>
+<li>
+<a href="../../notes/index.html">Notes</a>
+                </li>
+<li>
+<a href="../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS</a>
+                </li>
+<li>
+<a href="../../about/index.html">About</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+            </li>
+<li><a href="http://yongchen.org/zh_cn/" rel="alternate" hreflang="zh_cn">简体中文</a></li>
+
+                
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">SageMath File Exchange with Windows via VirtualBox</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    YONG
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-04-25T21:09:20+08:00" itemprop="datePublished" title="2016-04-25 21:09">2016-04-25 21:09</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/sagemath-file-exchange-with-windows-via-virtualbox.html">Comments</a>
+
+
+            
+
+                <meta name="description" itemprop="description" content="Sage notebooks, images can be stored in Windows"></p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="section" id="sagemath-windows">
+<h2>SageMath Windows安装</h2>
+<p>在win环境下SageMath以ova虚拟机应用的形式安装: <a class="reference external" href="http://www.sagemath.org/download-windows.html">SageMath for
+Windows</a> 在使用Virtual
+Box安装时将系统选择为自己比较熟悉的Ubuntu x64版本, 并按照 <a class="reference external" href="https://wiki.sagemath.org/SageAppliance/SageMath-7">SageMath
+Installation</a>
+中的步骤添加好共享文件夹后reset状态 (比如 C:/home/SageProjects).</p>
+<!-- TEASER_END -->
+<ul class="simple">
+<li>提示: 我们可以将和linux相关的所有文件都放在win下 C:/home 中,
+并将此路径起名为“home”的环境变量.7.0版本默认进入 jupyter 界面,</li>
+</ul>
+</div>
+<div class="section" id="ipython-notebook-jupyter">
+<h2>iPython Notebook (Jupyter)</h2>
+<p>个人感觉ipython也比sage原生的notebook模式好用, 因为它支持
+markdown+latex, 比sage的notebook界面更简洁,
+并且它存储的文件位置在虚拟机上很直观, 很容易找到, 并不像之前那么隐蔽.
+点击上方 jupyter 图标后, 显示所有文件夹和文件.
+我们可以创建一个文件夹用于文件共享, 名字随意, 比如这里叫 Downloads:</p>
+<p><img alt="Jupyter Notebook" src="../../images/sagemath-file-exchange-with-windows-via-virtualbox-jupyternotebook.png" style="width: 480px;"></p>
+<div class="section" id="id1">
+<h3>路径配置</h3>
+<p>这时按<tt class="docutils literal">右Ctrl+F1</tt>(默认``右Ctrl``为host鍵)进入shell,
+用户名和密码都是sage,
+将我们之前设定的文件夹<tt class="docutils literal"><span class="pre">C:/home/SageProjects</span></tt>添加进来,
+使用以下命令(参考<a class="reference external" href="https://help.ubuntu.com/community/VirtualBox/SharedFolders">https://help.ubuntu.com/community/VirtualBox/SharedFolders</a>):</p>
+<pre class="code bash"><a name="rest_code_0e910758b98d43aca4a24813d91bfdd4-1"></a>sudo mount -t vboxsf -o <span class="nv">uid</span><span class="o">=</span><span class="nv">$UID</span>,gid<span class="o">=</span><span class="k">$(</span>id -g<span class="k">)</span> SageProjects ~/Downloads
+</pre>
+<p>如下图:</p>
+<p><img alt="Directory Setting" src="../../images/sagemath-file-exchange-with-windows-via-virtualbox-directorysetting.png" style="width: 480px;"></p>
+<p>设置完毕后按<tt class="docutils literal">右Ctrl+F7</tt>(F2~F7之间的一个,
+一般是<tt class="docutils literal">F7</tt>)返回jupyter界面,
+这时我们只要进入Downloads文件夹创建notebook,执行运算, 保存结果等操作.
+所有产生的文件都会在这个文件夹下, 也会自动出现在win上的共享文件夹
+<tt class="docutils literal"><span class="pre">C:/home/SageProjects</span></tt> 下面,
+如创建sagemath7.0类型名为testNoteBook的文件,
+我们在里面做了计算并使用了plot, 且使用save函数将plot结果输出为pdf:</p>
+<p><img alt="Plot Example" src="../../images/sagemath-file-exchange-with-windows-via-virtualbox-plotexample.png" style="width: 480px;"></p>
+<p><img alt="Plot Example File" src="../../images/sagemath-file-exchange-with-windows-via-virtualbox-plotexamplefile.png" style="width: 480px;"></p>
+<p>这些文件同时也出现在了win系统的SageProjects共享文件夹中:</p>
+<p><img alt="Win Folder" src="../../images/sagemath-file-exchange-with-windows-via-virtualbox-winfolder.png" style="width: 480px;"></p>
+</div>
+<div class="section" id="duang">
+<h3>Duang~</h3>
+<p>这样就可以直接对sagemath虚拟机产生的文件进行操作了.
+这种做法的一个小缺点就是每次开启虚拟机后都要<tt class="docutils literal">右Ctrl+F1</tt>后用那串命令加载这个文件夹.</p>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/sage/" rel="tag">sage</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../org-to-rst-notes/" rel="prev" title="Org to rst Notes">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../install-textext-plugin-for-inkscape/" rel="next" title="Install Textext Plugin for Inkscape">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="yongchen",
+            disqus_url="http://yongchen.org/posts/sagemath-file-exchange-with-windows-via-virtualbox/",
+        disqus_title="SageMath File Exchange with Windows via VirtualBox",
+        disqus_identifier="cache/posts/sagemath-file-exchange-with-windows-via-virtualbox.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="yongchen";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:author@yongchen.org">Yong Chen</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

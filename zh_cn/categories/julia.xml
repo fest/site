@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Home (文章分类：Julia)</title><link>http://yongchen.org/</link><description></description><atom:link href="http://yongchen.org/zh_cn/categories/julia.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><lastBuildDate>Tue, 07 Feb 2017 18:44:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Wrap Angle to Given Range</title><link>http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/</link><dc:creator>YONG</dc:creator><description>&lt;div&gt;&lt;p&gt;问题: 如何将任一个角度值映射到给定范围, 比如[-pi, pi)?&lt;/p&gt;
+&lt;p&gt;方案: 参考 &lt;a class="reference external" href="http://stackoverflow.com/questions/4633177/c-how-to-wrap-a-float-to-the-interval-pi-pi"&gt;http://stackoverflow.com/questions/4633177/c-how-to-wrap-a-float-to-the-interval-pi-pi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;stackoverflow原文给出了cpp实现:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/</guid><pubDate>Wed, 20 Jul 2016 05:30:46 GMT</pubDate></item><item><title>Julia Notes</title><link>http://yongchen.org/zh_cn/posts/julia-notes/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;下载并安装64-bit Julia (command line version), 可选择自定义的安装路径.&lt;/li&gt;
+&lt;li&gt;新建环境变量 &lt;tt class="docutils literal"&gt;JULIA_HOME&lt;/tt&gt;, 并指向 &lt;tt class="docutils literal"&gt;Julia&lt;/tt&gt; 的 &lt;tt class="docutils literal"&gt;\bin&lt;/tt&gt; 目录.&lt;/li&gt;
+&lt;li&gt;在 &lt;tt class="docutils literal"&gt;PATH&lt;/tt&gt; 环境变量下添加 &lt;tt class="docutils literal"&gt;%JULIA_HOME%&lt;/tt&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/zh_cn/posts/julia-notes/"&gt;更多…&lt;/a&gt; (剩余 2 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/julia-notes/</guid><pubDate>Tue, 24 May 2016 04:22:41 GMT</pubDate></item></channel></rss>

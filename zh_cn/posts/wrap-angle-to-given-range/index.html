@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wrap Angle to Given Range | Home</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (zh_cn)" href="../../rss.xml">
+<link rel="canonical" href="http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="YONG">
+<link rel="prev" href="../geng-zhen-shi-zi-ran-de-hong-lou-meng-dai-yu-chuan/" title="更真实自然的红楼梦: 黛玉传" type="text/html">
+<link rel="next" href="../mian-fei-yu-ming-you-xiang-xuan-ze/" title="免费域名邮箱选择" type="text/html">
+<meta property="og:site_name" content="Home">
+<meta property="og:title" content="Wrap Angle to Given Range">
+<meta property="og:url" content="http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/">
+<meta property="og:description" content="问题: 如何将任一个角度值映射到给定范围, 比如[-pi, pi)?
+方案: 参考 http://stackoverflow.com/questions/4633177/c-how-to-wrap-a-float-to-the-interval-pi-pi
+stackoverflow原文给出了cpp实现:
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-07-20T13:30:46+08:00">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="cpp">
+<meta property="article:tag" content="Julia">
+<link rel="alternate" hreflang="en" href="../../../posts/wrap-angle-to-given-range/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://yongchen.org/zh_cn/">
+
+                <span id="blog-title">Home</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../posts/">文章</a>
+                </li>
+<li>
+<a href="../../../categories/">标签</a>
+                </li>
+<li>
+<a href="../../../notes/index.html">便笺</a>
+                </li>
+<li>
+<a href="../../../archive.html">存档</a>
+                </li>
+<li>
+<a href="../../../rss.xml">RSS</a>
+                </li>
+<li>
+<a href="../../../about/index.html">关于</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+            </li>
+<li><a href="http://yongchen.org/" rel="alternate" hreflang="en">English</a></li>
+
+                
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Wrap Angle to Given Range</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    YONG
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-07-20T13:30:46+08:00" itemprop="datePublished" title="2016-07-20 13:30">2016-07-20 13:30</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/wrap-angle-to-given-range.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>问题: 如何将任一个角度值映射到给定范围, 比如[-pi, pi)?</p>
+<p>方案: 参考 <a class="reference external" href="http://stackoverflow.com/questions/4633177/c-how-to-wrap-a-float-to-the-interval-pi-pi">http://stackoverflow.com/questions/4633177/c-how-to-wrap-a-float-to-the-interval-pi-pi</a></p>
+<p>stackoverflow原文给出了cpp实现:</p>
+<!-- TEASER_END -->
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-1"> 1</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-2"> 2</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-3"> 3</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-4"> 4</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-5"> 5</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-6"> 6</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-7"> 7</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-8"> 8</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-9"> 9</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-10">10</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-11">11</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-12">12</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-13">13</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-14">14</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-15">15</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-16">16</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-17">17</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-18">18</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-19">19</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-20">20</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-21">21</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-22">22</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-23">23</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-24">24</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-25">25</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-26">26</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-27">27</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-28">28</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-29">29</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-30">30</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-31">31</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-32">32</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-33">33</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-34">34</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-35">35</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-36">36</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-37">37</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-38">38</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-39">39</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-40">40</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-41">41</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-42">42</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-43">43</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-44">44</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-45">45</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-46">46</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-47">47</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-48">48</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-49">49</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-50">50</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-51">51</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-52">52</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-53">53</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-54">54</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-55">55</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-56">56</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-57">57</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-58">58</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-59">59</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-60">60</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-61">61</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-62">62</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-63">63</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-64">64</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-65">65</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-66">66</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-67">67</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-68">68</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-69">69</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-70">70</a>
+<a href="#rest_code_8f071f6215494c8ab6527c19c02f5b10-71">71</a></pre></div></td>
+<td class="code"><pre class="code cpp"><a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-1"></a><span class="k">static</span> <span class="k">const</span> <span class="kt">double</span>     <span class="n">_PI</span><span class="o">=</span> <span class="mf">3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348</span><span class="p">;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-2"></a><span class="k">static</span> <span class="k">const</span> <span class="kt">double</span> <span class="n">_TWO_PI</span><span class="o">=</span> <span class="mf">6.2831853071795864769252867665590057683943387987502116419498891846156328125724179972560696</span><span class="p">;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-3"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-4"></a><span class="c1">// Floating-point modulo</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-5"></a><span class="c1">// The result (the remainder) has same sign as the divisor.</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-6"></a><span class="c1">// Similar to matlab's mod(); Not similar to fmod() -   Mod(-3,4)= 1   fmod(-3,4)= -3</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-7"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-8"></a><span class="n">T</span> <span class="n">Mod</span><span class="p">(</span><span class="n">T</span> <span class="n">x</span><span class="p">,</span> <span class="n">T</span> <span class="n">y</span><span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-9"></a><span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-10"></a>    <span class="k">static_assert</span><span class="p">(</span><span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">is_exact</span> <span class="p">,</span> <span class="s">"Mod: floating-point type expected"</span><span class="p">);</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-11"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-12"></a>    <span class="k">if</span> <span class="p">(</span><span class="mf">0.</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-13"></a>        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-14"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-15"></a>    <span class="kt">double</span> <span class="n">m</span><span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">floor</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">);</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-16"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-17"></a>    <span class="c1">// handle boundary cases resulted from floating-point cut off:</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-18"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-19"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>              <span class="c1">// modulo range: [0..y)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-20"></a>    <span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-21"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="o">&gt;=</span><span class="n">y</span><span class="p">)</span>           <span class="c1">// Mod(-1e-16             , 360.    ): m= 360.</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-22"></a>            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-23"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-24"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-25"></a>        <span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-26"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="n">m</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-27"></a>                <span class="k">return</span> <span class="mi">0</span>  <span class="p">;</span> <span class="c1">// just in case...</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-28"></a>            <span class="k">else</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-29"></a>                <span class="k">return</span> <span class="n">y</span><span class="o">+</span><span class="n">m</span><span class="p">;</span> <span class="c1">// Mod(106.81415022205296 , _TWO_PI ): m= -1.421e-14</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-30"></a>        <span class="p">}</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-31"></a>    <span class="p">}</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-32"></a>    <span class="k">else</span>                    <span class="c1">// modulo range: (y..0]</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-33"></a>    <span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-34"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="o">&lt;=</span><span class="n">y</span><span class="p">)</span>           <span class="c1">// Mod(1e-16              , -360.   ): m= -360.</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-35"></a>            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-36"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-37"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="o">&gt;</span><span class="mi">0</span> <span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-38"></a>        <span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-39"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="n">m</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-40"></a>                <span class="k">return</span> <span class="mi">0</span>  <span class="p">;</span> <span class="c1">// just in case...</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-41"></a>            <span class="k">else</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-42"></a>                <span class="k">return</span> <span class="n">y</span><span class="o">+</span><span class="n">m</span><span class="p">;</span> <span class="c1">// Mod(-106.81415022205296, -_TWO_PI): m= 1.421e-14</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-43"></a>        <span class="p">}</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-44"></a>    <span class="p">}</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-45"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-46"></a>    <span class="k">return</span> <span class="n">m</span><span class="p">;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-47"></a><span class="p">}</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-48"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-49"></a><span class="c1">// wrap [rad] angle to [-PI..PI)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-50"></a><span class="kr">inline</span> <span class="kt">double</span> <span class="n">WrapPosNegPI</span><span class="p">(</span><span class="kt">double</span> <span class="n">fAng</span><span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-51"></a><span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-52"></a>    <span class="k">return</span> <span class="n">Mod</span><span class="p">(</span><span class="n">fAng</span> <span class="o">+</span> <span class="n">_PI</span><span class="p">,</span> <span class="n">_TWO_PI</span><span class="p">)</span> <span class="o">-</span> <span class="n">_PI</span><span class="p">;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-53"></a><span class="p">}</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-54"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-55"></a><span class="c1">// wrap [rad] angle to [0..TWO_PI)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-56"></a><span class="kr">inline</span> <span class="kt">double</span> <span class="n">WrapTwoPI</span><span class="p">(</span><span class="kt">double</span> <span class="n">fAng</span><span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-57"></a><span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-58"></a>    <span class="k">return</span> <span class="n">Mod</span><span class="p">(</span><span class="n">fAng</span><span class="p">,</span> <span class="n">_TWO_PI</span><span class="p">);</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-59"></a><span class="p">}</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-60"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-61"></a><span class="c1">// wrap [deg] angle to [-180..180)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-62"></a><span class="kr">inline</span> <span class="kt">double</span> <span class="n">WrapPosNeg180</span><span class="p">(</span><span class="kt">double</span> <span class="n">fAng</span><span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-63"></a><span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-64"></a>    <span class="k">return</span> <span class="n">Mod</span><span class="p">(</span><span class="n">fAng</span> <span class="o">+</span> <span class="mf">180.</span><span class="p">,</span> <span class="mf">360.</span><span class="p">)</span> <span class="o">-</span> <span class="mf">180.</span><span class="p">;</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-65"></a><span class="p">}</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-66"></a>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-67"></a><span class="c1">// wrap [deg] angle to [0..360)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-68"></a><span class="kr">inline</span> <span class="kt">double</span> <span class="n">Wrap360</span><span class="p">(</span><span class="kt">double</span> <span class="n">fAng</span><span class="p">)</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-69"></a><span class="p">{</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-70"></a>    <span class="k">return</span> <span class="n">Mod</span><span class="p">(</span><span class="n">fAng</span> <span class="p">,</span><span class="mf">360.</span><span class="p">);</span>
+<a name="rest_code_8f071f6215494c8ab6527c19c02f5b10-71"></a><span class="p">}</span>
+</pre></td>
+</tr></table>
+<p>注意: 1. 上面代码中定义了一个类似matlab中mod()的函数. 在Julia里就有mod()函数, 而且与matlab效果一致. 2. 上面的代码中实现了映射到[-pi, pi), 如果需要映射到(-pi, pi], 用Julia实现即: <tt class="docutils literal">mod(theta+pi, <span class="pre">-2pi)+pi</span></tt>, cpp实现如下:</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_b4982ec7e95b4a17a060ec3594e7a090-1">1</a>
+<a href="#rest_code_b4982ec7e95b4a17a060ec3594e7a090-2">2</a>
+<a href="#rest_code_b4982ec7e95b4a17a060ec3594e7a090-3">3</a>
+<a href="#rest_code_b4982ec7e95b4a17a060ec3594e7a090-4">4</a>
+<a href="#rest_code_b4982ec7e95b4a17a060ec3594e7a090-5">5</a></pre></div></td>
+<td class="code"><pre class="code cpp"><a name="rest_code_b4982ec7e95b4a17a060ec3594e7a090-1"></a><span class="c1">// wrap [rad] angle to (-PI..PI]</span>
+<a name="rest_code_b4982ec7e95b4a17a060ec3594e7a090-2"></a><span class="kr">inline</span> <span class="kt">double</span> <span class="nf">WrapPosNegPI</span><span class="p">(</span><span class="kt">double</span> <span class="n">fAng</span><span class="p">)</span>
+<a name="rest_code_b4982ec7e95b4a17a060ec3594e7a090-3"></a><span class="p">{</span>
+<a name="rest_code_b4982ec7e95b4a17a060ec3594e7a090-4"></a>    <span class="k">return</span> <span class="n">Mod</span><span class="p">(</span><span class="n">fAng</span> <span class="o">+</span> <span class="n">_PI</span><span class="p">,</span> <span class="o">-</span><span class="n">_TWO_PI</span><span class="p">)</span> <span class="o">+</span> <span class="n">_PI</span><span class="p">;</span>
+<a name="rest_code_b4982ec7e95b4a17a060ec3594e7a090-5"></a><span class="p">}</span>
+</pre></td>
+</tr></table>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/algorithm/" rel="tag">algorithm</a></li>
+            <li><a class="tag p-category" href="../../categories/cpp/" rel="tag">cpp</a></li>
+            <li><a class="tag p-category" href="../../categories/julia/" rel="tag">Julia</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../geng-zhen-shi-zi-ran-de-hong-lou-meng-dai-yu-chuan/" rel="prev" title="更真实自然的红楼梦: 黛玉传">前一篇</a>
+            </li>
+            <li class="next">
+                <a href="../mian-fei-yu-ming-you-xiang-xuan-ze/" rel="next" title="免费域名邮箱选择">后一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>注释</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="yongchen",
+            disqus_url="http://yongchen.org/zh_cn/posts/wrap-angle-to-given-range/",
+        disqus_title="Wrap Angle to Given Range",
+        disqus_identifier="cache/posts/wrap-angle-to-given-range.html",
+        disqus_config = function () {
+            this.language = "zh_cn";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="yongchen";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:author@yongchen.org">Yong Chen</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-zh-CN.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

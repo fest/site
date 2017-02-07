@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Home (文章分类：os)</title><link>http://yongchen.org/</link><description></description><atom:link href="http://yongchen.org/zh_cn/categories/cat_os.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><lastBuildDate>Tue, 07 Feb 2017 18:44:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>重置Ubuntu登录密码</title><link>http://yongchen.org/zh_cn/posts/chong-zhi-ubuntu-deng-lu-mi-ma/</link><dc:creator>YONG</dc:creator><description>&lt;div&gt;&lt;p&gt;经常在Windows上通过VirtualBox来使用Ubuntu, 很长一段时间没有登录, 居然把用户密码忘记了(或者是升级VirtualBox后的Bug?). 只能通过Grub重置密码了. 其本参照 &lt;a class="reference external" href="https://help.ubuntu.com/community/LostPassword"&gt;https://help.ubuntu.com/community/LostPassword&lt;/a&gt; 这里的方法, 步骤如下:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;启动Ubuntu时长按Shift键进入Grub菜单&lt;/li&gt;
+&lt;li&gt;选择recovery mode选项回车&lt;/li&gt;
+&lt;li&gt;选择"root Drop to root shell prompt"选项&lt;/li&gt;
+&lt;li&gt;在 &lt;tt class="docutils literal"&gt;~#&lt;/tt&gt; 符号后输入 &lt;tt class="docutils literal"&gt;mount &lt;span class="pre"&gt;-rw&lt;/span&gt; &lt;span class="pre"&gt;-o&lt;/span&gt; remount /&lt;/tt&gt; 使root盘获取读写权限. 如果略过此步执行下一步可能会提示"Authentication token manipulation error"&lt;/li&gt;
+&lt;li&gt;在 &lt;tt class="docutils literal"&gt;~#&lt;/tt&gt; 符号后输入 &lt;tt class="docutils literal"&gt;passwd [username]&lt;/tt&gt; 按提示设置新的密码&lt;/li&gt;
+&lt;li&gt;输入 &lt;tt class="docutils literal"&gt;reboot&lt;/tt&gt; 重启.&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;</description><guid>http://yongchen.org/zh_cn/posts/chong-zhi-ubuntu-deng-lu-mi-ma/</guid><pubDate>Thu, 18 Aug 2016 04:22:35 GMT</pubDate></item></channel></rss>
