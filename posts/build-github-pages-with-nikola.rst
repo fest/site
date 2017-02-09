@@ -131,7 +131,7 @@ Introduction
       “https://defnil.github.io/” (为方便发布到Github, 注意要以 ``/``
       结尾).
    -  排名第一位的格式是默认格式。如下面的 ``.rst`` 格式，用户也可以将自己
-   偏好的格式移到第一位。
+      偏好的格式移到第一位。
    -  如果页面要使用markdown和ipython notebook, 需要设置 ``POSTS`` 与
       ``PAGES`` 项(下面各增加了后几项,
       顺便吐槽以前在nikola中page居然被叫做story!!!):
