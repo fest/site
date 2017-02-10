@@ -7,11 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://yongchen.org/</loc>
-  <lastmod>2017-02-07T18:44:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/2016/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/2017/</loc>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/about/</loc>
@@ -19,11 +23,23 @@
  </url>
  <url>
   <loc>http://yongchen.org/archive.html</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/authors/</loc>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/authors/yong-chen/</loc>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/authors/yong/</loc>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/categories/</loc>
-  <lastmod>2017-02-07T18:20:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/categories/algorithm/</loc>
@@ -146,6 +162,10 @@
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>http://yongchen.org/categories/shou-ji/</loc>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://yongchen.org/categories/text-editor/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
@@ -187,7 +207,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/listings/hello.py.html</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/notes/</loc>
@@ -203,7 +223,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/</loc>
-  <lastmod>2017-02-07T18:20:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji/</loc>
@@ -263,11 +283,15 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/index-1.html</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/index-2.html</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/posts/index-3.html</loc>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/install-monodevelop-on-ubuntu/</loc>
@@ -328,6 +352,10 @@
  <url>
   <loc>http://yongchen.org/posts/wrap-angle-to-given-range/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/posts/xiao-mi-shou-ji-lian-jie-dian-nao/</loc>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/yu-ming-xiang-guan-chang-shi/</loc>

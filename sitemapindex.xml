@@ -6,6 +6,14 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>http://yongchen.org/authors/yong-chen.xml</loc>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://yongchen.org/authors/yong.xml</loc>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://yongchen.org/categories/algorithm.xml</loc>
   <lastmod>2017-02-07T19:11:00Z</lastmod>
  </sitemap>
@@ -23,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/cat_os.xml</loc>
-  <lastmod>2017-02-07T19:11:00Z</lastmod>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/cat_ping-lun.xml</loc>
@@ -35,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/cat_tools.xml</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/cat_zhuan-zai.xml</loc>
@@ -79,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/github.xml</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/gu-shi.xml</loc>
@@ -119,11 +127,15 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/python.xml</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/sage.xml</loc>
   <lastmod>2017-02-07T19:11:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://yongchen.org/categories/shou-ji.xml</loc>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/text-editor.xml</loc>
@@ -131,7 +143,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/ubuntu.xml</loc>
-  <lastmod>2017-02-07T19:11:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/visual-studio.xml</loc>
@@ -139,7 +151,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/web.xml</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/wen-xue.xml</loc>
@@ -151,18 +163,18 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/galleries/demo/rss.xml</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/galleries/rss.xml</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-09T07:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/rss.xml</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/sitemap.xml</loc>
-  <lastmod>2017-02-09T06:45:00Z</lastmod>
+  <lastmod>2017-02-10T04:17:00Z</lastmod>
  </sitemap>
 </sitemapindex>
