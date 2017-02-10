@@ -450,7 +450,7 @@ Thumbnails
 ~~~~~~~~~~
 
 To include an image placed in the ``images`` folder (or other folders
-defined in IMAGE\ :sub:`FOLDERS`), use the thumbnail directive, like
+defined in ``IMAGE_FOLDERS``), use the thumbnail directive, like
 this:
 
 .. code::
@@ -637,7 +637,7 @@ Author Page
 也很简单, 将 ``ENABLE_AUTHOR_PAGES`` 设为 ``False`` 即可.
 
 Footer
-------
+-------
 
 这里主要是在页面下显示 “Contents 2016 authorname - Powered by Nikola”
 字样. 可以在 ``CONTENT_FOOTER`` 中做修改.

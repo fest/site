@@ -2,9 +2,9 @@
 .. slug: chong-zhi-ubuntu-deng-lu-mi-ma
 .. date: 2016-08-18 12:22:35 UTC+08:00
 .. tags: ubuntu
-.. category: os
-.. link: 
-.. description: 
+.. category: OS
+.. link:
+.. description:
 .. type: text
 .. author: YONG
 

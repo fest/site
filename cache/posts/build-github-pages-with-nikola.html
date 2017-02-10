@@ -44,9 +44,9 @@ output 等</li>
 </li>
 <li><p class="first">新建一个虚拟环境用于安装nikola(当然也可以省掉这步,
 直接把nikola安装在global环境下)</p>
-<pre class="code shell"><a name="rest_code_bbfe6eb52540496b86069456de5b3774-1"></a>virtualenv nikola
-<a name="rest_code_bbfe6eb52540496b86069456de5b3774-2"></a><span class="nb">cd</span> nikola/Scripts
-<a name="rest_code_bbfe6eb52540496b86069456de5b3774-3"></a>activate.bat
+<pre class="code shell"><a name="rest_code_67725b85ec684aff8f119d9ecbf8a53c-1"></a>virtualenv nikola
+<a name="rest_code_67725b85ec684aff8f119d9ecbf8a53c-2"></a><span class="nb">cd</span> nikola/Scripts
+<a name="rest_code_67725b85ec684aff8f119d9ecbf8a53c-3"></a>activate.bat
 </pre><p>说明: 创建一个叫做nikola的虚拟环境. 这里视情况不同,
 如果提示命令失败可以尝试使用 <tt class="docutils literal">virtualenv3</tt>, <tt class="docutils literal"><span class="pre">virtualenv-3.x</span></tt>
 (其中x为python版本), 或者 <tt class="docutils literal">virtualenv <span class="pre">-p</span> /usr/bin/python3</tt>.
@@ -60,10 +60,10 @@ Linux下使用 <tt class="docutils literal">source bin/activate</tt> 命令. 执
 <tt class="docutils literal"><span class="pre">AppData\Local\Programs\Python\Python35-32</span></tt> 下方便操作,
 并在该目录下执行(如果出错提示, 则需要先安装wheel,
 再通过wheel安装它们):</p>
-<pre class="code shell"><a name="rest_code_6932a827163d409f8c3f7124c2d525fc-1"></a>python -m pip install Pillow-3.2.0-cp35-cp35m-win32.whl
-<a name="rest_code_6932a827163d409f8c3f7124c2d525fc-2"></a>python -m pip install lxml-3.6.0-cp35-cp35m-win32.whl
-<a name="rest_code_6932a827163d409f8c3f7124c2d525fc-3"></a><span class="nb">cd</span> .. <span class="c1"># back to nikola directory</span>
-<a name="rest_code_6932a827163d409f8c3f7124c2d525fc-4"></a>pip install --upgrade <span class="s2">&quot;Nikola[extras]&quot;</span>
+<pre class="code shell"><a name="rest_code_da982d6631554224bbfec268c944031f-1"></a>python -m pip install Pillow-3.2.0-cp35-cp35m-win32.whl
+<a name="rest_code_da982d6631554224bbfec268c944031f-2"></a>python -m pip install lxml-3.6.0-cp35-cp35m-win32.whl
+<a name="rest_code_da982d6631554224bbfec268c944031f-3"></a><span class="nb">cd</span> .. <span class="c1"># back to nikola directory</span>
+<a name="rest_code_da982d6631554224bbfec268c944031f-4"></a>pip install --upgrade <span class="s2">&quot;Nikola[extras]&quot;</span>
 </pre></li>
 </ul>
 </li>
@@ -72,12 +72,12 @@ Linux下使用 <tt class="docutils literal">source bin/activate</tt> 命令. 执
 <li><p class="first">安装Anaconda, 如果系统已有, 先升级Anaconda (在Anaconda prompt中使用 <tt class="docutils literal">conda update <span class="pre">--all</span></tt> 命令升级所有package.)</p>
 </li>
 <li><p class="first">查看python版本, 使用anaconda prompt命令行工具:</p>
-<pre class="code shell"><a name="rest_code_96db76aebfe44f15805d32f50ae8b980-1"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;python --version
-<a name="rest_code_96db76aebfe44f15805d32f50ae8b980-2"></a>Python 3.5.1 :: Anaconda 4.0.0 <span class="o">(</span>64-bit<span class="o">)</span>
+<pre class="code shell"><a name="rest_code_637cddc212aa441ab70ef5401cfcb43c-1"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;python --version
+<a name="rest_code_637cddc212aa441ab70ef5401cfcb43c-2"></a>Python 3.5.1 :: Anaconda 4.0.0 <span class="o">(</span>64-bit<span class="o">)</span>
 </pre><p>创建一个叫myblog虚拟环境:</p>
-<pre class="code shell"><a name="rest_code_cbd570f60daf4418b13bf462c4f05964-1"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;conda create -n myblog <span class="nv">python</span><span class="o">=</span>3.5 anaconda
-<a name="rest_code_cbd570f60daf4418b13bf462c4f05964-2"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;activate myblog <span class="c1"># use &quot;source activate myblog&quot; on linux</span>
-<a name="rest_code_cbd570f60daf4418b13bf462c4f05964-3"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;pip install <span class="s2">&quot;Nikola[extras]&quot;</span>
+<pre class="code shell"><a name="rest_code_05fd189909ac4277a27937af6f7afede-1"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;conda create -n myblog <span class="nv">python</span><span class="o">=</span>3.5 anaconda
+<a name="rest_code_05fd189909ac4277a27937af6f7afede-2"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;activate myblog <span class="c1"># use &quot;source activate myblog&quot; on linux</span>
+<a name="rest_code_05fd189909ac4277a27937af6f7afede-3"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;pip install <span class="s2">&quot;Nikola[extras]&quot;</span>
 </pre><p>升级nikola时, 先升级Anaconda, 再按照上面步骤, 最后一步使用 <tt class="docutils literal">pip install <span class="pre">--upgrade</span> &quot;Nikola[extras]</tt>. 我在升级7.7.9时报错, 于是直接先删除了Nikola再重新安装新版. 即 <tt class="docutils literal">pip uninstall &quot;Nikola[extras]&quot;</tt>, 之后再使用 <tt class="docutils literal">pip install &quot;Nikola[extras]&quot;</tt> 安装.</p>
 </li>
 </ul>
@@ -88,7 +88,7 @@ Linux下使用 <tt class="docutils literal">source bin/activate</tt> 命令. 执
 <h1>创建项目</h1>
 <ul>
 <li><p class="first">新建项目 新建一个目录 <tt class="docutils literal"><span class="pre">C:/home/mynikolasite</span></tt> 用于存放新建的项目:</p>
-<pre class="code shell"><a name="rest_code_faf1f2569086415eb6b79d430a45d114-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;nikola init --demo mynikolasite <span class="c1"># create an empty project without &quot;--demo&quot; option</span>
+<pre class="code shell"><a name="rest_code_96b1753ba9c94644924fb6ad6df8900b-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;nikola init --demo mynikolasite <span class="c1"># create an empty project without &quot;--demo&quot; option</span>
 </pre><p>这里nikola会问几个问题, 其中一个问到语言, 我们选择英文, 即输入
 <tt class="docutils literal">en</tt>, 其余的可视情况填写, 这些设置以后还可以在配置文件 <tt class="docutils literal">conf.py</tt>
 中更改.</p>
@@ -96,8 +96,8 @@ Linux下使用 <tt class="docutils literal">source bin/activate</tt> 命令. 执
 <li><p class="first">主题 在 <a class="reference external" href="https://themes.getnikola.com/">https://themes.getnikola.com/</a> 可以找到nikola的各种主题,
 安装主题 <tt class="docutils literal">bootstrap3</tt>, 为使主题生效, 需要另外在 <tt class="docutils literal">conf.py</tt> 中设置
 <tt class="docutils literal">THEME</tt> 变量:</p>
-<pre class="code shell"><a name="rest_code_9417fc39fa6440d38e766ac40ba3525f-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;cd mynikolasite
-<a name="rest_code_9417fc39fa6440d38e766ac40ba3525f-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola install_theme bootstrap3
+<pre class="code shell"><a name="rest_code_9cb712f7c9a7454a99f930f298ddf3f5-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;cd mynikolasite
+<a name="rest_code_9cb712f7c9a7454a99f930f298ddf3f5-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola install_theme bootstrap3
 </pre></li>
 <li><p class="first">配置 <tt class="docutils literal">conf.py</tt> 文件</p>
 <ul>
@@ -111,34 +111,34 @@ Linux下使用 <tt class="docutils literal">source bin/activate</tt> 命令. 执
 <li><p class="first">如果页面要使用markdown和ipython notebook, 需要设置 <tt class="docutils literal">POSTS</tt> 与
 <tt class="docutils literal">PAGES</tt> 项(下面各增加了后几项,
 顺便吐槽以前在nikola中page居然被叫做story!!!):</p>
-<pre class="code python"><a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-1"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-2"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-3"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-4"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-5"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-6"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-7"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.org&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-8"></a><span class="p">)</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-9"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-10"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-11"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-12"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-13"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-14"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-15"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.org&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_b7f123af20f54bd8a9fd4a618c3065da-16"></a><span class="p">)</span>
+<pre class="code python"><a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-1"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-2"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-3"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-4"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-5"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-6"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-7"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.org&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-8"></a><span class="p">)</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-9"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-10"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-11"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-12"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-13"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-14"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-15"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.org&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_e47d47e3254a410ea5168b6cf4facec2-16"></a><span class="p">)</span>
 </pre></li>
 <li><p class="first"><tt class="docutils literal">INDEX_TEASERS</tt> 设为 <tt class="docutils literal">True</tt> 可以启用teaser.
 这时只需在每个post中加入 <tt class="docutils literal">.. TEASER_END</tt> (reST文件)或
 <tt class="docutils literal"><span class="pre">&lt;!--TEASER_END--&gt;</span></tt> (markdown), 就可以使index
 page只显示post的第一部分, 而对于org-mode, 需要
 <tt class="docutils literal">#+HTML: <span class="pre">&lt;!--TEASER_END--&gt;</span></tt> 或者</p>
-<pre class="code python"><a name="rest_code_30e65a382e564064af1b5af400c4bfe7-1"></a><span class="c1">#+BEGIN_HTML</span>
-<a name="rest_code_30e65a382e564064af1b5af400c4bfe7-2"></a><span class="o">&lt;</span><span class="err">!</span><span class="o">--</span><span class="n">TEASER_END</span><span class="o">--&gt;</span>
-<a name="rest_code_30e65a382e564064af1b5af400c4bfe7-3"></a><span class="c1">#+END_HTML</span>
+<pre class="code python"><a name="rest_code_0b53ca28d9ea45c4b64ab3c3c505a7ac-1"></a><span class="c1">#+BEGIN_HTML</span>
+<a name="rest_code_0b53ca28d9ea45c4b64ab3c3c505a7ac-2"></a><span class="o">&lt;</span><span class="err">!</span><span class="o">--</span><span class="n">TEASER_END</span><span class="o">--&gt;</span>
+<a name="rest_code_0b53ca28d9ea45c4b64ab3c3c505a7ac-3"></a><span class="c1">#+END_HTML</span>
 </pre><p>另外,</p>
-<pre class="code python"><a name="rest_code_db6f30e573b14d2dbf2020c7e934cbf6-1"></a><span class="n">INDEX_READ_MORE_LINK</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<a name="rest_code_db6f30e573b14d2dbf2020c7e934cbf6-2"></a><span class="n">FEED_READ_MORE_LINK</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<pre class="code python"><a name="rest_code_51622a0951bf4b7287b8c6ff3fc892f4-1"></a><span class="n">INDEX_READ_MORE_LINK</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<a name="rest_code_51622a0951bf4b7287b8c6ff3fc892f4-2"></a><span class="n">FEED_READ_MORE_LINK</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 </pre><p>可以禁止掉 “Reader more…”. 个人感觉没有必要,
 因为禁掉后读者不能分清楚是否文章在这里真的已经完结还是只是摘要部分.</p>
 </li>
@@ -146,7 +146,7 @@ page只显示post的第一部分, 而对于org-mode, 需要
 (前提是你已经安装了它), 这样可以获得速度上的提升.</p>
 </li>
 <li><p class="first">禁止评论功能:</p>
-<pre class="code python"><a name="rest_code_709b0b1f3b6b403590be39e619eb424f-1"></a><span class="n">COMMENT_SYSTEM</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<pre class="code python"><a name="rest_code_ae8bab5bd1444e38b435f008d2f62915-1"></a><span class="n">COMMENT_SYSTEM</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 </pre><p>也可以选择启用其它的评论支持, 如disqus, facebook等.</p>
 </li>
 <li><p class="first"><tt class="docutils literal">GENERATE_RSS</tt> 设为 <tt class="docutils literal">True</tt> 默认支持RSS, 如果设为 <tt class="docutils literal">False</tt>,
@@ -154,16 +154,16 @@ page只显示post的第一部分, 而对于org-mode, 需要
 把和RSS相关的页面去掉</p>
 </li>
 <li><p class="first">去掉Source links, 页面上将不会显示页面源代码的链接</p>
-<pre class="code python"><a name="rest_code_98a1df4d41ab4bcea38abc27cf4363cc-1"></a><span class="n">SHOW_SOURCELINK</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_98a1df4d41ab4bcea38abc27cf4363cc-2"></a><span class="n">COPY_SOURCES</span> <span class="o">=</span> <span class="bp">False</span>
+<pre class="code python"><a name="rest_code_13afb8fc4d854c34b8f1655ccdcf256f-1"></a><span class="n">SHOW_SOURCELINK</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_13afb8fc4d854c34b8f1655ccdcf256f-2"></a><span class="n">COPY_SOURCES</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></li>
 </ul>
 </li>
 <li><p class="first">编译</p>
-<pre class="code shell"><a name="rest_code_957c4e16779f4c978d4f5f5f75b42a40-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola build
+<pre class="code shell"><a name="rest_code_5076a4173291451983f3f138f2eadbd7-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola build
 </pre><p>因为之前我们使用了 <tt class="docutils literal"><span class="pre">--demo</span></tt>,
 所以现在生成的网页已经包含了一些page在里面了. 我们可以看一看效果:</p>
-<pre class="code shell"><a name="rest_code_d7a6057231ff408cadedb33fcaf24c20-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola serve
+<pre class="code shell"><a name="rest_code_f4c1a8b1589646509c7bfe9606f2d81c-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola serve
 </pre><p>这时使用流览器访问 <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a>
 可以看到本地效果(Windows下使用命令 <tt class="docutils literal">nikola serve <span class="pre">-b</span></tt> 或者
 <tt class="docutils literal">nikola serve <span class="pre">--browser</span></tt> 流览器会打开http://0.0.0.0:8000/,
@@ -185,15 +185,15 @@ page只显示post的第一部分, 而对于org-mode, 需要
 <li><p class="first">在mynikolasite目录下创建.gitignore文件,(可直接下载使用<a class="reference external" href="https://github.com/getnikola/nikola/blob/master/.gitignore">文件</a>).</p>
 </li>
 <li><p class="first"><tt class="docutils literal">conf.py</tt> 相关设置如下:</p>
-<pre class="code python"><a name="rest_code_a165e06cd429480da2f4161e6c11101f-1"></a><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">&#39;source&#39;</span> <span class="c1"># where your Nikola site source will be deployed. We default to master, but user pages should use src or something else.</span>
-<a name="rest_code_a165e06cd429480da2f4161e6c11101f-2"></a><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">&#39;gh-pages&#39;</span> <span class="c1"># where Nikola-generated HTML files will be deployed. It should be gh-pages for project pages and master for user pages (user.github.io).</span>
-<a name="rest_code_a165e06cd429480da2f4161e6c11101f-3"></a><span class="n">GITHUB_REMOTE_NAME</span> <span class="o">=</span> <span class="s1">&#39;origin&#39;</span>
-<a name="rest_code_a165e06cd429480da2f4161e6c11101f-4"></a><span class="n">GITHUB_COMMIT_SOURCE</span> <span class="o">=</span> <span class="bp">True</span>
+<pre class="code python"><a name="rest_code_9d8feba82c31452884b5795f24662d8d-1"></a><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">&#39;source&#39;</span> <span class="c1"># where your Nikola site source will be deployed. We default to master, but user pages should use src or something else.</span>
+<a name="rest_code_9d8feba82c31452884b5795f24662d8d-2"></a><span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">&#39;gh-pages&#39;</span> <span class="c1"># where Nikola-generated HTML files will be deployed. It should be gh-pages for project pages and master for user pages (user.github.io).</span>
+<a name="rest_code_9d8feba82c31452884b5795f24662d8d-3"></a><span class="n">GITHUB_REMOTE_NAME</span> <span class="o">=</span> <span class="s1">&#39;origin&#39;</span>
+<a name="rest_code_9d8feba82c31452884b5795f24662d8d-4"></a><span class="n">GITHUB_COMMIT_SOURCE</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></li>
 <li><p class="first">打开git bash,</p>
-<pre class="code shell"><a name="rest_code_dd1aacc050f347d3adc11ffac179c8f8-1"></a><span class="nb">cd</span> C:/home/mynikolasite
-<a name="rest_code_dd1aacc050f347d3adc11ffac179c8f8-2"></a>git init
-<a name="rest_code_dd1aacc050f347d3adc11ffac179c8f8-3"></a>git remote add origin git@github.com:defnil/sitename.git
+<pre class="code shell"><a name="rest_code_52c5db2a756340c3a0c1f59a38ddcb75-1"></a><span class="nb">cd</span> C:/home/mynikolasite
+<a name="rest_code_52c5db2a756340c3a0c1f59a38ddcb75-2"></a>git init
+<a name="rest_code_52c5db2a756340c3a0c1f59a38ddcb75-3"></a>git remote add origin git@github.com:defnil/sitename.git
 </pre></li>
 <li><p class="first">当你build满意后, 就可以执行 <tt class="docutils literal">nikola github_deploy</tt>,
 不用亲自去commit, 也不用手动建立名为source的branch,
@@ -217,21 +217,21 @@ page只显示post的第一部分, 而对于org-mode, 需要
 </li>
 <li><p class="first">打开一个git bash, 将所有mynikolasite内容push到 <tt class="docutils literal"><span class="pre">nikola-blog</span></tt>
 这个repo里:</p>
-<pre class="code shell"><a name="rest_code_7ab51c7278c44a4491916d024cb81449-1"></a><span class="nb">cd</span> C:/home/mynikolasite
-<a name="rest_code_7ab51c7278c44a4491916d024cb81449-2"></a>git init
-<a name="rest_code_7ab51c7278c44a4491916d024cb81449-3"></a>git add .
-<a name="rest_code_7ab51c7278c44a4491916d024cb81449-4"></a>git commit -m <span class="s2">&quot;first commit&quot;</span>
-<a name="rest_code_7ab51c7278c44a4491916d024cb81449-5"></a>git remote add origin git@github.com:defnil/nikola-blog.git
-<a name="rest_code_7ab51c7278c44a4491916d024cb81449-6"></a>git push -u origin master
+<pre class="code shell"><a name="rest_code_0d83ff973ead4e648da800a1db4109f9-1"></a><span class="nb">cd</span> C:/home/mynikolasite
+<a name="rest_code_0d83ff973ead4e648da800a1db4109f9-2"></a>git init
+<a name="rest_code_0d83ff973ead4e648da800a1db4109f9-3"></a>git add .
+<a name="rest_code_0d83ff973ead4e648da800a1db4109f9-4"></a>git commit -m <span class="s2">&quot;first commit&quot;</span>
+<a name="rest_code_0d83ff973ead4e648da800a1db4109f9-5"></a>git remote add origin git@github.com:defnil/nikola-blog.git
+<a name="rest_code_0d83ff973ead4e648da800a1db4109f9-6"></a>git push -u origin master
 </pre></li>
 <li><p class="first">再运行下面命令将output目录下的博客内容push到我们的blog site里, 即
 <tt class="docutils literal">defnil.github.io</tt> 这个repo.</p>
-<pre class="code shell"><a name="rest_code_a867ca744a5b44488d368274b3949a1b-1"></a><span class="nb">cd</span> output
-<a name="rest_code_a867ca744a5b44488d368274b3949a1b-2"></a>git init
-<a name="rest_code_a867ca744a5b44488d368274b3949a1b-3"></a>git add .
-<a name="rest_code_a867ca744a5b44488d368274b3949a1b-4"></a>git commit -m <span class="s2">&quot;first blog commit&quot;</span>
-<a name="rest_code_a867ca744a5b44488d368274b3949a1b-5"></a>git remote add origin git@github.com:defnil/defnil.github.io.git
-<a name="rest_code_a867ca744a5b44488d368274b3949a1b-6"></a>git push -u origin master
+<pre class="code shell"><a name="rest_code_8b54c0416f29499fb901167433f208ee-1"></a><span class="nb">cd</span> output
+<a name="rest_code_8b54c0416f29499fb901167433f208ee-2"></a>git init
+<a name="rest_code_8b54c0416f29499fb901167433f208ee-3"></a>git add .
+<a name="rest_code_8b54c0416f29499fb901167433f208ee-4"></a>git commit -m <span class="s2">&quot;first blog commit&quot;</span>
+<a name="rest_code_8b54c0416f29499fb901167433f208ee-5"></a>git remote add origin git@github.com:defnil/defnil.github.io.git
+<a name="rest_code_8b54c0416f29499fb901167433f208ee-6"></a>git push -u origin master
 </pre></li>
 </ul>
 </div>
@@ -242,13 +242,13 @@ page只显示post的第一部分, 而对于org-mode, 需要
 假设我们用的是上述方法一来管理和发布页面的. 则先在本地的 <tt class="docutils literal">files/</tt>
 目录下添加 <tt class="docutils literal">CNAME</tt> 文件, 其内容很简单, 只有 <tt class="docutils literal">abc.me</tt>.
 可以用下面的命令实现:</p>
-<pre class="code shell"><a name="rest_code_47780faaabef4944a7765c156bc02537-1"></a><span class="nb">cd</span> C:/home/mynikolasite
-<a name="rest_code_47780faaabef4944a7765c156bc02537-2"></a><span class="nb">echo</span> <span class="s2">&quot;abc.me&quot;</span> &gt; files/CNAME
+<pre class="code shell"><a name="rest_code_cda3ba1b44dc41fca1a3ac7b3b08de73-1"></a><span class="nb">cd</span> C:/home/mynikolasite
+<a name="rest_code_cda3ba1b44dc41fca1a3ac7b3b08de73-2"></a><span class="nb">echo</span> <span class="s2">&quot;abc.me&quot;</span> &gt; files/CNAME
 </pre><p>之后我们在完成编译后使用 <tt class="docutils literal">github_deploy</tt> 命令, <tt class="docutils literal">CNAME</tt> 会被拷贝到
 <tt class="docutils literal">output/</tt> 目录下, 并会自动上传至 <tt class="docutils literal">defnil.github.io</tt> 的 <tt class="docutils literal">source</tt>
 branch下.</p>
-<pre class="code shell"><a name="rest_code_152e17afb9ab4e43a1fd497eaaa5d4b3-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola build
-<a name="rest_code_152e17afb9ab4e43a1fd497eaaa5d4b3-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola github_deploy
+<pre class="code shell"><a name="rest_code_0ba54e8405884675be97d7a79100c279-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola build
+<a name="rest_code_0ba54e8405884675be97d7a79100c279-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola github_deploy
 </pre><p>接下来需要去域名服务商那里绑定, 以namecheap为例, 参考
 <a class="reference external" href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">这里</a>.
 其中第1步我们已做过了相关设置, 略过直接从第2步开始. 完成这些步骤后,
@@ -261,23 +261,23 @@ branch下.</p>
 <div class="section" id="metadata">
 <h2>metadata</h2>
 <p>进入anaconda prompt,</p>
-<pre class="code shell"><a name="rest_code_dd702b7f406f4e758b7a4ad77b87ef63-1"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;activate myblog <span class="c1"># enter &quot;nikola&quot; virtual environment</span>
-<a name="rest_code_dd702b7f406f4e758b7a4ad77b87ef63-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;cd mynikolasite
-<a name="rest_code_dd702b7f406f4e758b7a4ad77b87ef63-3"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola new_post
+<pre class="code shell"><a name="rest_code_e0c4027a30f2493fb9b70833e4d9651f-1"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;activate myblog <span class="c1"># enter &quot;nikola&quot; virtual environment</span>
+<a name="rest_code_e0c4027a30f2493fb9b70833e4d9651f-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;cd mynikolasite
+<a name="rest_code_e0c4027a30f2493fb9b70833e4d9651f-3"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola new_post
 </pre><p>Nikola提供这种方式生成reStructuredText文档, 并存放在posts目录下,
 (markdown文档使用 <tt class="docutils literal">nikola new_post <span class="pre">-f</span> markdown</tt>).
 每产生个文档中都含有metadata, 包括标题, 作者等信息. 支持汉字作为标题,
 汉字会被自动转换为拼音作为文件名, 如:</p>
-<pre class="code shell"><a name="rest_code_5af2807a4e084ef9a7ed8982ea97064c-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola new_post -f markdown
-<a name="rest_code_5af2807a4e084ef9a7ed8982ea97064c-2"></a>Creating New Post
-<a name="rest_code_5af2807a4e084ef9a7ed8982ea97064c-3"></a>Title: markdown <span class="nb">test</span> 我了个去呀
-<a name="rest_code_5af2807a4e084ef9a7ed8982ea97064c-4"></a>Scanning posts..........done!
-<a name="rest_code_5af2807a4e084ef9a7ed8982ea97064c-5"></a><span class="o">[</span>2016-04-23T07:47:55Z<span class="o">]</span> INFO: new_post: Your post<span class="err">&#39;</span>s text is at: posts<span class="se">\m</span>arkdown-test-wo-liao-ge-qu-ya.md
+<pre class="code shell"><a name="rest_code_bd087814b6d54e7486e2512974c41abb-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola new_post -f markdown
+<a name="rest_code_bd087814b6d54e7486e2512974c41abb-2"></a>Creating New Post
+<a name="rest_code_bd087814b6d54e7486e2512974c41abb-3"></a>Title: markdown <span class="nb">test</span> 我了个去呀
+<a name="rest_code_bd087814b6d54e7486e2512974c41abb-4"></a>Scanning posts..........done!
+<a name="rest_code_bd087814b6d54e7486e2512974c41abb-5"></a><span class="o">[</span>2016-04-23T07:47:55Z<span class="o">]</span> INFO: new_post: Your post<span class="err">&#39;</span>s text is at: posts<span class="se">\m</span>arkdown-test-wo-liao-ge-qu-ya.md
 </pre><p>我们可以将一些信息(比如作者)放在 <tt class="docutils literal">conf.py</tt> 中,
 这样所有post都不用再指定作者信息了:</p>
-<pre class="code python"><a name="rest_code_eaab6843baba4b488f214879ff711921-1"></a><span class="n">ADDITIONAL_METADATA</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_eaab6843baba4b488f214879ff711921-2"></a>    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;defnil&#39;</span>
-<a name="rest_code_eaab6843baba4b488f214879ff711921-3"></a><span class="p">}</span>
+<pre class="code python"><a name="rest_code_dddaffc4aec747a4bf283f5c8d9caa03-1"></a><span class="n">ADDITIONAL_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_dddaffc4aec747a4bf283f5c8d9caa03-2"></a>    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;defnil&#39;</span>
+<a name="rest_code_dddaffc4aec747a4bf283f5c8d9caa03-3"></a><span class="p">}</span>
 </pre><p>当然也可以手动在 <tt class="docutils literal">posts/</tt> 目录下新建文档, 还可以在里面新建多层目录,
 非常灵活. metadata 中比较重要的有:</p>
 <ul class="simple">
@@ -302,14 +302,14 @@ branch下.</p>
 </li>
 <li><p class="first">inline math 不再支持 <tt class="docutils literal">$inline$</tt> 形式, 而使用 <tt class="docutils literal">\(inline\)</tt>
 (有的情况下需要使用 <tt class="docutils literal"><span class="pre">\\(inline\\)</span></tt>), 如</p>
-<pre class="code text"><a name="rest_code_58ea135609a441e0b9b320bc26345a06-1"></a>Euler’s formula: \(e^{ix} = \cos x + i\sin x\)
+<pre class="code text"><a name="rest_code_09587bd9e1874167820d5a653c1bf522-1"></a>Euler’s formula: \(e^{ix} = \cos x + i\sin x\)
 </pre><p>在reST文件中还可以使用 <tt class="docutils literal">:math:</tt> (推荐):</p>
-<pre class="code text"><a name="rest_code_b37c87b0709d41b6a1908585cf6cfeb6-1"></a>Euler’s formula: :math:`e^{ix} = \cos x + i\sin x`
+<pre class="code text"><a name="rest_code_7da4d6b371724a19b49d48483701330f-1"></a>Euler’s formula: :math:`e^{ix} = \cos x + i\sin x`
 </pre></li>
 <li><p class="first">display math 使用 <tt class="docutils literal"><span class="pre">\[\]</span></tt>, reST中推荐下面这种形式:</p>
-<pre class="code text"><a name="rest_code_bfa663b594044b7187f44ece8b74d4d3-1"></a>.. math::
-<a name="rest_code_bfa663b594044b7187f44ece8b74d4d3-2"></a>
-<a name="rest_code_bfa663b594044b7187f44ece8b74d4d3-3"></a>   \int \frac{dx}{1+ax}=\frac{1}{a}\ln(1+ax)+C
+<pre class="code text"><a name="rest_code_30586f1a945f4c4aa9187c76b4c74ed9-1"></a>.. math::
+<a name="rest_code_30586f1a945f4c4aa9187c76b4c74ed9-2"></a>
+<a name="rest_code_30586f1a945f4c4aa9187c76b4c74ed9-3"></a>   \int \frac{dx}{1+ax}=\frac{1}{a}\ln(1+ax)+C
 </pre></li>
 </ul>
 </div>
@@ -317,74 +317,74 @@ branch下.</p>
 <h2>reST中插入多种格式</h2>
 <div class="section" id="media">
 <h3>media</h3>
-<pre class="code text"><a name="rest_code_66c45ce66c1a40e8935e4392568e3319-1"></a>.. media:: http://vimeo.com/72425090
-<a name="rest_code_66c45ce66c1a40e8935e4392568e3319-2"></a>.. media:: http://www.youtube.com/watch?v=wyRpAat5oz0
+<pre class="code text"><a name="rest_code_cc1a335b22364d5f8c14065e5cbc2875-1"></a>.. media:: http://vimeo.com/72425090
+<a name="rest_code_cc1a335b22364d5f8c14065e5cbc2875-2"></a>.. media:: http://www.youtube.com/watch?v=wyRpAat5oz0
 </pre></div>
 <div class="section" id="youtube-vimeo-soundcloud">
 <h3>YouTube, Vimeo, Soundcloud</h3>
-<pre class="code text"><a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-1"></a>.. youtube:: 8N_tupPBtWQ
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-2"></a>
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-3"></a>.. vimeo:: 20241459
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-4"></a>
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-5"></a>.. vimeo:: 20241459
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-6"></a>   :height: 240
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-7"></a>   :width: 320
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-8"></a>
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-9"></a>[soundcloud url=&quot;http://api.soundcloud.com/tracks/78131362&quot;
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-10"></a>
-<a name="rest_code_cdb904fe808d4004b0f853d5bb76cb2a-11"></a>.. soundcloud:: 78131362
+<pre class="code text"><a name="rest_code_05bdb5043450432391fd74744e4f0a82-1"></a>.. youtube:: 8N_tupPBtWQ
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-2"></a>
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-3"></a>.. vimeo:: 20241459
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-4"></a>
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-5"></a>.. vimeo:: 20241459
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-6"></a>   :height: 240
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-7"></a>   :width: 320
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-8"></a>
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-9"></a>[soundcloud url=&quot;http://api.soundcloud.com/tracks/78131362&quot;
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-10"></a>
+<a name="rest_code_05bdb5043450432391fd74744e4f0a82-11"></a>.. soundcloud:: 78131362
 </pre></div>
 <div class="section" id="code">
 <h3>Code</h3>
-<pre class="code text"><a name="rest_code_3296c770bddd490e988000fc75cd88dc-1"></a>.. code-block:: python
-<a name="rest_code_3296c770bddd490e988000fc75cd88dc-2"></a>   :number-lines:
-<a name="rest_code_3296c770bddd490e988000fc75cd88dc-3"></a>
-<a name="rest_code_3296c770bddd490e988000fc75cd88dc-4"></a>   print(&quot;Our virtues and our failings are inseparable&quot;)
+<pre class="code text"><a name="rest_code_6911a6c2325d4fa58ae766202e0b9d75-1"></a>.. code-block:: python
+<a name="rest_code_6911a6c2325d4fa58ae766202e0b9d75-2"></a>   :number-lines:
+<a name="rest_code_6911a6c2325d4fa58ae766202e0b9d75-3"></a>
+<a name="rest_code_6911a6c2325d4fa58ae766202e0b9d75-4"></a>   print(&quot;Our virtues and our failings are inseparable&quot;)
 </pre></div>
 <div class="section" id="listing">
 <h3>Listing</h3>
 <p>将 <tt class="docutils literal">foo.py</tt> 文件放在 <tt class="docutils literal">LISTINGS_FOLDERS</tt> 指定的目录下.</p>
-<pre class="code text"><a name="rest_code_d481804fc01a42d583d699a8fde1d3d8-1"></a>.. listing:: foo.py python
+<pre class="code text"><a name="rest_code_1b9f296fd3da4978a7d45497310c7bed-1"></a>.. listing:: foo.py python
 </pre></div>
 <div class="section" id="gist">
 <h3>Gist</h3>
-<pre class="code text"><a name="rest_code_2d0ca5afa5434260b3f0f244fb49905b-1"></a>.. gist:: 2395294
+<pre class="code text"><a name="rest_code_f553de79e71b40e08e27a366465d13cb-1"></a>.. gist:: 2395294
 </pre></div>
 <div class="section" id="thumbnails">
 <h3>Thumbnails</h3>
 <p>To include an image placed in the <tt class="docutils literal">images</tt> folder (or other folders
-defined in IMAGE<sub>FOLDERS</sub>), use the thumbnail directive, like
+defined in <tt class="docutils literal">IMAGE_FOLDERS</tt>), use the thumbnail directive, like
 this:</p>
-<pre class="code text"><a name="rest_code_f01d728dd29845068183db4d2801f18d-1"></a>.. thumbnail:: ../tesla.jpg
-<a name="rest_code_f01d728dd29845068183db4d2801f18d-2"></a>
-<a name="rest_code_f01d728dd29845068183db4d2801f18d-3"></a>   Nikola Tesla, the man that invented the 20th century.
+<pre class="code text"><a name="rest_code_0395457b7dc04c0ab1106ccb3df90d87-1"></a>.. thumbnail:: ../tesla.jpg
+<a name="rest_code_0395457b7dc04c0ab1106ccb3df90d87-2"></a>
+<a name="rest_code_0395457b7dc04c0ab1106ccb3df90d87-3"></a>   Nikola Tesla, the man that invented the 20th century.
 </pre></div>
 <div class="section" id="slideshows">
 <h3>Slideshows</h3>
-<pre class="code text"><a name="rest_code_32340537890e4a6d9f3633ac07b31fd9-1"></a>.. slides::
-<a name="rest_code_32340537890e4a6d9f3633ac07b31fd9-2"></a>
-<a name="rest_code_32340537890e4a6d9f3633ac07b31fd9-3"></a>   /galleries/demo/tesla_conducts_lg.jpg
-<a name="rest_code_32340537890e4a6d9f3633ac07b31fd9-4"></a>   /galleries/demo/tesla_lightning2_lg.jpg
-<a name="rest_code_32340537890e4a6d9f3633ac07b31fd9-5"></a>   /galleries/demo/tesla4_lg.jpg
-<a name="rest_code_32340537890e4a6d9f3633ac07b31fd9-6"></a>   /galleries/demo/tesla_lightning1_lg.jpg
-<a name="rest_code_32340537890e4a6d9f3633ac07b31fd9-7"></a>   /galleries/demo/tesla_tower1_lg.jpg
+<pre class="code text"><a name="rest_code_8c7e2e96f2d34c35b2abeeaaddd10f15-1"></a>.. slides::
+<a name="rest_code_8c7e2e96f2d34c35b2abeeaaddd10f15-2"></a>
+<a name="rest_code_8c7e2e96f2d34c35b2abeeaaddd10f15-3"></a>   /galleries/demo/tesla_conducts_lg.jpg
+<a name="rest_code_8c7e2e96f2d34c35b2abeeaaddd10f15-4"></a>   /galleries/demo/tesla_lightning2_lg.jpg
+<a name="rest_code_8c7e2e96f2d34c35b2abeeaaddd10f15-5"></a>   /galleries/demo/tesla4_lg.jpg
+<a name="rest_code_8c7e2e96f2d34c35b2abeeaaddd10f15-6"></a>   /galleries/demo/tesla_lightning1_lg.jpg
+<a name="rest_code_8c7e2e96f2d34c35b2abeeaaddd10f15-7"></a>   /galleries/demo/tesla_tower1_lg.jpg
 </pre></div>
 <div class="section" id="chart">
 <h3>Chart</h3>
 <p>可以参考 <a class="reference external" href="http://www.pygal.org/en/latest/">这里</a></p>
-<pre class="code text"><a name="rest_code_f4229b7539e8409ab61fa765b3a41c12-1"></a>.. chart:: Bar
-<a name="rest_code_f4229b7539e8409ab61fa765b3a41c12-2"></a>   :title: &#39;Browser usage evolution (in %)&#39;
-<a name="rest_code_f4229b7539e8409ab61fa765b3a41c12-3"></a>   :x_labels: [&quot;2002&quot;, &quot;2003&quot;, &quot;2004&quot;, &quot;2005&quot;, &quot;2006&quot;, &quot;2007&quot;]
-<a name="rest_code_f4229b7539e8409ab61fa765b3a41c12-4"></a>   &#39;Firefox&#39;, [None, None, 0, 16.6, 25, 31]
-<a name="rest_code_f4229b7539e8409ab61fa765b3a41c12-5"></a>   &#39;Chrome&#39;,  [None, None, None, None, None, None]
-<a name="rest_code_f4229b7539e8409ab61fa765b3a41c12-6"></a>   &#39;IE&#39;,      [85.8, 84.6, 84.7, 74.5, 66, 58.6]
-<a name="rest_code_f4229b7539e8409ab61fa765b3a41c12-7"></a>   &#39;Others&#39;,  [14.2, 15.4, 15.3, 8.9, 9, 10.4]
+<pre class="code text"><a name="rest_code_7962e5021e8a43b8b94e0fdab74b4934-1"></a>.. chart:: Bar
+<a name="rest_code_7962e5021e8a43b8b94e0fdab74b4934-2"></a>   :title: &#39;Browser usage evolution (in %)&#39;
+<a name="rest_code_7962e5021e8a43b8b94e0fdab74b4934-3"></a>   :x_labels: [&quot;2002&quot;, &quot;2003&quot;, &quot;2004&quot;, &quot;2005&quot;, &quot;2006&quot;, &quot;2007&quot;]
+<a name="rest_code_7962e5021e8a43b8b94e0fdab74b4934-4"></a>   &#39;Firefox&#39;, [None, None, 0, 16.6, 25, 31]
+<a name="rest_code_7962e5021e8a43b8b94e0fdab74b4934-5"></a>   &#39;Chrome&#39;,  [None, None, None, None, None, None]
+<a name="rest_code_7962e5021e8a43b8b94e0fdab74b4934-6"></a>   &#39;IE&#39;,      [85.8, 84.6, 84.7, 74.5, 66, 58.6]
+<a name="rest_code_7962e5021e8a43b8b94e0fdab74b4934-7"></a>   &#39;Others&#39;,  [14.2, 15.4, 15.3, 8.9, 9, 10.4]
 </pre></div>
 <div class="section" id="doc">
 <h3>Doc</h3>
 <p>用于跳转到其它页面.</p>
-<pre class="code text"><a name="rest_code_569b395297d54699801f596fa9638711-1"></a>Take a look at :doc:`my other post &lt;creating-a-theme&gt;` about theme creating.
-<a name="rest_code_569b395297d54699801f596fa9638711-2"></a>Take a look at :doc:`creating-a-theme` to know how to do it.
+<pre class="code text"><a name="rest_code_04c62d87d9904a38a59113157bc09aeb-1"></a>Take a look at :doc:`my other post &lt;creating-a-theme&gt;` about theme creating.
+<a name="rest_code_04c62d87d9904a38a59113157bc09aeb-2"></a>Take a look at :doc:`creating-a-theme` to know how to do it.
 </pre></div>
 </div>
 </div>
@@ -392,17 +392,17 @@ this:</p>
 <h1>Org-Mode</h1>
 <ul>
 <li><p class="first">安装插件</p>
-<pre class="code shell"><a name="rest_code_0355a4f043d94133a2a53fcf9de41d1c-1"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;activate myblog
-<a name="rest_code_0355a4f043d94133a2a53fcf9de41d1c-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;nikola plugin -i orgmode
+<pre class="code shell"><a name="rest_code_6104f62c01f44897821fd7966497deed-1"></a><span class="o">[</span>Anaconda3<span class="o">]</span> C:<span class="se">\h</span>ome&gt;activate myblog
+<a name="rest_code_6104f62c01f44897821fd7966497deed-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;nikola plugin -i orgmode
 </pre></li>
 <li><p class="first">在 <tt class="docutils literal">conf.py</tt> 中 <tt class="docutils literal">COMPILERS</tt>, <tt class="docutils literal">POSTS</tt>, <tt class="docutils literal">PAGES</tt> 项中加入下和 <tt class="docutils literal">.org</tt> 有关的内容 (参考本项目中的 conf.py 文件)。</p>
 </li>
 <li><p class="first">创建org文档</p>
-<pre class="code shell"><a name="rest_code_251447d2c81a408384a0d9bb9c03d1a0-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;cd mynikolasite
-<a name="rest_code_251447d2c81a408384a0d9bb9c03d1a0-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola new_post -f orgmode
+<pre class="code shell"><a name="rest_code_e3c753a6e8094c12ae7ac3764ece8bd1-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome&gt;cd mynikolasite
+<a name="rest_code_e3c753a6e8094c12ae7ac3764ece8bd1-2"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola new_post -f orgmode
 </pre></li>
 <li><p class="first">build</p>
-<pre class="code shell"><a name="rest_code_2300e5f5682d4392bf9ee8daf84edb6e-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola auto -b
+<pre class="code shell"><a name="rest_code_c137df6c2a5648c1ab4513d051d9036e-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola auto -b
 </pre><p>会自动检查文件变化并build, <tt class="docutils literal"><span class="pre">-b</span></tt> 是打开流览器(Windows下尝试
 <tt class="docutils literal">nikola auto</tt> 总是失败(因为内部调用的 <tt class="docutils literal">epoll</tt> 命令在win下无效),
 还是老老实实使用 <tt class="docutils literal">nikola build</tt> 和 <tt class="docutils literal">nikola serve</tt> 再访问
@@ -419,20 +419,20 @@ this:</p>
 <p>如果要将markdown或者其它格式设置为默认格式, 只需将其放在 <tt class="docutils literal">POSTS</tt> 和
 <tt class="docutils literal">PAGES</tt> 第一个位置, 这样以后在执行 <tt class="docutils literal">nikola new_post</tt> 时不用加参数,
 会默认生成 <tt class="docutils literal">.md</tt> 文件:</p>
-<pre class="code python"><a name="rest_code_d587e5537d734796b7b529a27db4f028-1"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-2"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-3"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-4"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-5"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-6"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-7"></a><span class="p">)</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-8"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-9"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-10"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-11"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-12"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-13"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_d587e5537d734796b7b529a27db4f028-14"></a><span class="p">)</span>
+<pre class="code python"><a name="rest_code_4e6608c634094cd8a35e01ca6778c844-1"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-2"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-3"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-4"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-5"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-6"></a>    <span class="p">(</span><span class="s2">&quot;posts/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span> <span class="s2">&quot;post.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-7"></a><span class="p">)</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-8"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-9"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-10"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-11"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-12"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-13"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_4e6608c634094cd8a35e01ca6778c844-14"></a><span class="p">)</span>
 </pre></div>
 <div class="section" id="extensions">
 <h2>Extensions</h2>
@@ -457,8 +457,8 @@ Footnots in markdown</li>
 </ul>
 <p>可以设置 <tt class="docutils literal">conf.py</tt> 文件中的 <tt class="docutils literal">MARKDOWN_EXTENSIONS</tt>
 变量来使用这些extensions, 如:</p>
-<pre class="code python"><a name="rest_code_ca187859e8d84a8a943c2ec8ef4f14d5-1"></a><span class="n">MARKDOWN_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nl2br&quot;</span><span class="p">,</span> <span class="s2">&quot;fenced_code&quot;</span><span class="p">,</span> <span class="s2">&quot;footnotes&quot;</span><span class="p">,</span>
-<a name="rest_code_ca187859e8d84a8a943c2ec8ef4f14d5-2"></a><span class="s2">&quot;smart_strong&quot;</span><span class="p">,</span><span class="s2">&quot;codehilite(linenums=True)&quot;</span><span class="p">,</span> <span class="s1">&#39;extra&#39;</span><span class="p">]</span>
+<pre class="code python"><a name="rest_code_0b3156e4302140a9b0a3e2f215550605-1"></a><span class="n">MARKDOWN_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nl2br&quot;</span><span class="p">,</span> <span class="s2">&quot;fenced_code&quot;</span><span class="p">,</span> <span class="s2">&quot;footnotes&quot;</span><span class="p">,</span>
+<a name="rest_code_0b3156e4302140a9b0a3e2f215550605-2"></a><span class="s2">&quot;smart_strong&quot;</span><span class="p">,</span><span class="s2">&quot;codehilite(linenums=True)&quot;</span><span class="p">,</span> <span class="s1">&#39;extra&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="section" id="customization">
@@ -471,7 +471,7 @@ a very good choice among them, since it supports
 <a class="reference external" href="https://bootswatch.com/">Bootswatch</a> schemes. For example, to use
 <em>Superhero</em> scheme on this <a class="reference external" href="https://bootswatch.com/superhero/">page</a>,
 just run</p>
-<pre class="code shell"><a name="rest_code_e5b72475ebb249cba189ba834c2dc5c2-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola bootswatch_theme -n custum_theme -s superhero -p bootstrap3
+<pre class="code shell"><a name="rest_code_d34746fa40ae4d9680198b6ab9b41028-1"></a><span class="o">[</span>myblog<span class="o">]</span> C:<span class="se">\h</span>ome<span class="se">\m</span>ynikolasite&gt;nikola bootswatch_theme -n custum_theme -s superhero -p bootstrap3
 </pre><p>after installing <em>bootstrap3</em> theme. To enable this custom scheme, you
 need set <tt class="docutils literal">THEME</tt> to “custom” in <tt class="docutils literal">conf.py</tt>.</p>
 <p>To further tweak your theme, please refer to <a class="reference external" href="https://getnikola.com/theming.html">Theming
@@ -485,16 +485,16 @@ Nikola</a>.</p>
 <a class="reference external" href="https://getnikola.com/blog/author-pages-in-nikola-v770.html">说明</a>
 进一步设置. 即: 将 <tt class="docutils literal">AUTHOR_PAGES_ARE_INDEXES</tt> 设为 <tt class="docutils literal">False</tt>,
 然后设置每个作者的描述:</p>
-<pre class="code python"><a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-1"></a><span class="n">ENABLE_AUTHOR_PAGES</span> <span class="o">=</span> <span class="bp">True</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-2"></a><span class="n">AUTHOR_PAGES_ARE_INDEXES</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-3"></a><span class="n">AUTHOR_PATH</span> <span class="o">=</span> <span class="s2">&quot;authors&quot;</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-4"></a><span class="n">AUTHOR_PAGES_DESCRIPTIONS</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-5"></a>    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-6"></a>        <span class="s2">&quot;defnil&quot;</span><span class="p">:</span> <span class="s2">&quot;Old posts&quot;</span><span class="p">,</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-7"></a>        <span class="s2">&quot;YONG&quot;</span><span class="p">:</span> <span class="s2">&quot;^_^&quot;</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-8"></a>    <span class="p">},</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-9"></a><span class="p">}</span>
-<a name="rest_code_1f44bf523b2e4dc1952cc9ec15270110-10"></a><span class="n">HIDDEN_AUTHORS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Guest&#39;</span><span class="p">]</span>
+<pre class="code python"><a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-1"></a><span class="n">ENABLE_AUTHOR_PAGES</span> <span class="o">=</span> <span class="bp">True</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-2"></a><span class="n">AUTHOR_PAGES_ARE_INDEXES</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-3"></a><span class="n">AUTHOR_PATH</span> <span class="o">=</span> <span class="s2">&quot;authors&quot;</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-4"></a><span class="n">AUTHOR_PAGES_DESCRIPTIONS</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-5"></a>    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-6"></a>        <span class="s2">&quot;defnil&quot;</span><span class="p">:</span> <span class="s2">&quot;Old posts&quot;</span><span class="p">,</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-7"></a>        <span class="s2">&quot;YONG&quot;</span><span class="p">:</span> <span class="s2">&quot;^_^&quot;</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-8"></a>    <span class="p">},</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-9"></a><span class="p">}</span>
+<a name="rest_code_89d6a389a3824d88b70ff7bcf1b5b0cc-10"></a><span class="n">HIDDEN_AUTHORS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Guest&#39;</span><span class="p">]</span>
 </pre><p><em>bootstrap3</em> 主题已将这些页面包含在内,
 因此作上述设置后就可以直接看到结果了. 如果你要完全禁止这个功能,
 也很简单, 将 <tt class="docutils literal">ENABLE_AUTHOR_PAGES</tt> 设为 <tt class="docutils literal">False</tt> 即可.</p>
@@ -509,22 +509,22 @@ Nikola</a>.</p>
 <p>可以在 <tt class="docutils literal">NAVIGATION_LINKS</tt> 里添加要链接的页面即可. 比如新建了一个名为
 <tt class="docutils literal">about.rst</tt> 的page (会被存放在 <tt class="docutils literal">pages/</tt> 目录下),
 如果要将它放在导航栏里:</p>
-<pre class="code python"><a name="rest_code_5bda30141c244529bdfb9d3fde7dea9f-1"></a><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_5bda30141c244529bdfb9d3fde7dea9f-2"></a>    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
-<a name="rest_code_5bda30141c244529bdfb9d3fde7dea9f-3"></a>        <span class="p">(</span><span class="s2">&quot;/archive.html&quot;</span><span class="p">,</span> <span class="s2">&quot;Archive&quot;</span><span class="p">),</span>
-<a name="rest_code_5bda30141c244529bdfb9d3fde7dea9f-4"></a>        <span class="p">(</span><span class="s2">&quot;/categories/&quot;</span><span class="p">,</span> <span class="s2">&quot;Tags&quot;</span><span class="p">),</span>
-<a name="rest_code_5bda30141c244529bdfb9d3fde7dea9f-5"></a>        <span class="p">(</span><span class="s2">&quot;/pages/about/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;About&quot;</span><span class="p">),</span> <span class="c1"># need to be changed to /output/index.html after you set your own homepage</span>
-<a name="rest_code_5bda30141c244529bdfb9d3fde7dea9f-6"></a>        <span class="p">(</span><span class="s2">&quot;/rss.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;RSS feed&quot;</span><span class="p">),</span>
-<a name="rest_code_5bda30141c244529bdfb9d3fde7dea9f-7"></a>    <span class="p">),</span>
-<a name="rest_code_5bda30141c244529bdfb9d3fde7dea9f-8"></a><span class="p">}</span>
+<pre class="code python"><a name="rest_code_e1271695647d45378a4ec87bb35ee9fd-1"></a><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_e1271695647d45378a4ec87bb35ee9fd-2"></a>    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
+<a name="rest_code_e1271695647d45378a4ec87bb35ee9fd-3"></a>        <span class="p">(</span><span class="s2">&quot;/archive.html&quot;</span><span class="p">,</span> <span class="s2">&quot;Archive&quot;</span><span class="p">),</span>
+<a name="rest_code_e1271695647d45378a4ec87bb35ee9fd-4"></a>        <span class="p">(</span><span class="s2">&quot;/categories/&quot;</span><span class="p">,</span> <span class="s2">&quot;Tags&quot;</span><span class="p">),</span>
+<a name="rest_code_e1271695647d45378a4ec87bb35ee9fd-5"></a>        <span class="p">(</span><span class="s2">&quot;/pages/about/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;About&quot;</span><span class="p">),</span> <span class="c1"># need to be changed to /output/index.html after you set your own homepage</span>
+<a name="rest_code_e1271695647d45378a4ec87bb35ee9fd-6"></a>        <span class="p">(</span><span class="s2">&quot;/rss.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;RSS feed&quot;</span><span class="p">),</span>
+<a name="rest_code_e1271695647d45378a4ec87bb35ee9fd-7"></a>    <span class="p">),</span>
+<a name="rest_code_e1271695647d45378a4ec87bb35ee9fd-8"></a><span class="p">}</span>
 </pre><p>根据 <a class="reference external" href="https://getnikola.com/handbook.html">Nikola Handbook</a> 的说法,
 导航栏至多支持一级子菜单 “Only one level of submenus is supported”,
 可以参照说明设置带子菜单样式的导航栏.</p>
 </div>
 <div class="section" id="disqus">
 <h2>评论功能 DISQUS</h2>
-<pre class="code python"><a name="rest_code_d501d34e5eb54b6ba2128f6248cd2ce9-1"></a><span class="n">COMMENT_SYSTEM</span> <span class="o">=</span> <span class="s2">&quot;disqus&quot;</span>
-<a name="rest_code_d501d34e5eb54b6ba2128f6248cd2ce9-2"></a><span class="n">COMMENT_SYSTEM_ID</span> <span class="o">=</span> <span class="s2">&quot;yongch&quot;</span> <span class="c1"># your disqus ID</span>
+<pre class="code python"><a name="rest_code_fd552a2fd5f84771b91283d475f0aa28-1"></a><span class="n">COMMENT_SYSTEM</span> <span class="o">=</span> <span class="s2">&quot;disqus&quot;</span>
+<a name="rest_code_fd552a2fd5f84771b91283d475f0aa28-2"></a><span class="n">COMMENT_SYSTEM_ID</span> <span class="o">=</span> <span class="s2">&quot;yongch&quot;</span> <span class="c1"># your disqus ID</span>
 </pre></div>
 <div class="section" id="image-size">
 <h2>Image Size</h2>
@@ -541,28 +541,28 @@ Nikola</a>.</p>
 <a class="reference external" href="https://getnikola.com/creating-a-site-not-a-blog-with-nikola.html">这里</a>
 有如何建一个site的步骤. 对于已经按blog建立的站点,
 我们可以进行下面的改造.</p>
-<pre class="code python"><a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-1"></a><span class="n">INDEX_PATH</span> <span class="o">=</span> <span class="s2">&quot;posts&quot;</span>
-<a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-2"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-3"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-4"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-5"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-6"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-7"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-8"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.org&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
-<a name="rest_code_80b40d0496fd418fa81a9e720aaa941c-9"></a><span class="p">)</span>
+<pre class="code python"><a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-1"></a><span class="n">INDEX_PATH</span> <span class="o">=</span> <span class="s2">&quot;posts&quot;</span>
+<a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-2"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-3"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-4"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-5"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.html&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-6"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.md&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-7"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-8"></a>    <span class="p">(</span><span class="s2">&quot;pages/*.org&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;story.tmpl&quot;</span><span class="p">),</span>
+<a name="rest_code_dd5b9d55905d421080ab36e1e31d345a-9"></a><span class="p">)</span>
 </pre><p>然后我们可以使用 <tt class="docutils literal">nikola new_page <span class="pre">-t</span> Home</tt> 创建一个名为 “Home” 的页面.
 (slug 改为index). 现在我们还需要根据 <tt class="docutils literal">output/</tt>
 下目录的变化重新调整导航栏, 并且把posts放到“Posts”导航栏里. 如下图：</p>
-<pre class="code python"><a name="rest_code_fce6d4c4c8774516969fa35ed6296266-1"></a><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-2"></a>    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-3"></a>        <span class="p">(</span><span class="s2">&quot;/posts/&quot;</span><span class="p">,</span> <span class="s2">&quot;Posts&quot;</span><span class="p">),</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-4"></a>        <span class="p">(</span><span class="s2">&quot;/categories/&quot;</span><span class="p">,</span> <span class="s2">&quot;Tags&quot;</span><span class="p">),</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-5"></a>        <span class="p">(</span><span class="s2">&quot;/Notes/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;Notes&quot;</span><span class="p">),</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-6"></a>        <span class="p">(</span><span class="s2">&quot;/archive.html&quot;</span><span class="p">,</span> <span class="s2">&quot;Archive&quot;</span><span class="p">),</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-7"></a>        <span class="p">(</span><span class="s2">&quot;/rss.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;RSS&quot;</span><span class="p">),</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-8"></a>        <span class="p">(</span><span class="s2">&quot;/about/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;About&quot;</span><span class="p">),</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-9"></a>    <span class="p">),</span>
-<a name="rest_code_fce6d4c4c8774516969fa35ed6296266-10"></a><span class="p">}</span>
+<pre class="code python"><a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-1"></a><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-2"></a>    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-3"></a>        <span class="p">(</span><span class="s2">&quot;/posts/&quot;</span><span class="p">,</span> <span class="s2">&quot;Posts&quot;</span><span class="p">),</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-4"></a>        <span class="p">(</span><span class="s2">&quot;/categories/&quot;</span><span class="p">,</span> <span class="s2">&quot;Tags&quot;</span><span class="p">),</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-5"></a>        <span class="p">(</span><span class="s2">&quot;/Notes/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;Notes&quot;</span><span class="p">),</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-6"></a>        <span class="p">(</span><span class="s2">&quot;/archive.html&quot;</span><span class="p">,</span> <span class="s2">&quot;Archive&quot;</span><span class="p">),</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-7"></a>        <span class="p">(</span><span class="s2">&quot;/rss.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;RSS&quot;</span><span class="p">),</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-8"></a>        <span class="p">(</span><span class="s2">&quot;/about/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;About&quot;</span><span class="p">),</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-9"></a>    <span class="p">),</span>
+<a name="rest_code_2a6f87b1e0eb4e6fa15109682f27969e-10"></a><span class="p">}</span>
 </pre><p>这时可以编辑你自己的 <tt class="docutils literal">home.rst</tt> 了. 也可以直接用我们之前做的
 <tt class="docutils literal">about.rst</tt> 链接过来做主页: <tt class="docutils literal">.. include:: pages/about.rst</tt>.
 如果你正在使用基于 <em>bootstrap3</em> 的主题, 因为它基于 <tt class="docutils literal">Bootstrap</tt>,
