@@ -3,6 +3,7 @@
 <li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
 <li><a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html">reStructuredText Primer</a></li>
 <li><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">reStructuredText Quick Reference</a></li>
+<li><a class="reference external" href="https://getnikola.com/handbook.html">The Nikola Handbook</a></li>
 </ol>
 <!-- TEASER_END -->
 <div class="section" id="id1">
@@ -408,6 +409,78 @@ span rows.</td>
 </tbody>
 </table>
 </td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="nikola">
+<h1>Nikola 常用语法</h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><pre class="first last literal-block">
+**Math**: 在 ``tags`` 中添加 ``mathjax`` 启用 LaTeX.
+
+- inline math:
+
+  Euler’s formula: :math:`e^{ix} = \cos x + i\sin x`
+
+- displayed math:
+
+  .. math::
+
+     \int \frac{dx}{1+ax}=\frac{1}{a}\ln(1+ax)+C
+</pre>
+</td>
+<td><p class="first"><strong>Math</strong>: 在 <tt class="docutils literal">tags</tt> 中添加 <tt class="docutils literal">mathjax</tt> 启用 LaTeX.</p>
+<ul class="last">
+<li><p class="first">inline math:</p>
+<p>Euler’s formula: <span class="math">\(e^{ix} = \cos x + i\sin x\)</span></p>
+</li>
+<li><p class="first">displayed math:</p>
+<div class="math">
+\begin{equation*}
+\int \frac{dx}{1+ax}=\frac{1}{a}\ln(1+ax)+C
+\end{equation*}
+</div>
+</li>
+</ul>
+</td>
+</tr>
+<tr><td><pre class="first last literal-block">
+**Media**: 可直接插入Vimeo, Youtute, Soundcloud.
+
+.. youtube:: 8N_tupPBtWQ
+   :align: center
+
+.. vimeo:: 20241459
+   :height: 240
+   :width: 320
+
+.. soundcloud:: 78131362
+</pre>
+</td>
+<td><p class="first"><strong>Media</strong>: 可直接插入Vimeo, Youtute, Soundcloud.</p>
+<div class="youtube-video align-center">
+<iframe width="425" height="344"
+src="https://www.youtube.com/embed/8N_tupPBtWQ?rel=0&amp;hd=1&amp;wmode=transparent"
+></iframe>
+</div><div class="vimeo-video">
+<iframe src="https://player.vimeo.com/video/20241459"
+width="320" height="240"
+frameborder="0" webkitAllowFullScreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowFullScreen="allowFullScreen">
+</iframe>
+</div>
+<div class="last"><div class="soundcloud-player">
+<iframe width="600" height="160"
+scrolling="no" frameborder="no"
+src="https://w.soundcloud.com/player/?url=http://api.soundcloud.com/tracks/78131362">
+</iframe>
+</div></div></td>
 </tr>
 </tbody>
 </table>

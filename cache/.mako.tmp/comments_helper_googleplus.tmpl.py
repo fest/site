@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1487277889.2651641
+_modified_time = 1488226444.5408156
 _enable_loop = True
 _template_filename = 'c:/users/yong/anaconda3/envs/nikolablog/lib/site-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl'
 _template_uri = 'comments_helper_googleplus.tmpl'
@@ -62,6 +62,6 @@ def render_comment_link_script(context):
 
 """
 __M_BEGIN_METADATA
-{"filename": "c:/users/yong/anaconda3/envs/nikolablog/lib/site-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl", "line_map": {"33": 11, "34": 12, "35": 12, "41": 2, "45": 2, "46": 5, "47": 5, "16": 0, "21": 9, "22": 14, "23": 17, "57": 16, "63": 57, "29": 11, "53": 16}, "uri": "comments_helper_googleplus.tmpl", "source_encoding": "utf-8"}
+{"uri": "comments_helper_googleplus.tmpl", "filename": "c:/users/yong/anaconda3/envs/nikolablog/lib/site-packages/nikola/data/themes/base/templates/comments_helper_googleplus.tmpl", "source_encoding": "utf-8", "line_map": {"33": 11, "34": 12, "35": 12, "41": 2, "45": 2, "46": 5, "47": 5, "16": 0, "21": 9, "22": 14, "23": 17, "57": 16, "63": 57, "29": 11, "53": 16}}
 __M_END_METADATA
 """
