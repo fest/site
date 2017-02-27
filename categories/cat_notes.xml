@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Home (Posts about notes)</title><link>http://yongchen.org/</link><description></description><atom:link href="http://yongchen.org/categories/cat_notes.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 16 Feb 2017 20:44:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>reStructuredText Notes</title><link>http://yongchen.org/posts/reStructuredText-notes/</link><dc:creator>Yong Chen</dc:creator><description>&lt;div&gt;&lt;p&gt;参考：&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Home (Posts about notes)</title><link>http://yongchen.org/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://yongchen.org/categories/cat_notes.xml"></atom:link><language>en</language><lastBuildDate>Mon, 27 Feb 2017 20:13:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>reStructuredText Notes</title><link>http://yongchen.org/posts/reStructuredText-notes/</link><dc:creator>Yong Chen</dc:creator><description>&lt;div&gt;&lt;div class="admonition admonition-"&gt;
+&lt;p class="first admonition-title"&gt;参考&lt;/p&gt;
+&lt;p&gt;写本文时 Nikola 版本为 7.8.3. 参考链接：&lt;/p&gt;
+&lt;ol class="last arabic simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html"&gt;reStructuredText Markup Specification&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html"&gt;reStructuredText Primer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html"&gt;reStructuredText Quick Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html"&gt;reStructuredText Directives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://getnikola.com/handbook.html"&gt;The Nikola Handbook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://getnikola.com/handbook.txt"&gt;The Nikola Handbook Source&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;a href="http://yongchen.org/posts/reStructuredText-notes/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>http://yongchen.org/posts/reStructuredText-notes/</guid><pubDate>Sun, 12 Feb 2017 13:06:35 GMT</pubDate></item><item><title>域名相关常识</title><link>http://yongchen.org/posts/yu-ming-xiang-guan-chang-shi/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="id1"&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/reStructuredText-notes/"&gt;Read more…&lt;/a&gt; (8 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><category>python</category><guid>http://yongchen.org/posts/reStructuredText-notes/</guid><pubDate>Sun, 12 Feb 2017 13:06:35 GMT</pubDate></item><item><title>域名相关常识</title><link>http://yongchen.org/posts/yu-ming-xiang-guan-chang-shi/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
 &lt;p&gt;自己只是打算建一个 Github Page 绑定到个人域名, 在注册域名的过程中慢慢了解了该行业的一些状况. 大多是基本常识, 还有一些个人看法, 属于个人笔记性质.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://yongchen.org/posts/yu-ming-xiang-guan-chang-shi/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>domain</category><guid>http://yongchen.org/posts/yu-ming-xiang-guan-chang-shi/</guid><pubDate>Mon, 16 May 2016 04:52:40 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/yu-ming-xiang-guan-chang-shi/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>domain</category><guid>http://yongchen.org/posts/yu-ming-xiang-guan-chang-shi/</guid><pubDate>Mon, 16 May 2016 04:52:40 GMT</pubDate></item><item><title>Build Github Pages with Nikola</title><link>http://yongchen.org/posts/build-github-pages-with-nikola/</link><dc:creator>YONG</dc:creator><description>&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;静态网站生成工具(static site generator)非常多,
+在&lt;a class="reference external" href="https://www.staticgen.com/"&gt;这里&lt;/a&gt;
+就可以看到开源的众多静态网站生成工具. 不少工具都有它们各自的特点,
+比如Hugo用golang编写, 在编译网页时速度比其它框架更快, 但缺点也比较明显,
+做个性化扩展比较麻烦. 这里选择Nikola是考虑到它是由Python编写,
+编译速度也比常见的Jekyll等要快不少, 且开发活跃,
+被很多科研人员选作博客工具. 我比较看重的Nikola特性有:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/build-github-pages-with-nikola/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>github</category><category>python</category><category>web</category><guid>http://yongchen.org/posts/build-github-pages-with-nikola/</guid><pubDate>Tue, 26 Apr 2016 04:56:35 GMT</pubDate></item></channel></rss>
