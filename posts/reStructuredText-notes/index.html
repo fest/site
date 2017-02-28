@@ -121,23 +121,24 @@ The Nikola Handbook Sour">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
 <li>
-<a class="reference internal" href="#id1" id="id9">章节结构</a><ul>
-<li><a class="reference internal" href="#transition" id="id10">Transition</a></li>
-<li><a class="reference internal" href="#topic" id="id11">Topic 结构</a></li>
+<a class="reference internal" href="#id1" id="id10">章节结构</a><ul>
+<li><a class="reference internal" href="#transition" id="id11">Transition</a></li>
+<li><a class="reference internal" href="#topic" id="id12">Topic 结构</a></li>
 </ul>
 </li>
 <li>
-<a class="reference internal" href="#rst" id="id12">rst 常用语法</a><ul>
-<li><a class="reference internal" href="#id2" id="id13">常见样式</a></li>
-<li><a class="reference internal" href="#id7" id="id14">目录结构</a></li>
-<li><a class="reference internal" href="#id8" id="id15">侧边栏</a></li>
+<a class="reference internal" href="#rst" id="id13">rst 常用语法</a><ul>
+<li><a class="reference internal" href="#id2" id="id14">常见样式</a></li>
+<li><a class="reference internal" href="#id7" id="id15">代码高亮</a></li>
+<li><a class="reference internal" href="#id8" id="id16">目录结构</a></li>
+<li><a class="reference internal" href="#id9" id="id17">侧边栏</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#nikola" id="id16">Nikola 常用语法</a></li>
+<li><a class="reference internal" href="#nikola" id="id18">Nikola 常用语法</a></li>
 </ul>
 </div>
 <div class="section" id="id1">
-<h2><a class="toc-backref" href="#id9">章节结构</a></h2>
+<h2><a class="toc-backref" href="#id10">章节结构</a></h2>
 <ul>
 <li>
 <p class="first">常用符号：</p>
@@ -149,12 +150,12 @@ The Nikola Handbook Sour">
 </li>
 </ul>
 <div class="section" id="transition">
-<h3><a class="toc-backref" href="#id10">Transition</a></h3>
+<h3><a class="toc-backref" href="#id11">Transition</a></h3>
 <p>Transition 符号由4个或以上 <a class="reference internal" href="#id1">章节结构</a> 里允许用的符号组成，都会被渲染成水平线。如下面的水平线是由 <tt class="docutils literal"><span class="pre">####</span></tt> 渲染成的。</p>
 </div>
 <hr class="docutils">
 <div class="section" id="topic">
-<h3><a class="toc-backref" href="#id11">Topic 结构</a></h3>
+<h3><a class="toc-backref" href="#id12">Topic 结构</a></h3>
 <div class="topic">
 <p class="topic-title first">Topic Title Example</p>
 <p>这是 topic 第一段。</p>
@@ -171,9 +172,9 @@ The Nikola Handbook Sour">
 </div>
 </div>
 <div class="section" id="rst">
-<h2><a class="toc-backref" href="#id12">rst 常用语法</a></h2>
+<h2><a class="toc-backref" href="#id13">rst 常用语法</a></h2>
 <div class="section" id="id2">
-<h3><a class="toc-backref" href="#id13">常见样式</a></h3>
+<h3><a class="toc-backref" href="#id14">常见样式</a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%">
@@ -527,9 +528,9 @@ David Goodger</p>
 <p class="first"><strong>code</strong>: 可选参数 <tt class="docutils literal"><span class="pre">number-lines</span> : [start line number]</tt>
 Nikola 现在已使用 rst 的 <tt class="docutils literal">code</tt> 代替以前 Nikola 使用的
 <tt class="docutils literal"><span class="pre">code-block</span></tt> 语法. 另外引用整个文件可以用 <tt class="docutils literal">listing</tt>.</p>
-<pre class="code python"><a name="rest_code_63a9111ad5944b50bc792d98be209b70-1"></a><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
-<a name="rest_code_63a9111ad5944b50bc792d98be209b70-2"></a>    <span class="s2">"just a test"</span>
-<a name="rest_code_63a9111ad5944b50bc792d98be209b70-3"></a>    <span class="k">print</span> <span class="mi">8</span><span class="o">/</span><span class="mi">2</span>
+<pre class="code python"><a name="rest_code_9b45c2ab5b0448fe822fefc4151435d8-1"></a><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+<a name="rest_code_9b45c2ab5b0448fe822fefc4151435d8-2"></a>    <span class="s2">"just a test"</span>
+<a name="rest_code_9b45c2ab5b0448fe822fefc4151435d8-3"></a>    <span class="k">print</span> <span class="mi">8</span><span class="o">/</span><span class="mi">2</span>
 </pre>
 <p class="last"><strong>gist</strong>: 引用 GitHub 的 gist (效果略).</p>
 </td>
@@ -864,7 +865,10 @@ crunchy, now would it?</td>
 </tr>
 </tbody>
 </table>
-<p>备注：Nikola 中的代码高亮都是借用 <tt class="docutils literal">Pygments</tt> 实现的。其支持的语言及简写参见 <a class="reference external" href="http://pygments.org/docs/lexers/">Available lexers</a>. 常用的有以下几种：</p>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id15">代码高亮</a></h3>
+<p>Nikola 中的代码高亮都是借用 <tt class="docutils literal">Pygments</tt> 实现的。其支持的语言及简写参见 <a class="reference external" href="http://pygments.org/docs/lexers/">Available lexers</a>. 常用的有以下几种：</p>
 <table border="1" class="colwidths-auto docutils align-left">
 <caption>常见编程语言及简写</caption>
 <colgroup>
@@ -986,8 +990,8 @@ crunchy, now would it?</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="id7">
-<h3><a class="toc-backref" href="#id14">目录结构</a></h3>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id16">目录结构</a></h3>
 <p>目录用 <tt class="docutils literal">contents</tt> 生成。本文的目录 (contents) 原代码如下 (参考 <a class="reference external" href="https://getnikola.com/handbook.txt">The Nikola Handbook Source</a> 中的写法)：</p>
 <pre class="literal-block">
 .. class:: alert alert-info pull-right
@@ -995,8 +999,8 @@ crunchy, now would it?</td>
 .. contents::
 </pre>
 </div>
-<div class="section" id="id8">
-<h3><a class="toc-backref" href="#id15">侧边栏</a></h3>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id17">侧边栏</a></h3>
 <div class="sidebar">
 <p class="first sidebar-title">Sidebar Title</p>
 <p class="sidebar-subtitle">Optional Sidebar Subtitle</p>
@@ -1017,7 +1021,7 @@ interpreted as body elements.</p>
 </div>
 <hr class="docutils">
 <div class="section" id="nikola">
-<h2><a class="toc-backref" href="#id16">Nikola 常用语法</a></h2>
+<h2><a class="toc-backref" href="#id18">Nikola 常用语法</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%">
