@@ -527,9 +527,9 @@ David Goodger</p>
 <p class="first"><strong>code</strong>: 可选参数 <tt class="docutils literal"><span class="pre">number-lines</span> : [start line number]</tt>
 Nikola 现在已使用 rst 的 <tt class="docutils literal">code</tt> 代替以前 Nikola 使用的
 <tt class="docutils literal"><span class="pre">code-block</span></tt> 语法. 另外引用整个文件可以用 <tt class="docutils literal">listing</tt>.</p>
-<pre class="code python"><a name="rest_code_58fc79a7c1d5415a99298a07ef39a0cf-1"></a><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
-<a name="rest_code_58fc79a7c1d5415a99298a07ef39a0cf-2"></a>    <span class="s2">"just a test"</span>
-<a name="rest_code_58fc79a7c1d5415a99298a07ef39a0cf-3"></a>    <span class="k">print</span> <span class="mi">8</span><span class="o">/</span><span class="mi">2</span>
+<pre class="code python"><a name="rest_code_63a9111ad5944b50bc792d98be209b70-1"></a><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+<a name="rest_code_63a9111ad5944b50bc792d98be209b70-2"></a>    <span class="s2">"just a test"</span>
+<a name="rest_code_63a9111ad5944b50bc792d98be209b70-3"></a>    <span class="k">print</span> <span class="mi">8</span><span class="o">/</span><span class="mi">2</span>
 </pre>
 <p class="last"><strong>gist</strong>: 引用 GitHub 的 gist (效果略).</p>
 </td>
@@ -861,6 +861,127 @@ crunchy, now would it?</td>
 </tbody>
 </table>
 </td>
+</tr>
+</tbody>
+</table>
+<p>备注：Nikola 中的代码高亮都是借用 <tt class="docutils literal">Pygments</tt> 实现的。其支持的语言及简写参见 <a class="reference external" href="http://pygments.org/docs/lexers/">Available lexers</a>. 常用的有以下几种：</p>
+<table border="1" class="colwidths-auto docutils align-left">
+<caption>常见编程语言及简写</caption>
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead valign="bottom"><tr>
+<th class="head stub">Programming language</th>
+<th class="head">Short names</th>
+<th class="head">Filenames</th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<th class="stub">C</th>
+<td>c</td>
+<td>*.c, *.h, *.idc</td>
+</tr>
+<tr>
+<th class="stub">C++</th>
+<td>cpp, c++</td>
+<td>*.cpp, *.hpp, *.c++, *.h++, *.cc, *.hh, *.cxx, *.hxx, *.C, *.H, *.cp, *.CPP</td>
+</tr>
+<tr>
+<th class="stub">C#</th>
+<td>csharp, c#</td>
+<td>*.cs</td>
+</tr>
+<tr>
+<th class="stub">Mathematica</th>
+<td>mathematica, mma, nb</td>
+<td>*.nb, *.cdf, *.nbp, *.ma</td>
+</tr>
+<tr>
+<th class="stub">CSS</th>
+<td>css</td>
+<td>*.css</td>
+</tr>
+<tr>
+<th class="stub">Json</th>
+<td>json</td>
+<td>*.json</td>
+</tr>
+<tr>
+<th class="stub">HTML</th>
+<td>html</td>
+<td>*.html, *.htm, *.xhtml, *.xslt</td>
+</tr>
+<tr>
+<th class="stub">XML</th>
+<td>xml</td>
+<td>*.xml, *.xsl, *.rss, *.xslt, *.xsd, *.wsdl, *.wsf</td>
+</tr>
+<tr>
+<th class="stub">JavaScript</th>
+<td>js, javascript</td>
+<td>*.js, *.jsm</td>
+</tr>
+<tr>
+<th class="stub">Julia</th>
+<td>julia, jl</td>
+<td>*.jl</td>
+</tr>
+<tr>
+<th class="stub">Julia Console</th>
+<td>jlcon</td>
+<td>None</td>
+</tr>
+<tr>
+<th class="stub">Java</th>
+<td>java</td>
+<td>*.java</td>
+</tr>
+<tr>
+<th class="stub">LaTeX</th>
+<td>tex, latex</td>
+<td>*.tex, *.aux, *.toc</td>
+</tr>
+<tr>
+<th class="stub">Matlab</th>
+<td>matlab</td>
+<td>*.m</td>
+</tr>
+<tr>
+<th class="stub">Python</th>
+<td>python, py, sage</td>
+<td>*.py, *.pyw, *.sc, SConstruct, SConscript, *.tac, *.sage</td>
+</tr>
+<tr>
+<th class="stub">Python Console</th>
+<td>pycon</td>
+<td>None</td>
+</tr>
+<tr>
+<th class="stub">Bash</th>
+<td>bash, sh, ksh, zsh, shell</td>
+<td>*.sh, *.ksh, *.bash, *.ebuild, *.eclass, *.exheres-0, *.exlib, *.zsh, .bashrc, bashrc, .bash*, bash*, zshrc, .zshrc, PKGBUILD</td>
+</tr>
+<tr>
+<th class="stub">Console</th>
+<td>console, shell-session</td>
+<td>*.sh-session, *.shell-session</td>
+</tr>
+<tr>
+<th class="stub">Batch</th>
+<td>bat, batch, dosbatch, winbatch</td>
+<td>*.bat, *.cmd</td>
+</tr>
+<tr>
+<th class="stub">MSDOS Session</th>
+<td>doscon</td>
+<td>None</td>
+</tr>
+<tr>
+<th class="stub">PowerShell Session</th>
+<td>ps1con</td>
+<td>None</td>
 </tr>
 </tbody>
 </table>
