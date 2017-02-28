@@ -339,6 +339,81 @@ rst 常用语法
 |                                                          |                                                          |
 +----------------------------------------------------------+----------------------------------------------------------+
 
+备注：Nikola 中的代码高亮都是借用 ``Pygments`` 实现的。其支持的语言及简写参见 `Available lexers`_. 常用的有以下几种：
+
+.. list-table:: 常见编程语言及简写
+   :widths: auto
+   :header-rows: 1
+   :stub-columns: 1
+   :align: left
+
+   * - Programming language
+     - Short names
+     - Filenames
+   * - C
+     - c
+     - \*.c, \*.h, \*.idc
+   * - C++
+     - cpp, c++
+     - \*.cpp, \*.hpp, \*.c++, \*.h++, \*.cc, \*.hh, \*.cxx, \*.hxx, \*.C, \*.H, \*.cp, \*.CPP
+   * - C#
+     - csharp, c#
+     - \*.cs
+   * - Mathematica
+     - mathematica, mma, nb
+     - \*.nb, \*.cdf, \*.nbp, \*.ma
+   * - CSS
+     - css
+     - \*.css
+   * - Json
+     - json
+     - \*.json
+   * - HTML
+     - html
+     - \*.html, \*.htm, \*.xhtml, \*.xslt
+   * - XML
+     - xml
+     - \*.xml, \*.xsl, \*.rss, \*.xslt, \*.xsd, \*.wsdl, \*.wsf
+   * - JavaScript
+     - js, javascript
+     - \*.js, \*.jsm
+   * - Julia
+     - julia, jl
+     - \*.jl
+   * - Julia Console
+     - jlcon
+     - None
+   * - Java
+     - java
+     - \*.java
+   * - LaTeX
+     - tex, latex
+     - \*.tex, \*.aux, \*.toc
+   * - Matlab
+     - matlab
+     - \*.m
+   * - Python
+     - python, py, sage
+     - \*.py, \*.pyw, \*.sc, SConstruct, SConscript, \*.tac, \*.sage
+   * - Python Console
+     - pycon
+     - None
+   * - Bash
+     - bash, sh, ksh, zsh, shell
+     - \*.sh, \*.ksh, \*.bash, \*.ebuild, \*.eclass, \*.exheres-0, \*.exlib, \*.zsh, .bashrc, bashrc, .bash\*, bash\*, zshrc, .zshrc, PKGBUILD
+   * - Console
+     - console, shell-session
+     - \*.sh-session, \*.shell-session
+   * - Batch
+     - bat, batch, dosbatch, winbatch
+     - \*.bat, \*.cmd
+   * - MSDOS Session
+     - doscon
+     - None
+   * - PowerShell Session
+     - ps1con
+     - None
+
 目录结构
 -----------
 
@@ -417,3 +492,4 @@ Nikola 常用语法
 
 .. _CSV Table: http://docutils.sourceforge.net/docs/ref/rst/directives.html#id4
 .. _List Table: http://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table
+.. _Available lexers: http://pygments.org/docs/lexers/
