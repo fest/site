@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/archive.html</loc>
-  <lastmod>2017-02-14T07:17:00Z</lastmod>
+  <lastmod>2017-03-01T06:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/authors/</loc>
@@ -39,7 +39,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/categories/</loc>
-  <lastmod>2017-02-09T07:06:00Z</lastmod>
+  <lastmod>2017-03-01T06:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/categories/algorithm/</loc>
@@ -150,6 +150,10 @@
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>http://yongchen.org/categories/nikola/</loc>
+  <lastmod>2017-02-28T02:49:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://yongchen.org/categories/org-mode/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
@@ -168,6 +172,10 @@
  <url>
   <loc>http://yongchen.org/categories/text-editor/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/categories/tutorial/</loc>
+  <lastmod>2017-03-01T06:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/categories/ubuntu/</loc>
@@ -223,7 +231,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/</loc>
-  <lastmod>2017-02-14T07:17:00Z</lastmod>
+  <lastmod>2017-03-01T06:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji/</loc>
@@ -291,11 +299,11 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/index-2.html</loc>
-  <lastmod>2017-02-17T13:41:00Z</lastmod>
+  <lastmod>2017-02-28T02:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/index-3.html</loc>
-  <lastmod>2017-02-14T07:17:00Z</lastmod>
+  <lastmod>2017-03-01T06:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/install-monodevelop-on-ubuntu/</loc>
@@ -304,6 +312,10 @@
  <url>
   <loc>http://yongchen.org/posts/install-textext-plugin-for-inkscape/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/posts/julia-for-matrix-methods/</loc>
+  <lastmod>2017-03-01T06:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/julia-notes/</loc>
