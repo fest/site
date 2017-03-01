@@ -1,7 +1,7 @@
 .. title: Wrap Angle to Given Range
 .. slug: wrap-angle-to-given-range
 .. date: 2016-07-20 13:30:46 UTC+08:00
-.. tags: Julia, cpp, algorithm
+.. tags: julia, cpp, algorithm
 .. category: programming
 .. link: 
 .. description: 

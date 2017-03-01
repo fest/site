@@ -1,7 +1,7 @@
 .. title: Julia Notes
 .. slug: julia-notes
 .. date: 2016-05-24 12:22:41 UTC+08:00
-.. tags: Julia
+.. tags: julia
 .. category: programming
 .. link: 
 .. description: 

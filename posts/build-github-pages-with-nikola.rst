@@ -1,7 +1,7 @@
 .. title: Build Github Pages with Nikola
 .. slug: build-github-pages-with-nikola
 .. date: 2016-04-26 12:56:35 UTC+08:00
-.. tags: github, python, web
+.. tags: github, python, nikola, web
 .. category: notes
 .. link:
 .. description:

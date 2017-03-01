@@ -1,12 +1,20 @@
 .. title: reStructuredText Notes
 .. slug: reStructuredText-notes
 .. date: 2017-02-12 21:06:35 UTC+08:00
-.. tags: python, mathjax
+.. tags: python, nikola, mathjax
 .. category: notes
 .. link:
 .. description:
 .. type: text
 
+
+.. sectnum::
+
+.. contents::
+
+.. TEASER_END
+
+.. class:: alert alert-info pull-right
 
 .. admonition:: 参考
 
@@ -23,13 +31,6 @@
    #. `The Nikola Handbook`_
 
    #. `The Nikola Handbook Source`_
-
-
-.. TEASER_END
-
-.. class:: alert alert-info pull-right
-
-.. contents::
 
 
 
@@ -208,7 +209,7 @@ rst 常用语法
 +----------------------------------------------------------+----------------------------------------------------------+
 | ::                                                       | **code**: 可选参数 ``number-lines : [start line number]``|
 |                                                          | Nikola 现在已使用 rst 的 ``code`` 代替以前 Nikola 使用的 |
-|                                                          | ``code-block`` 语法. 另外引用整个文件可以用 ``listing``. |
+|                                                          | ``code-block`` 语法. 另外引用整个文件可以用 `listing`_.  |
 |                                                          |                                                          |
 |   .. code:: python                                       | .. code:: python                                         |
 |                                                          |                                                          |
@@ -267,7 +268,7 @@ rst 常用语法
 |                                                          |                                                          |
 |   **Admonitions**: 包括 "attention", "caution", "danger",| **Admonitions**: 包括 "attention", "caution", "danger",  |
 |    "error", "hint", "important", "note", "tip", "warning"| "error", "hint", "important", "note", "tip", "warning"   |
-|    以及一般性的 "admonition"                             | 以及一般性的 "admonition"                                |
+|    以及一般性的 "admonition"                             | 以及一般性的 "admonition" (参考 `Admonitions`_)          |
 |                                                          |                                                          |
 |   .. DANGER::                                            | .. DANGER::                                              |
 |      Beware killer rabbits!                              |    Beware killer rabbits!                                |
@@ -417,16 +418,28 @@ Nikola 中的代码高亮都是借用 ``Pygments`` 实现的。其支持的语�
      - ps1con
      - None
 
+
 目录结构
 -----------
 
-目录用 ``contents`` 生成。本文的目录 (contents) 原代码如下 (参考 `The Nikola Handbook Source`_ 中的写法)：
+目录用 ``contents`` 生成。参考 `The Nikola Handbook Source`_ 中的写法：
 
 ::
 
   .. class:: alert alert-info pull-right
 
   .. contents::
+
+
+章节自动编号
+---------------  
+
+在文章开始前使用 `sectnum`_ 使章节结构标题自动编号，编号在 **contents** 目录里也会显示。
+
+::
+
+  .. sectnum::
+
 
 侧边栏
 -------------
@@ -496,3 +509,6 @@ Nikola 常用语法
 .. _CSV Table: http://docutils.sourceforge.net/docs/ref/rst/directives.html#id4
 .. _List Table: http://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table
 .. _Available lexers: http://pygments.org/docs/lexers/
+.. _sectnum: http://docutils.sourceforge.net/docs/ref/rst/directives.html#automatic-section-numbering
+.. _listing: https://getnikola.com/handbook.html#listing
+.. _Admonitions: http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
