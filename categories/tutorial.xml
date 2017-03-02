@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Home (Posts about tutorial)</title><link>http://yongchen.org/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://yongchen.org/categories/tutorial.xml"></atom:link><language>en</language><lastBuildDate>Wed, 01 Mar 2017 12:31:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Julia for Matrix Methods</title><link>http://yongchen.org/posts/julia-for-matrix-methods/</link><dc:creator>Yong Chen</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Home (Posts about tutorial)</title><link>http://yongchen.org/</link><description></description><atom:link href="http://yongchen.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 02 Mar 2017 16:50:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Julia for Matrix Methods</title><link>http://yongchen.org/posts/julia-for-matrix-methods/</link><dc:creator>Yong Chen</dc:creator><description>&lt;div&gt;&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title first"&gt;Contents&lt;/p&gt;
 &lt;ul class="auto-toc simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="http://yongchen.org/posts/julia-for-matrix-methods/#introduction" id="id2"&gt;1   Introduction&lt;/a&gt;&lt;ul class="auto-toc"&gt;
@@ -21,6 +21,16 @@
 &lt;li&gt;&lt;a class="reference internal" href="http://yongchen.org/posts/julia-for-matrix-methods/#useful-functions" id="id14"&gt;3.3   Useful functions&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://yongchen.org/posts/julia-for-matrix-methods/#tricks" id="id15"&gt;4   Tricks&lt;/a&gt;&lt;ul class="auto-toc"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://yongchen.org/posts/julia-for-matrix-methods/#initialization" id="id16"&gt;4.1   Initialization&lt;/a&gt;&lt;ul class="auto-toc"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://yongchen.org/posts/julia-for-matrix-methods/#data-types" id="id17"&gt;4.1.1   Data types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://yongchen.org/posts/julia-for-matrix-methods/#empty-array" id="id18"&gt;4.1.2   Empty array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://yongchen.org/posts/julia-for-matrix-methods/#allocate-array-no-initialization" id="id19"&gt;4.1.3   Allocate array (no initialization)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://yongchen.org/posts/julia-for-matrix-methods/#initialize-a-matrix" id="id20"&gt;4.1.4   Initialize a matrix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href="http://yongchen.org/posts/julia-for-matrix-methods/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>julia</category><category>mathjax</category><category>tutorial</category><guid>http://yongchen.org/posts/julia-for-matrix-methods/</guid><pubDate>Wed, 01 Mar 2017 05:59:43 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="http://yongchen.org/posts/julia-for-matrix-methods/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>julia</category><category>mathjax</category><category>tutorial</category><guid>http://yongchen.org/posts/julia-for-matrix-methods/</guid><pubDate>Wed, 01 Mar 2017 05:59:43 GMT</pubDate></item></channel></rss>
