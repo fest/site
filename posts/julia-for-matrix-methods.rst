@@ -27,15 +27,19 @@ Basic arithmetric & mathematical functions
 ---------------------------------------------
 
 - ``+``, ``-``, ``*``, ``/``, ``^`` (exponentiate), ...
-- ``true``, ``false``, ``==``, ``!=``, ``<``, ``>``, ``<=``, ``>==``, ``!(value == 4)``, ...
-- ``exp``, ``sin``, ``pi``, ...
-- ``println(23)``, ``quit()``, ``help(sin)``, ``rand()``, ...
+- ``true``, ``false``, ``+=``, ``!=``, ``<``, ``>``, ``<=``, ``>==``, ``!(value == 4)``, ...
+- ``im`` (imaginary unit), ``pi``, ``e``, ``golden``, ...
+- ``exp``, ``sqrt``, ``sin``, ``rand()``, ...
+- ``println(23)``, ``quit()``, ``help(sin)``, ...
+- assign multiple variables (return type: Tuple): ``a,b=5,3``
+
+  Swap two variables: ``a,b=b,a``
 
 Ranges
 --------
 
 - ``1:5``, ``0.0:0.1:10.0``, ``linspace(0.0,10.0,11)``
-- convert **Range** to **Array**: ``collect(1:5)``
+- convert **Range** to **Array**: ``collect(1:5)`` or simply use ``[1:5]`` (``collect`` is much faster)
 
 Lists
 -------
@@ -162,7 +166,7 @@ Vector operations
      \right)
 
 - inner product :math:`\boldsymbol{a}^T\boldsymbol{b}`: ``dot(a,b)`` (:math:`\boldsymbol{a}` and :math:`\boldsymbol{b}` must have the same length)
-
+- vecter-vecter element-wise operation: ``[2,4].*[10,20]``
 
 Norm and distance
 ----------------------
@@ -198,7 +202,7 @@ Matrices
 Matrics
 ----------
 
-Matrices are 2D arrays.
+Matrices are 2D or higher dimensional arrays.
 
 - spaces separate entries in a row; semicolons separate individual rows: ``A=[2 -4 8.2; -5.5 3.5 63]``
 
@@ -266,4 +270,166 @@ Useful functions
 - Element-wise *max* and *min*: ``max(A, B)``, ``min(A, B)`` (the arguments must have the same size unless one is a scalar)
 - ``norm(A[:])`` or ``vecnorm(A)`` (Note that ``norm(A)`` has a different meaning) means :math:`\left(\sum_{i,j} A_{i,j}^2\right)^{1/2}`
 
-To be continued ...
+Tricks
+==========
+
+Initialization
+----------------
+
+Data types
+^^^^^^^^^^^^
+
+List (1D **Array**) and matrix (2D or higher dimensional **Array**) may include entries of different types: ``[1, "2", sin, 3.0]``, ``[1, "2"; sin, 3.0]``
+
+.. code:: jlcon
+
+    julia> [1, "2", sin, 3.0]
+    4-element Array{Any,1}:
+     1
+     "2"
+     sin
+     3.0
+
+    julia> [1 "2"; sin 3.0]
+    2x2 Array{Any,2}:
+     1      "2"
+     sin    3.0
+
+如果元素类型只有常用的数学类型的时候，会按 ``Int64``, ``Rational{Int64}``, ``Float64`` 的顺序进行自动的promotion.
+如果元素中有复数，则其余实数类型也会被自动转换为复数，实部和复部类型按之前的顺序自动promotion.
+
+例子如下：
+
+.. code:: jlcon
+
+   julia> [2, 3//4]
+   2-element Array{Rational{Int64},1}:
+    2//1
+    3//4
+
+   julia> [2, 3//4, 0.1]
+   3-element Array{Float64,1}:
+    2.0
+    0.75
+    0.1
+
+   julia> [2, 3//4, 0.1, 1+2im]
+   4-element Array{Complex{Float64},1}:
+     2.0+0.0im
+     0.75+0.0im
+     0.1+0.0im
+     1.0+2.0im
+
+然而，list 或 matrix 的类型也可以进行明确指定。如：
+
+.. code:: jlcon
+
+    julia> Float64[1,2,3]
+    3-element Array{Float64,1}:
+     1.0
+     2.0
+     3.0
+
+Empty array
+^^^^^^^^^^^^^^
+
+Initialize an empty array. List example (1D array):
+
+.. code:: jlcon
+
+    julia> Float64[]
+    0-element Array{Float64,1}
+
+    julia> Array(Float64,0)
+    0-element Array{Float64,1}
+
+    julia> Array{Float64}(0)
+    0-element Array{Float64,1}
+
+    julia> []
+    0-element Array{Any,1}
+
+Matrix example (2D or higher dimensional array), 初始化某一维度为0:
+
+.. code:: jlcon
+
+    julia> Array(Float64,0,2)
+    0x2 Array{Float64,2}
+
+    julia> Array{Float64}(0,2)
+    0x2 Array{Float64,2}
+
+也可以用 ``reshape`` 函数实现同样效果：
+
+.. code:: jlcon
+
+    julia> reshape([],0,2)
+    0x2 Array{Any,2}
+
+Allocate array (no initialization)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Allocate a list (1D array), and fill it with random values. 注：如果数据类型为 Any, 则会被填充未知量。
+
+.. code:: jlcon
+
+    julia> Array(Float64,3)
+    3-element Array{Float64,1}:
+     1.08099e-314
+     1.08097e-314
+     1.08098e-314
+
+    julia> Array{Float64}(3)
+    3-element Array{Float64,1}:
+     0.0
+     1.061e-314
+     0.0
+
+    julia> Array{Any}(3)
+    3-element Array{Any,1}:
+     #undef
+     #undef
+     #undef
+
+上面最后一个式子当然也等同于 ``Array(Any,3)``.
+
+同理，我们也可以创建一个 2x3 矩阵（元素为随机产生）： ``Array(Float64,2,3)`` or ``Array{Float64}(2,3)``
+
+为方便起见，一维和二维的情况下，Julia提供了两个函数, ``Vector(3)``, ``Matrix(2,3)`` 分别相当于 ``Array(Any,3)`` 以及 ``Array(Any,2,3)``.
+
+Initialize a matrix
+^^^^^^^^^^^^^^^^^^^^^
+
+创建一个 2x3 矩阵并赋值，可以用下列方式：
+
+1. 按行创建
+
+   .. code:: jlcon
+
+      julia> [1 2 3; 4 5 6]
+      2x3 Array{Int64,2}:
+       1  2  3
+       4  5  6
+
+#. 按列创建
+
+   .. code:: jlcon
+
+      julia> [[1, 4] [2, 5] [3, 6]]
+      2x3 Array{Int64,2}:
+       1  2  3
+       4  5  6
+
+#. 由另一个 list 或 matrix 变形而来
+
+   .. code:: jlcon
+
+      julia> reshape([1,4,2,5,3,6], 2, 3)
+      2x3 Array{Int64,2}:
+       1  2  3
+       4  5  6
+
+.. note:: Julia 是 **列主序**
+
+   * Column-major order: Julia, Fortran, R, Matlab, GNU Octave, BLAS, LAPACK, OpenGL/OpenGL ES
+   * ROW-major order: C/C++, Mathematica, Pascal, Python, C#/CLI/.Net, Direct3D

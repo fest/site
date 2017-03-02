@@ -3,8 +3,8 @@
 .. date: 2016-05-24 12:22:41 UTC+08:00
 .. tags: julia
 .. category: programming
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 .. author: YONG
 
@@ -109,9 +109,9 @@ Row vectors
      1
      2
      3
-     
-    julia> [1 2 3]        
-    1x3 Array{Int64,2}:   
+
+    julia> [1 2 3]
+    1x3 Array{Int64,2}:
      1  2  3
 
 可以看出, 列向量是Array{Int64,1}类型而行向量是Array{Int64,2}
@@ -121,12 +121,12 @@ Range objects
 
 ``1:10`` 等同于 ``range(1,10)``, 用途:
 
-1. 生成列向量. 比如 ``[1:10]``.
+1. 生成列向量. 比如 ``[1:10]``, 或 ``collect(1:10)``
 2. loop表达式: ``for n in 1:10 print(n) end``
 
 ``[0:10:100]`` 从0到100(包括100), 步长10. 亦可用于浮点类型.
 
-``linrange(1,100,12)`` 从1到100, 12步, 即会产生12个数. 还有一个方便的函数 ``linspace()``, 与此同理, 但会直接创建一个array. 另一个类似函数是 ``logspace()``, 即它的 logarithmic 版本.
+``linspace(1,100,12)`` 从1到100, 12步, 即会产生12个数. 另一个类似函数是 ``logspace()``, 即它的 logarithmic 版本.
 
 Matrix
 ~~~~~~~~~
@@ -136,7 +136,7 @@ Matrix
 
 创建一个2x3矩阵, 可使用:
 
-1. ``[1 2 3; 4 5 6]`` (按行创建), 
+1. ``[1 2 3; 4 5 6]`` (按行创建),
 2. 按列创建: ``[[1, 2, 3] [4,5,6]]``
 3.  ``Array(Int64, 3,2)`` 创建一个二维矩阵
 4. ``reshape([1,2,3,4,5,6], 2, 3)``, 即将一个简单数组或矩阵变为想要形状.
@@ -184,5 +184,3 @@ Other Tips
 * ``@show()`` 可以接受多个参数, 用于debug时打印出中间变量到console, 非常方便.
 * ``@time`` macro加在执行命令的前面用于测试运行时间. 第一次调用时运行时间会稍长, 之后的调用会比较短. 因此以之后的为准.
 * ``0^0`` 在 Julia 中被定义为1, 在Mathematica中会报错(只能说MMA比较2, 经常涉及到Bernstein的定义都要用个Switch来考虑一下特殊情况).
-
-

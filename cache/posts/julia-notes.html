@@ -127,8 +127,8 @@
 <div class="section" id="arrays-and-tuples">
 <h1>Arrays and Tuples</h1>
 <p>Julia arrays are &quot;column-major&quot; (列主序). This means that you read down the columns:</p>
-<pre class="code shell"><a name="rest_code_c594871371284f8eac48a26b9794afde-1"></a><span class="m">1</span> 3
-<a name="rest_code_c594871371284f8eac48a26b9794afde-2"></a><span class="m">2</span> 4
+<pre class="code shell"><a name="rest_code_54b655400f2f4487a4d8f19cd8ff0ff6-1"></a><span class="m">1</span> 3
+<a name="rest_code_54b655400f2f4487a4d8f19cd8ff0ff6-2"></a><span class="m">2</span> 4
 </pre><ul class="simple">
 <li>Column-major order: Fortran, R, Matlab, GNU Octave, BLAS, LAPACK, OpenGL/OpenGL ES, Julia</li>
 <li>ROW-major order: C/C++, Mathematica, Pascal, Python, C#/CLI/.Net, Direct3D</li>
@@ -182,26 +182,26 @@
 </tbody>
 </table>
 <p>在julia中, column vector是一维矩阵, 而row vector是二维矩阵, 大概julia也是偏好列向量的计算系统. 比如:</p>
-<pre class="code shell"><a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-1"></a>julia&gt; <span class="o">[</span>1,2,3<span class="o">]</span>
-<a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-2"></a>3-element Array<span class="o">{</span>Int64,1<span class="o">}</span>:
-<a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-3"></a> 1
-<a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-4"></a> 2
-<a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-5"></a> 3
-<a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-6"></a>
-<a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-7"></a>julia&gt; <span class="o">[</span><span class="m">1</span> <span class="m">2</span> 3<span class="o">]</span>
-<a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-8"></a>1x3 Array<span class="o">{</span>Int64,2<span class="o">}</span>:
-<a name="rest_code_17f6934bdb034d5caaf6ccdeea3a5c96-9"></a> <span class="m">1</span>  <span class="m">2</span>  3
+<pre class="code shell"><a name="rest_code_97cb59fe89e944b99300209f2b535151-1"></a>julia&gt; <span class="o">[</span>1,2,3<span class="o">]</span>
+<a name="rest_code_97cb59fe89e944b99300209f2b535151-2"></a>3-element Array<span class="o">{</span>Int64,1<span class="o">}</span>:
+<a name="rest_code_97cb59fe89e944b99300209f2b535151-3"></a> 1
+<a name="rest_code_97cb59fe89e944b99300209f2b535151-4"></a> 2
+<a name="rest_code_97cb59fe89e944b99300209f2b535151-5"></a> 3
+<a name="rest_code_97cb59fe89e944b99300209f2b535151-6"></a>
+<a name="rest_code_97cb59fe89e944b99300209f2b535151-7"></a>julia&gt; <span class="o">[</span><span class="m">1</span> <span class="m">2</span> 3<span class="o">]</span>
+<a name="rest_code_97cb59fe89e944b99300209f2b535151-8"></a>1x3 Array<span class="o">{</span>Int64,2<span class="o">}</span>:
+<a name="rest_code_97cb59fe89e944b99300209f2b535151-9"></a> <span class="m">1</span>  <span class="m">2</span>  3
 </pre><p>可以看出, 列向量是Array{Int64,1}类型而行向量是Array{Int64,2}</p>
 </div>
 <div class="section" id="range-objects">
 <h2>Range objects</h2>
 <p><tt class="docutils literal">1:10</tt> 等同于 <tt class="docutils literal">range(1,10)</tt>, 用途:</p>
 <ol class="arabic simple">
-<li>生成列向量. 比如 <tt class="docutils literal">[1:10]</tt>.</li>
+<li>生成列向量. 比如 <tt class="docutils literal">[1:10]</tt>, 或 <tt class="docutils literal">collect(1:10)</tt></li>
 <li>loop表达式: <tt class="docutils literal">for n in 1:10 print(n) end</tt></li>
 </ol>
 <p><tt class="docutils literal">[0:10:100]</tt> 从0到100(包括100), 步长10. 亦可用于浮点类型.</p>
-<p><tt class="docutils literal">linrange(1,100,12)</tt> 从1到100, 12步, 即会产生12个数. 还有一个方便的函数 <tt class="docutils literal">linspace()</tt>, 与此同理, 但会直接创建一个array. 另一个类似函数是 <tt class="docutils literal">logspace()</tt>, 即它的 logarithmic 版本.</p>
+<p><tt class="docutils literal">linspace(1,100,12)</tt> 从1到100, 12步, 即会产生12个数. 另一个类似函数是 <tt class="docutils literal">logspace()</tt>, 即它的 logarithmic 版本.</p>
 </div>
 <div class="section" id="matrix">
 <h2>Matrix</h2>
