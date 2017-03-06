@@ -657,7 +657,7 @@ Array of arrays
        #undef
        #undef
 
-- Use ``hcat()`` or ``vcat()`` to convert an array to a matrix
+- Use ``hcat()`` or ``vcat()`` to convert an array to a matrix (Refer to `slurping and splatting <http://docs.julialang.org/en/stable/manual/faq/#what-does-the-operator-do>`_)
 
   .. code:: jlcon
 
