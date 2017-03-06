@@ -30,10 +30,50 @@ Basic arithmetric & mathematical functions
 - ``true``, ``false``, ``+=``, ``!=``, ``<``, ``>``, ``<=``, ``>==``, ``!(value == 4)``, ...
 - ``im`` (imaginary unit), ``pi``, ``e``, ``golden``, ...
 - ``exp``, ``sqrt``, ``sin``, ``rand()``, ...
-- ``println(23)``, ``quit()``, ``help(sin)``, ...
+- ``typeof(x)``, ``println(23)``, ``quit()``, ``methods(sin)``, ...
 - assign multiple variables (return type: Tuple): ``a,b=5,3``
 
   Swap two variables: ``a,b=b,a``
+
+Tuples
+---------
+
+Tuples act like "immutable" arrays.
+
+- unpack a tuple:
+
+  .. code:: jlcon
+
+      julia> word1, word2 = ("foo", "bar")
+      ("foo","bar")
+
+      julia> word1
+      "foo"
+
+      julia> word2
+      "bar"
+
+- ``collect``: convert tuple to array
+
+- tuples as function arguments: unpack it use an ellipsis ``f((1, 2, 3)...)`` (Refer to `Varargs Functions <http://julia.readthedocs.org/en/latest/manual/functions/#varargs-functions>`_)
+  注：之前的版本还可以使用 ``apply`` 函数，现在该函数已被 Julia 作废。
+
+  .. code:: jlcon
+
+      julia> g() = (1, 2, 3)
+      g (generic function with 1 method)
+
+      julia> f(a, b, c) = +(a, b, c)
+      f (generic function with 1 method)
+
+      julia> f(g())
+      ERROR: MethodError: `f` has no method matching f(::Tuple{Int64,Int64
+      ,Int64})
+      Closest candidates are:
+        f(::Any, ::Any, ::Any)
+
+      julia> f(g()...)
+      6
 
 Ranges
 --------
@@ -49,28 +89,6 @@ List is one-dimensional array.
 - create: ``my_list = ["a", 1, -0.76]``
 - access: ``m_list[2]``, ``my_list[end]``, ``my_list[end-1]``
 - length: ``length(my_list)``
-
-For loops
------------
-
-- loop over a **Range**
-
-  .. code:: julia
-
-     value = 0
-     for i in 1:10
-       value += i
-     end
-
-- loop over a **List**
-
-  .. code:: julia
-
-     value = 0
-     my_list = [1,2,3,4,5]
-     for i in my_list
-       value += i
-     end
 
 Vectors
 =========
@@ -166,7 +184,7 @@ Vector operations
      \right)
 
 - inner product :math:`\boldsymbol{a}^T\boldsymbol{b}`: ``dot(a,b)`` (:math:`\boldsymbol{a}` and :math:`\boldsymbol{b}` must have the same length)
-- vecter-vecter element-wise operation: ``[2,4].*[10,20]``
+- vector-vector element-wise operation: ``[2,4].*[10,20]``
 
 Norm and distance
 ----------------------
@@ -243,7 +261,9 @@ Matrix operations
 - :math:`\boldsymbol{A}^T` (transpose): ``A'``
 - matrix addition and subtraction: ``+``, ``-``
 - matrix-scalar operations ``+``, ``-``, ``*``, ``/`` apply elementwise: ``10 * [1 2; 3 4]`` gives ``[10 20; 30 40]``
-- matrix-vector multiplication ``*``. For example, ``[1 2; 3 4]*[5, 6]``:
+- matrix-vector multiplication ``*``
+
+  For example, ``[1 2; 3 4]*[5, 6]``:
 
   .. math::
 
@@ -261,6 +281,7 @@ Matrix operations
       \right)
 
 - ``*`` is also used for matrix-matrix multiplication
+- ``*.`` is for matrix-matrix element-wise multiplication
 
 Useful functions
 -------------------
@@ -268,10 +289,56 @@ Useful functions
 - sum of all entries of a matrix: ``sum(A)``
 - average of entries of a matrix: ``mean(A)``
 - Element-wise *max* and *min*: ``max(A, B)``, ``min(A, B)`` (the arguments must have the same size unless one is a scalar)
-- ``norm(A[:])`` or ``vecnorm(A)`` (Note that ``norm(A)`` has a different meaning) means :math:`\left(\sum_{i,j} A_{i,j}^2\right)^{1/2}`
+- ``norm(A[:])`` or ``vecnorm(A)`` means :math:`\left(\sum_{i,j} A_{i,j}^2\right)^{1/2}` (Note that ``norm(A)`` has a different meaning and do not misuse it)
 
 Tricks
 ==========
+
+For loops
+-----------
+
+- loop over a **Range**
+
+  .. code:: julia
+
+     value = 0
+     for i in 1:10
+       value += i
+     end
+
+- loop over a **List**
+
+  .. code:: julia
+
+     value = 0
+     my_list = [1,2,3,4,5]
+     for i in my_list
+       value += i
+     end
+
+- ``zip``:
+
+  .. code:: julia
+
+      countries = ("Japan", "Korea", "China")
+      cities = ("Tokyo", "Seoul", "Beijing")
+      for (country, city) in zip(countries, cities)
+       println("The capital of $country is $city")
+      end
+
+- ``enumerate``: yields a tuple ``(index, value)``
+
+  .. code:: julia
+
+      countries = ("Japan", "Korea", "China")
+      cities = ("Tokyo", "Seoul", "Beijing")
+      for (i, country) in enumerate(countries)
+          city = cities[i]
+          println("The capital of $country is $city")
+      end
+
+
+
 
 Initialization
 ----------------
@@ -369,33 +436,53 @@ Matrix example (2D or higher dimensional array), 初始化某一维度为0:
 Allocate array (no initialization)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Allocate a list (1D array), and fill it with random values. 注：如果数据类型为 Any, 则会被填充未知量。
+- List
 
-.. code:: jlcon
+  Allocate a list (1D array), and fill it with random values:
 
-    julia> Array(Float64,3)
-    3-element Array{Float64,1}:
-     1.08099e-314
-     1.08097e-314
-     1.08098e-314
+  - 直接使用构造函数 ``Array``
 
-    julia> Array{Float64}(3)
-    3-element Array{Float64,1}:
-     0.0
-     1.061e-314
-     0.0
+    .. code:: jlcon
 
-    julia> Array{Any}(3)
-    3-element Array{Any,1}:
-     #undef
-     #undef
-     #undef
+        julia> Array(Float64,3)
+        3-element Array{Float64,1}:
+         1.08099e-314
+         1.08097e-314
+         1.08098e-314
 
-上面最后一个式子当然也等同于 ``Array(Any,3)``.
+        julia> Array{Float64}(3)
+        3-element Array{Float64,1}:
+         0.0
+         1.061e-314
+         0.0
 
-同理，我们也可以创建一个 2x3 矩阵（元素为随机产生）： ``Array(Float64,2,3)`` or ``Array{Float64}(2,3)``
+  - 基于另一个 list, 创建与之相同类型的 list, 利用函数 ``similar``
 
-为方便起见，一维和二维的情况下，Julia提供了两个函数, ``Vector(3)``, ``Matrix(2,3)`` 分别相当于 ``Array(Any,3)`` 以及 ``Array(Any,2,3)``.
+    .. code:: jlcon
+
+       julia> similar([1.0, 2.0, 3.0])
+       3-element Array{Float64,1}:
+        1.0818e-314
+        1.08225e-314
+        1.08853e-314
+
+  - 如果数据类型为 Any, 则会被填充未知量。
+
+    .. code:: jlcon
+
+      julia> Array{Any}(3)
+      3-element Array{Any,1}:
+       #undef
+       #undef
+       #undef
+
+    当然也等同于使用 ``Array(Any,3)``.
+
+- Matrix
+
+  - 同理，我们也可以创建一个 2x3 矩阵（元素为随机产生）： ``Array(Float64,2,3)`` or ``Array{Float64}(2,3)`` or ``similar([1 2 3; 4 5 6])``
+
+  - 为方便起见，一维和二维的情况下，Julia提供了两个函数, ``Vector(3)``, ``Matrix(2,3)`` 分别相当于 ``Array(Any,3)`` 以及 ``Array(Any,2,3)``.
 
 Initialize a matrix
 ^^^^^^^^^^^^^^^^^^^^^
@@ -429,7 +516,186 @@ Initialize a matrix
        1  2  3
        4  5  6
 
-.. note:: Julia 是 **列主序**
+.. note:: Julia 是 **列主序** (Column-major)
 
    * Column-major order: Julia, Fortran, R, Matlab, GNU Octave, BLAS, LAPACK, OpenGL/OpenGL ES
-   * ROW-major order: C/C++, Mathematica, Pascal, Python, C#/CLI/.Net, Direct3D
+   * Row-major order: C/C++, Mathematica, Pascal, Python, C#/CLI/.Net, Direct3D
+
+由上面 ``reshape`` 结果也可以看出 Julia 是列主序(Column-major)的。而高维矩阵也可以看成等效的一维矩阵，
+比如 ``A = [1 2 3; 4 5 6]``, 那么 ``A[4]`` 等于 :math:`4` 而非 :math:`5`.
+因此也可以使用 ``A[:]`` 得到矩阵转换为一维数组的结果。在用多维和一维这两种不同方式表示时，有两个函数很有用：
+
+- ``ind2sub(dims, index)`` 求一维数组表示法中的 index 元素在多维表示法中的位置。
+  如 ``ind2sub((2,3), 4)`` 返回 ``(2,2)``, 意即在一个 ``2x3`` 维的矩阵中，位置 ``(2,2)`` 对应一维数组中的脚标 ``4``
+- ``sub2ind((2,3), 2,2)`` 返回 ``4``, 表示在 ``2x3`` 的矩阵中位置 ``(2,2)`` 对应一维数组中的第 ``4`` 个位置。
+
+
+Useful functions
+-----------------
+
+.. note:: 参考
+
+   1. http://docs.julialang.org/en/stable/stdlib/arrays/
+   #. http://docs.julialang.org/en/stable/stdlib/collections/
+   #. https://en.wikibooks.org/wiki/Introducing_Julia/Arrays_and_tuples
+
+基本信息
+^^^^^^^^^^^^^
+
+以 ``exampleArray = [1 2 3; 4 5 6; 7 8 9]`` 为例：
+
+- ``ndims(exampleArray)`` 返回维度 ``2``
+- ``size(exampleArray)`` 返回各维大小 ``(3,3)``
+- ``length(exampleArray)`` 返回总元素数量 ``9``
+
+最大(小)值，以及求和
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+- ``maximum``, ``minimum`` 求list或矩阵(及其某一维度上)的最大值和最小值
+- ``maxabs``, ``minabs``, 绝对值的最大(小)值
+- ``findmax``, ``findmin`` 会返回一个tuple，``(value, index)``，即包括最大（小）值及其位置
+- ``sum``, 求和
+- ``sumabs``, 求绝对值之和
+- ``sumabs2``, 求平方和，等同于 ``sum(abs2(itr))``
+
+
+查找，筛选
+^^^^^^^^^^^^^^^^^^
+
+- ``in`` 判断元素是否属于某array，如 ``in(3, 1:10)`` 会返回 ``true``
+- ``count(predicate, A)`` 返回所有满足 ``predicate`` 的元素数量. 如 ``count(isodd, exampleArray)`` 返回 ``5``.
+- ``find(predicate, A)`` Return a vector of the linear indexes of ``A`` where ``predicate`` returns ``true``.
+
+  .. code:: jlcon
+
+      julia> find(iseven,1:10)
+      5-element Array{Int64,1}:
+      2
+      4
+      6
+      8
+      10
+
+  如果找不到，则会返回 ``0``. 常用的内置判断函数有 ``iseven``, ``isodd``, ``isinteger``, ``isreal``, ``isprime``, 还可以用 lambda 表达式自定义函数。
+
+- ``findfirst`` 常用用法 (``findlast`` 用法类似)：
+
+  - ``findfirst(A)`` Return the index of the first non-zero value in ``A`` (determined by ``A[i]!=0``).
+  - ``findfirst(A,v)`` Return the index of the first element equal to ``v`` in ``A``. 如 ``findfirst(2:2:10, 6)`` 返回 ``3``.
+  - ``findfirst(predicate, A)`` Return the index of the first element of ``A`` for which predicate returns ``true``. 如 ``findfirst(isprime, 0:10)`` 返回 ``3``.
+
+- ``findnext`` 与 ``findfirst`` 相似，但提供一个额外的参数表示搜索开始位置。所以 ``findfirst(predicate, A)`` 相当于 ``findnext(predicate, A, 1)``
+
+  还有一个相似的函数 ``findprev``.
+
+注意，``find``, ``findfirst``, ``findlast`` 返回的值都是 index，因此想要拿到对应的值就应该用 ``A[findfirst(predicate,A)]`` 类似的形式。
+
+- ``filter`` 与 ``find`` 作用相似，不同点是 ``filter`` 直接返回的是元素值而 ``find`` 返回的是对应的脚标。同时 ``filter!`` 可以直接将原来的array改变，只保留满足条件的值。
+- 使用 broadcasting 与 indexing. 如 ``A[A.>4]`` 与 ``filter(x->x>4, A)`` 作用相同; ``A[isodd.(A)]`` 与 ``filter(isodd, A)`` 作用相同 (``isodd.(A)`` 这种写法仅Julia 0.5版本之后支持).
+  注意，``A[A%3.==0]`` 是正确写法而 ``A[A.%3==0]`` 是不正确的。(实践发现当 ``A`` 元素比较多时，0.4版本这种方式比 ``filter`` 要更快一些。但在另一机器上0.5版本测试结果各有胜负)
+- ``any(predicate, A)``: 只要 ``A`` 中存在一个元素满足条件就返回 ``true``
+- ``all(predicate, A)``: 只有 ``A`` 中所有元素都满足条件就返回 ``true``
+
+删除行或列
+^^^^^^^^^^^^^^^^
+
+假设一个 3x3 的矩阵 ``A``, 我们要删除其第二行变成一个 2x3 矩阵。在Julia中，没有办法直接删除元素来改变原矩阵内容，即 ``A[2,:]=[]`` 类似这样的做法是无效的。
+因此我们只能复制原矩阵中部分值赋值给新的矩阵。使用之前提到的用 predicate 函数来indexing的方法，取出剩余部分赋值给新的矩阵 ``B``.
+即 ``B=A[1:end.!=2,:]``
+
+Joining arrays and matrices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- ``[A B]`` or ``hcat(A, B)``
+- ``[A; B]`` or ``vcat(A, B)``
+- ``[A B; C D]``
+- ``vec(A)`` 把 ``A`` 变成一维数组
+
+Array of arrays
+------------------
+
+- 基本例子：
+
+  .. code:: jlcon
+
+      julia> Array[1:3, 4:6]
+      2-element Array{Array{T,N},1}:
+       [1,2,3]
+       [4,5,6]
+
+      julia> Array[[1,2], [3,4]]
+      2-element Array{Array{T,N},1}:
+       [1,2]
+       [3,4]
+
+- Create an empty array of arrays:
+
+  .. code:: jlcon
+
+      julia> Array{Int}[]
+      0-element Array{Array{Int64,N},1}
+
+      julia> Array{Int, 2}[]
+      0-element Array{Array{Int64,2},1}
+
+      julia> Array(Array{Float64,3},0)
+      0-element Array{Array{Float64,3},1}
+
+- Create by specifying the size:
+
+  .. code:: jlcon
+
+      julia> Array(Array{Int64, 2},3)
+      3-element Array{Array{Int64,2},1}:
+       #undef
+       #undef
+       #undef
+
+      julia> Array{Array{Int64, 2}}(3)
+      3-element Array{Array{Int64,2},1}:
+       #undef
+       #undef
+       #undef
+
+- Use ``hcat()`` or ``vcat()`` to convert an array to a matrix
+
+  .. code:: jlcon
+
+      julia> a = Array[[1,2],[3,4],[5,6]]
+      3-element Array{Array{T,N},1}:
+       [1,2]
+       [3,4]
+       [5,6]
+
+      julia> hcat(a...)
+      2x3 Array{Int64,2}:
+       1  3  5
+       2  4  6
+
+      julia> vcat(a...)
+      6-element Array{Int64,1}:
+       1
+       2
+       3
+       4
+       5
+       6
+
+      julia> b = Array[[1 2],[3 4],[5 6]]
+      3-element Array{Array{T,N},1}:
+       1x2 Array{Int64,2}:
+       1  2
+       1x2 Array{Int64,2}:
+       3  4
+       1x2 Array{Int64,2}:
+       5  6
+
+      julia> vcat(b...)
+      3x2 Array{Int64,2}:
+       1  2
+       3  4
+       5  6
+
+      julia> hcat(b...)
+      1x6 Array{Int64,2}:
+       1  2  3  4  5  6

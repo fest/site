@@ -26,6 +26,7 @@ REPL 基础
 ans                     上一次计算结果
 ?                       help mode, 等同于 help(xxx)
 apropos("quit")         搜索和quit相关的命令
+methods(filter)         查看filter函数详细信息
 ;                       shell mode
 whos()                  查看全局变量信息
 @which sin(3)           查看sin(3)命令中调用了哪些method
