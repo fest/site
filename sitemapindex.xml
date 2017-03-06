@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://yongchen.org/authors/yong-chen.xml</loc>
-  <lastmod>2017-03-02T03:58:00Z</lastmod>
+  <lastmod>2017-03-06T19:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/authors/yong.xml</loc>
-  <lastmod>2017-03-02T03:58:00Z</lastmod>
+  <lastmod>2017-03-06T19:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/algorithm.xml</loc>
@@ -39,7 +39,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/cat_programming.xml</loc>
-  <lastmod>2017-03-02T03:58:00Z</lastmod>
+  <lastmod>2017-03-06T19:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/cat_tools.xml</loc>
@@ -103,7 +103,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/julia.xml</loc>
-  <lastmod>2017-03-02T03:58:00Z</lastmod>
+  <lastmod>2017-03-06T19:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/latex.xml</loc>
@@ -115,7 +115,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/mathjax.xml</loc>
-  <lastmod>2017-03-02T03:58:00Z</lastmod>
+  <lastmod>2017-03-06T19:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/matlab.xml</loc>
@@ -147,7 +147,7 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/tutorial.xml</loc>
-  <lastmod>2017-03-02T03:58:00Z</lastmod>
+  <lastmod>2017-03-06T19:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/categories/ubuntu.xml</loc>
@@ -179,10 +179,10 @@
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/rss.xml</loc>
-  <lastmod>2017-03-02T03:58:00Z</lastmod>
+  <lastmod>2017-03-06T19:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://yongchen.org/sitemap.xml</loc>
-  <lastmod>2017-03-02T03:58:00Z</lastmod>
+  <lastmod>2017-03-06T19:33:00Z</lastmod>
  </sitemap>
 </sitemapindex>
