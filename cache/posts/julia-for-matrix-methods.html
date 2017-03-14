@@ -65,6 +65,8 @@
 <li><p class="first">assign multiple variables (return type: Tuple): <tt class="docutils literal">a,b=5,3</tt></p>
 <p>Swap two variables: <tt class="docutils literal">a,b=b,a</tt></p>
 </li>
+<li><p class="first">convert float to int: <tt class="docutils literal">Int64(3.0)</tt> 相当于 <tt class="docutils literal">convert(Int64, 3.0</tt>), <tt class="docutils literal">ceil(Int64, 2.5)</tt>, <tt class="docutils literal">round(Int64, 2.5)</tt>, <tt class="docutils literal">floor(Int64, 2.5)</tt></p>
+</li>
 </ul>
 </div>
 <div class="section" id="tuples">
@@ -72,33 +74,33 @@
 <p>Tuples act like &quot;immutable&quot; arrays.</p>
 <ul>
 <li><p class="first">unpack a tuple:</p>
-<pre class="code jlcon"><a name="rest_code_7983c59a736441dd98ebc00eb9a79143-1"></a><span class="gp">julia&gt;</span> <span class="n">word1</span><span class="p">,</span> <span class="n">word2</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">)</span>
-<a name="rest_code_7983c59a736441dd98ebc00eb9a79143-2"></a><span class="go">(&quot;foo&quot;,&quot;bar&quot;)</span>
-<a name="rest_code_7983c59a736441dd98ebc00eb9a79143-3"></a>
-<a name="rest_code_7983c59a736441dd98ebc00eb9a79143-4"></a><span class="gp">julia&gt;</span> <span class="n">word1</span>
-<a name="rest_code_7983c59a736441dd98ebc00eb9a79143-5"></a><span class="go">&quot;foo&quot;</span>
-<a name="rest_code_7983c59a736441dd98ebc00eb9a79143-6"></a>
-<a name="rest_code_7983c59a736441dd98ebc00eb9a79143-7"></a><span class="gp">julia&gt;</span> <span class="n">word2</span>
-<a name="rest_code_7983c59a736441dd98ebc00eb9a79143-8"></a><span class="go">&quot;bar&quot;</span>
+<pre class="code jlcon"><a name="rest_code_8d710c2e1fe54bd0a58fa8b7ab94d944-1"></a><span class="gp">julia&gt;</span> <span class="n">word1</span><span class="p">,</span> <span class="n">word2</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">)</span>
+<a name="rest_code_8d710c2e1fe54bd0a58fa8b7ab94d944-2"></a><span class="go">(&quot;foo&quot;,&quot;bar&quot;)</span>
+<a name="rest_code_8d710c2e1fe54bd0a58fa8b7ab94d944-3"></a>
+<a name="rest_code_8d710c2e1fe54bd0a58fa8b7ab94d944-4"></a><span class="gp">julia&gt;</span> <span class="n">word1</span>
+<a name="rest_code_8d710c2e1fe54bd0a58fa8b7ab94d944-5"></a><span class="go">&quot;foo&quot;</span>
+<a name="rest_code_8d710c2e1fe54bd0a58fa8b7ab94d944-6"></a>
+<a name="rest_code_8d710c2e1fe54bd0a58fa8b7ab94d944-7"></a><span class="gp">julia&gt;</span> <span class="n">word2</span>
+<a name="rest_code_8d710c2e1fe54bd0a58fa8b7ab94d944-8"></a><span class="go">&quot;bar&quot;</span>
 </pre></li>
 <li><p class="first"><tt class="docutils literal">collect</tt>: convert tuple to array</p>
 </li>
 <li><p class="first">tuples as function arguments: unpack it use an ellipsis <tt class="docutils literal"><span class="pre">f((1,</span> 2, <span class="pre">3)...)</span></tt> (Refer to <a class="reference external" href="http://julia.readthedocs.org/en/latest/manual/functions/#varargs-functions">Varargs Functions</a>)
 注：之前的版本还可以使用 <tt class="docutils literal">apply</tt> 函数，现在该函数已被 Julia 作废。</p>
-<pre class="code jlcon"><a name="rest_code_c080948d964943d48a2c84f3f3993e8b-1"></a><span class="gp">julia&gt;</span> <span class="n">g</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-2"></a><span class="go">g (generic function with 1 method)</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-3"></a>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-4"></a><span class="gp">julia&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="o">+</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-5"></a><span class="go">f (generic function with 1 method)</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-6"></a>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-7"></a><span class="gp">julia&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">())</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-8"></a><span class="go">ERROR: MethodError: `f` has no method matching f(::Tuple{Int64,Int64</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-9"></a><span class="go">,Int64})</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-10"></a><span class="go">Closest candidates are:</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-11"></a><span class="go">  f(::Any, ::Any, ::Any)</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-12"></a>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-13"></a><span class="gp">julia&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">()</span><span class="o">...</span><span class="p">)</span>
-<a name="rest_code_c080948d964943d48a2c84f3f3993e8b-14"></a><span class="go">6</span>
+<pre class="code jlcon"><a name="rest_code_86244b11d36c4594a18d2a501a4dba51-1"></a><span class="gp">julia&gt;</span> <span class="n">g</span><span class="p">()</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-2"></a><span class="go">g (generic function with 1 method)</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-3"></a>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-4"></a><span class="gp">julia&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="o">+</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-5"></a><span class="go">f (generic function with 1 method)</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-6"></a>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-7"></a><span class="gp">julia&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">())</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-8"></a><span class="go">ERROR: MethodError: `f` has no method matching f(::Tuple{Int64,Int64</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-9"></a><span class="go">,Int64})</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-10"></a><span class="go">Closest candidates are:</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-11"></a><span class="go">  f(::Any, ::Any, ::Any)</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-12"></a>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-13"></a><span class="gp">julia&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">()</span><span class="o">...</span><span class="p">)</span>
+<a name="rest_code_86244b11d36c4594a18d2a501a4dba51-14"></a><span class="go">6</span>
 </pre></li>
 </ul>
 </div>
@@ -352,32 +354,32 @@
 <h2><a class="toc-backref" href="#id21">4.1&nbsp;&nbsp;&nbsp;For loops</a></h2>
 <ul>
 <li><p class="first">loop over a <strong>Range</strong></p>
-<pre class="code julia"><a name="rest_code_57db887ded154537a7a17238beffda60-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_57db887ded154537a7a17238beffda60-2"></a><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
-<a name="rest_code_57db887ded154537a7a17238beffda60-3"></a>  <span class="n">value</span> <span class="o">+=</span> <span class="n">i</span>
-<a name="rest_code_57db887ded154537a7a17238beffda60-4"></a><span class="k">end</span>
+<pre class="code julia"><a name="rest_code_0c3d3739f9f64cb1814046e255aa7752-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_0c3d3739f9f64cb1814046e255aa7752-2"></a><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
+<a name="rest_code_0c3d3739f9f64cb1814046e255aa7752-3"></a>  <span class="n">value</span> <span class="o">+=</span> <span class="n">i</span>
+<a name="rest_code_0c3d3739f9f64cb1814046e255aa7752-4"></a><span class="k">end</span>
 </pre></li>
 <li><p class="first">loop over a <strong>List</strong></p>
-<pre class="code julia"><a name="rest_code_62226d63dddd4906a5132454e2d5db63-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_62226d63dddd4906a5132454e2d5db63-2"></a><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<a name="rest_code_62226d63dddd4906a5132454e2d5db63-3"></a><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">my_list</span>
-<a name="rest_code_62226d63dddd4906a5132454e2d5db63-4"></a>  <span class="n">value</span> <span class="o">+=</span> <span class="n">i</span>
-<a name="rest_code_62226d63dddd4906a5132454e2d5db63-5"></a><span class="k">end</span>
+<pre class="code julia"><a name="rest_code_1a9ae78d6b00427ba1fdc3a052278595-1"></a><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_1a9ae78d6b00427ba1fdc3a052278595-2"></a><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<a name="rest_code_1a9ae78d6b00427ba1fdc3a052278595-3"></a><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">my_list</span>
+<a name="rest_code_1a9ae78d6b00427ba1fdc3a052278595-4"></a>  <span class="n">value</span> <span class="o">+=</span> <span class="n">i</span>
+<a name="rest_code_1a9ae78d6b00427ba1fdc3a052278595-5"></a><span class="k">end</span>
 </pre></li>
 <li><p class="first"><tt class="docutils literal">zip</tt>:</p>
-<pre class="code julia"><a name="rest_code_4055cf3a3d8648778b293f3a0ad5c680-1"></a><span class="n">countries</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Japan&quot;</span><span class="p">,</span> <span class="s">&quot;Korea&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">)</span>
-<a name="rest_code_4055cf3a3d8648778b293f3a0ad5c680-2"></a><span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="s">&quot;Seoul&quot;</span><span class="p">,</span> <span class="s">&quot;Beijing&quot;</span><span class="p">)</span>
-<a name="rest_code_4055cf3a3d8648778b293f3a0ad5c680-3"></a><span class="k">for</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span> <span class="k">in</span> <span class="n">zip</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">cities</span><span class="p">)</span>
-<a name="rest_code_4055cf3a3d8648778b293f3a0ad5c680-4"></a> <span class="n">println</span><span class="p">(</span><span class="s">&quot;The capital of </span><span class="si">$country</span><span class="s"> is </span><span class="si">$city</span><span class="s">&quot;</span><span class="p">)</span>
-<a name="rest_code_4055cf3a3d8648778b293f3a0ad5c680-5"></a><span class="k">end</span>
+<pre class="code julia"><a name="rest_code_69048fcf38ee4bd281dc97a96d5b7cf1-1"></a><span class="n">countries</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Japan&quot;</span><span class="p">,</span> <span class="s">&quot;Korea&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">)</span>
+<a name="rest_code_69048fcf38ee4bd281dc97a96d5b7cf1-2"></a><span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="s">&quot;Seoul&quot;</span><span class="p">,</span> <span class="s">&quot;Beijing&quot;</span><span class="p">)</span>
+<a name="rest_code_69048fcf38ee4bd281dc97a96d5b7cf1-3"></a><span class="k">for</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span> <span class="k">in</span> <span class="n">zip</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">cities</span><span class="p">)</span>
+<a name="rest_code_69048fcf38ee4bd281dc97a96d5b7cf1-4"></a> <span class="n">println</span><span class="p">(</span><span class="s">&quot;The capital of </span><span class="si">$country</span><span class="s"> is </span><span class="si">$city</span><span class="s">&quot;</span><span class="p">)</span>
+<a name="rest_code_69048fcf38ee4bd281dc97a96d5b7cf1-5"></a><span class="k">end</span>
 </pre></li>
 <li><p class="first"><tt class="docutils literal">enumerate</tt>: yields a tuple <tt class="docutils literal">(index, value)</tt></p>
-<pre class="code julia"><a name="rest_code_2db3da27a4404a0e898dd95316584ea0-1"></a><span class="n">countries</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Japan&quot;</span><span class="p">,</span> <span class="s">&quot;Korea&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">)</span>
-<a name="rest_code_2db3da27a4404a0e898dd95316584ea0-2"></a><span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="s">&quot;Seoul&quot;</span><span class="p">,</span> <span class="s">&quot;Beijing&quot;</span><span class="p">)</span>
-<a name="rest_code_2db3da27a4404a0e898dd95316584ea0-3"></a><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">country</span><span class="p">)</span> <span class="k">in</span> <span class="n">enumerate</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
-<a name="rest_code_2db3da27a4404a0e898dd95316584ea0-4"></a>    <span class="n">city</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<a name="rest_code_2db3da27a4404a0e898dd95316584ea0-5"></a>    <span class="n">println</span><span class="p">(</span><span class="s">&quot;The capital of </span><span class="si">$country</span><span class="s"> is </span><span class="si">$city</span><span class="s">&quot;</span><span class="p">)</span>
-<a name="rest_code_2db3da27a4404a0e898dd95316584ea0-6"></a><span class="k">end</span>
+<pre class="code julia"><a name="rest_code_00dc39cccd9a40c2b591c6a0164cdc16-1"></a><span class="n">countries</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Japan&quot;</span><span class="p">,</span> <span class="s">&quot;Korea&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">)</span>
+<a name="rest_code_00dc39cccd9a40c2b591c6a0164cdc16-2"></a><span class="n">cities</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="s">&quot;Seoul&quot;</span><span class="p">,</span> <span class="s">&quot;Beijing&quot;</span><span class="p">)</span>
+<a name="rest_code_00dc39cccd9a40c2b591c6a0164cdc16-3"></a><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">country</span><span class="p">)</span> <span class="k">in</span> <span class="n">enumerate</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
+<a name="rest_code_00dc39cccd9a40c2b591c6a0164cdc16-4"></a>    <span class="n">city</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a name="rest_code_00dc39cccd9a40c2b591c6a0164cdc16-5"></a>    <span class="n">println</span><span class="p">(</span><span class="s">&quot;The capital of </span><span class="si">$country</span><span class="s"> is </span><span class="si">$city</span><span class="s">&quot;</span><span class="p">)</span>
+<a name="rest_code_00dc39cccd9a40c2b591c6a0164cdc16-6"></a><span class="k">end</span>
 </pre></li>
 </ul>
 </div>
@@ -386,67 +388,67 @@
 <div class="section" id="data-types">
 <h3><a class="toc-backref" href="#id23">4.2.1&nbsp;&nbsp;&nbsp;Data types</a></h3>
 <p>List (1D <strong>Array</strong>) and matrix (2D or higher dimensional <strong>Array</strong>) may include entries of different types: <tt class="docutils literal">[1, &quot;2&quot;, sin, 3.0]</tt>, <tt class="docutils literal">[1, &quot;2&quot;; sin, 3.0]</tt></p>
-<pre class="code jlcon"><a name="rest_code_8b59b3b679e34152952463313a0f5d1a-1"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;2&quot;</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-2"></a><span class="go">4-element Array{Any,1}:</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-3"></a><span class="go"> 1</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-4"></a><span class="go"> &quot;2&quot;</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-5"></a><span class="go"> sin</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-6"></a><span class="go"> 3.0</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-7"></a>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-8"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">1</span> <span class="s">&quot;2&quot;</span><span class="p">;</span> <span class="n">sin</span> <span class="mf">3.0</span><span class="p">]</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-9"></a><span class="go">2x2 Array{Any,2}:</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-10"></a><span class="go"> 1      &quot;2&quot;</span>
-<a name="rest_code_8b59b3b679e34152952463313a0f5d1a-11"></a><span class="go"> sin    3.0</span>
+<pre class="code jlcon"><a name="rest_code_cf77328fea624762a446af2595a08c4b-1"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;2&quot;</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-2"></a><span class="go">4-element Array{Any,1}:</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-3"></a><span class="go"> 1</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-4"></a><span class="go"> &quot;2&quot;</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-5"></a><span class="go"> sin</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-6"></a><span class="go"> 3.0</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-7"></a>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-8"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">1</span> <span class="s">&quot;2&quot;</span><span class="p">;</span> <span class="n">sin</span> <span class="mf">3.0</span><span class="p">]</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-9"></a><span class="go">2x2 Array{Any,2}:</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-10"></a><span class="go"> 1      &quot;2&quot;</span>
+<a name="rest_code_cf77328fea624762a446af2595a08c4b-11"></a><span class="go"> sin    3.0</span>
 </pre><p>如果元素类型只有常用的数学类型的时候，会按 <tt class="docutils literal">Int64</tt>, <tt class="docutils literal">Rational{Int64}</tt>, <tt class="docutils literal">Float64</tt> 的顺序进行自动的promotion.
 如果元素中有复数，则其余实数类型也会被自动转换为复数，实部和复部类型按之前的顺序自动promotion.</p>
 <p>例子如下：</p>
-<pre class="code jlcon"><a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-1"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">//</span><span class="mi">4</span><span class="p">]</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-2"></a><span class="go">2-element Array{Rational{Int64},1}:</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-3"></a><span class="go"> 2//1</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-4"></a><span class="go"> 3//4</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-5"></a>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-6"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-7"></a><span class="go">3-element Array{Float64,1}:</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-8"></a><span class="go"> 2.0</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-9"></a><span class="go"> 0.75</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-10"></a><span class="go"> 0.1</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-11"></a>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-12"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="nb">im</span><span class="p">]</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-13"></a><span class="go">4-element Array{Complex{Float64},1}:</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-14"></a><span class="go">  2.0+0.0im</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-15"></a><span class="go">  0.75+0.0im</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-16"></a><span class="go">  0.1+0.0im</span>
-<a name="rest_code_d2a2a33cb8434e08ba99c72615ea7f08-17"></a><span class="go">  1.0+2.0im</span>
+<pre class="code jlcon"><a name="rest_code_f059baaf27e24fd0896917766af80ecb-1"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">//</span><span class="mi">4</span><span class="p">]</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-2"></a><span class="go">2-element Array{Rational{Int64},1}:</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-3"></a><span class="go"> 2//1</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-4"></a><span class="go"> 3//4</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-5"></a>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-6"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-7"></a><span class="go">3-element Array{Float64,1}:</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-8"></a><span class="go"> 2.0</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-9"></a><span class="go"> 0.75</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-10"></a><span class="go"> 0.1</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-11"></a>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-12"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="nb">im</span><span class="p">]</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-13"></a><span class="go">4-element Array{Complex{Float64},1}:</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-14"></a><span class="go">  2.0+0.0im</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-15"></a><span class="go">  0.75+0.0im</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-16"></a><span class="go">  0.1+0.0im</span>
+<a name="rest_code_f059baaf27e24fd0896917766af80ecb-17"></a><span class="go">  1.0+2.0im</span>
 </pre><p>然而，list 或 matrix 的类型也可以进行明确指定。如：</p>
-<pre class="code jlcon"><a name="rest_code_6b0d4b1878da4a76b5894c2b33774046-1"></a><span class="gp">julia&gt;</span> <span class="kt">Float64</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<a name="rest_code_6b0d4b1878da4a76b5894c2b33774046-2"></a><span class="go">3-element Array{Float64,1}:</span>
-<a name="rest_code_6b0d4b1878da4a76b5894c2b33774046-3"></a><span class="go"> 1.0</span>
-<a name="rest_code_6b0d4b1878da4a76b5894c2b33774046-4"></a><span class="go"> 2.0</span>
-<a name="rest_code_6b0d4b1878da4a76b5894c2b33774046-5"></a><span class="go"> 3.0</span>
+<pre class="code jlcon"><a name="rest_code_55e2cf445767429e9b9b44354d181ccb-1"></a><span class="gp">julia&gt;</span> <span class="kt">Float64</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<a name="rest_code_55e2cf445767429e9b9b44354d181ccb-2"></a><span class="go">3-element Array{Float64,1}:</span>
+<a name="rest_code_55e2cf445767429e9b9b44354d181ccb-3"></a><span class="go"> 1.0</span>
+<a name="rest_code_55e2cf445767429e9b9b44354d181ccb-4"></a><span class="go"> 2.0</span>
+<a name="rest_code_55e2cf445767429e9b9b44354d181ccb-5"></a><span class="go"> 3.0</span>
 </pre></div>
 <div class="section" id="empty-array">
 <h3><a class="toc-backref" href="#id24">4.2.2&nbsp;&nbsp;&nbsp;Empty array</a></h3>
 <p>Initialize an empty array. List example (1D array):</p>
-<pre class="code jlcon"><a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-1"></a><span class="gp">julia&gt;</span> <span class="kt">Float64</span><span class="p">[]</span>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-2"></a><span class="go">0-element Array{Float64,1}</span>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-3"></a>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-4"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-5"></a><span class="go">0-element Array{Float64,1}</span>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-6"></a>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-7"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="mi">0</span><span class="p">)</span>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-8"></a><span class="go">0-element Array{Float64,1}</span>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-9"></a>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-10"></a><span class="gp">julia&gt;</span> <span class="p">[]</span>
-<a name="rest_code_343ec5be50314b3bbe10135ad0ab9ff9-11"></a><span class="go">0-element Array{Any,1}</span>
+<pre class="code jlcon"><a name="rest_code_d3510893b61c42ebafc207c992058fc8-1"></a><span class="gp">julia&gt;</span> <span class="kt">Float64</span><span class="p">[]</span>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-2"></a><span class="go">0-element Array{Float64,1}</span>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-3"></a>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-4"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-5"></a><span class="go">0-element Array{Float64,1}</span>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-6"></a>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-7"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-8"></a><span class="go">0-element Array{Float64,1}</span>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-9"></a>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-10"></a><span class="gp">julia&gt;</span> <span class="p">[]</span>
+<a name="rest_code_d3510893b61c42ebafc207c992058fc8-11"></a><span class="go">0-element Array{Any,1}</span>
 </pre><p>Matrix example (2D or higher dimensional array), 初始化某一维度为0:</p>
-<pre class="code jlcon"><a name="rest_code_ca016460c9444dc58ecf01c115ec2960-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_ca016460c9444dc58ecf01c115ec2960-2"></a><span class="go">0x2 Array{Float64,2}</span>
-<a name="rest_code_ca016460c9444dc58ecf01c115ec2960-3"></a>
-<a name="rest_code_ca016460c9444dc58ecf01c115ec2960-4"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_ca016460c9444dc58ecf01c115ec2960-5"></a><span class="go">0x2 Array{Float64,2}</span>
+<pre class="code jlcon"><a name="rest_code_54ca7a135c05451fa2ba33e6f83c39f4-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_54ca7a135c05451fa2ba33e6f83c39f4-2"></a><span class="go">0x2 Array{Float64,2}</span>
+<a name="rest_code_54ca7a135c05451fa2ba33e6f83c39f4-3"></a>
+<a name="rest_code_54ca7a135c05451fa2ba33e6f83c39f4-4"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_54ca7a135c05451fa2ba33e6f83c39f4-5"></a><span class="go">0x2 Array{Float64,2}</span>
 </pre><p>也可以用 <tt class="docutils literal">reshape</tt> 函数实现同样效果：</p>
-<pre class="code jlcon"><a name="rest_code_52c6cc155c41421e9987a14bafe577b9-1"></a><span class="gp">julia&gt;</span> <span class="n">reshape</span><span class="p">([],</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_52c6cc155c41421e9987a14bafe577b9-2"></a><span class="go">0x2 Array{Any,2}</span>
+<pre class="code jlcon"><a name="rest_code_f7b9c98f2f8443e1bf47a938041e8ed2-1"></a><span class="gp">julia&gt;</span> <span class="n">reshape</span><span class="p">([],</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_f7b9c98f2f8443e1bf47a938041e8ed2-2"></a><span class="go">0x2 Array{Any,2}</span>
 </pre></div>
 <div class="section" id="allocate-array-no-initialization">
 <h3><a class="toc-backref" href="#id25">4.2.3&nbsp;&nbsp;&nbsp;Allocate array (no initialization)</a></h3>
@@ -455,31 +457,31 @@
 <p>Allocate a list (1D array), and fill it with random values:</p>
 <ul>
 <li><p class="first">直接使用构造函数 <tt class="docutils literal">Array</tt></p>
-<pre class="code jlcon"><a name="rest_code_5219ac38e211474db79b23af9d4e10ac-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-2"></a><span class="go">3-element Array{Float64,1}:</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-3"></a><span class="go"> 1.08099e-314</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-4"></a><span class="go"> 1.08097e-314</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-5"></a><span class="go"> 1.08098e-314</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-6"></a>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-7"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="mi">3</span><span class="p">)</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-8"></a><span class="go">3-element Array{Float64,1}:</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-9"></a><span class="go"> 0.0</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-10"></a><span class="go"> 1.061e-314</span>
-<a name="rest_code_5219ac38e211474db79b23af9d4e10ac-11"></a><span class="go"> 0.0</span>
+<pre class="code jlcon"><a name="rest_code_29484d74a3124fcab13d4cca394d919a-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-2"></a><span class="go">3-element Array{Float64,1}:</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-3"></a><span class="go"> 1.08099e-314</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-4"></a><span class="go"> 1.08097e-314</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-5"></a><span class="go"> 1.08098e-314</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-6"></a>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-7"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-8"></a><span class="go">3-element Array{Float64,1}:</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-9"></a><span class="go"> 0.0</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-10"></a><span class="go"> 1.061e-314</span>
+<a name="rest_code_29484d74a3124fcab13d4cca394d919a-11"></a><span class="go"> 0.0</span>
 </pre></li>
 <li><p class="first">基于另一个 list, 创建与之相同类型的 list, 利用函数 <tt class="docutils literal">similar</tt></p>
-<pre class="code jlcon"><a name="rest_code_0d6062f524624f3cbda366399f8fb356-1"></a><span class="gp">julia&gt;</span> <span class="n">similar</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
-<a name="rest_code_0d6062f524624f3cbda366399f8fb356-2"></a><span class="go">3-element Array{Float64,1}:</span>
-<a name="rest_code_0d6062f524624f3cbda366399f8fb356-3"></a><span class="go"> 1.0818e-314</span>
-<a name="rest_code_0d6062f524624f3cbda366399f8fb356-4"></a><span class="go"> 1.08225e-314</span>
-<a name="rest_code_0d6062f524624f3cbda366399f8fb356-5"></a><span class="go"> 1.08853e-314</span>
+<pre class="code jlcon"><a name="rest_code_b85912ea4e794e118e87bb245455a4ba-1"></a><span class="gp">julia&gt;</span> <span class="n">similar</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+<a name="rest_code_b85912ea4e794e118e87bb245455a4ba-2"></a><span class="go">3-element Array{Float64,1}:</span>
+<a name="rest_code_b85912ea4e794e118e87bb245455a4ba-3"></a><span class="go"> 1.0818e-314</span>
+<a name="rest_code_b85912ea4e794e118e87bb245455a4ba-4"></a><span class="go"> 1.08225e-314</span>
+<a name="rest_code_b85912ea4e794e118e87bb245455a4ba-5"></a><span class="go"> 1.08853e-314</span>
 </pre></li>
 <li><p class="first">如果数据类型为 Any, 则会被填充未知量。</p>
-<pre class="code jlcon"><a name="rest_code_ac7f11e82f4542a780d5062eb534ed64-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Any</span><span class="p">}(</span><span class="mi">3</span><span class="p">)</span>
-<a name="rest_code_ac7f11e82f4542a780d5062eb534ed64-2"></a><span class="go">3-element Array{Any,1}:</span>
-<a name="rest_code_ac7f11e82f4542a780d5062eb534ed64-3"></a><span class="go"> #undef</span>
-<a name="rest_code_ac7f11e82f4542a780d5062eb534ed64-4"></a><span class="go"> #undef</span>
-<a name="rest_code_ac7f11e82f4542a780d5062eb534ed64-5"></a><span class="go"> #undef</span>
+<pre class="code jlcon"><a name="rest_code_29363e28525147909c4da36564ece96c-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Any</span><span class="p">}(</span><span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_29363e28525147909c4da36564ece96c-2"></a><span class="go">3-element Array{Any,1}:</span>
+<a name="rest_code_29363e28525147909c4da36564ece96c-3"></a><span class="go"> #undef</span>
+<a name="rest_code_29363e28525147909c4da36564ece96c-4"></a><span class="go"> #undef</span>
+<a name="rest_code_29363e28525147909c4da36564ece96c-5"></a><span class="go"> #undef</span>
 </pre><p>当然也等同于使用 <tt class="docutils literal">Array(Any,3)</tt>.</p>
 </li>
 </ul>
@@ -497,22 +499,22 @@
 <p>创建一个 2x3 矩阵并赋值，可以用下列方式：</p>
 <ol class="arabic">
 <li><p class="first">按行创建</p>
-<pre class="code jlcon"><a name="rest_code_d09520ddec0240fab2964ba290a2c894-1"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
-<a name="rest_code_d09520ddec0240fab2964ba290a2c894-2"></a><span class="go">2x3 Array{Int64,2}:</span>
-<a name="rest_code_d09520ddec0240fab2964ba290a2c894-3"></a><span class="go"> 1  2  3</span>
-<a name="rest_code_d09520ddec0240fab2964ba290a2c894-4"></a><span class="go"> 4  5  6</span>
+<pre class="code jlcon"><a name="rest_code_cb43a9ac22274e34bedfb11a5a818ca6-1"></a><span class="gp">julia&gt;</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
+<a name="rest_code_cb43a9ac22274e34bedfb11a5a818ca6-2"></a><span class="go">2x3 Array{Int64,2}:</span>
+<a name="rest_code_cb43a9ac22274e34bedfb11a5a818ca6-3"></a><span class="go"> 1  2  3</span>
+<a name="rest_code_cb43a9ac22274e34bedfb11a5a818ca6-4"></a><span class="go"> 4  5  6</span>
 </pre></li>
 <li><p class="first">按列创建</p>
-<pre class="code jlcon"><a name="rest_code_b74bc1958ac1463ab18eaa141d43fa0d-1"></a><span class="gp">julia&gt;</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
-<a name="rest_code_b74bc1958ac1463ab18eaa141d43fa0d-2"></a><span class="go">2x3 Array{Int64,2}:</span>
-<a name="rest_code_b74bc1958ac1463ab18eaa141d43fa0d-3"></a><span class="go"> 1  2  3</span>
-<a name="rest_code_b74bc1958ac1463ab18eaa141d43fa0d-4"></a><span class="go"> 4  5  6</span>
+<pre class="code jlcon"><a name="rest_code_1df5f5be2895428bac343fe3a45066d3-1"></a><span class="gp">julia&gt;</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<a name="rest_code_1df5f5be2895428bac343fe3a45066d3-2"></a><span class="go">2x3 Array{Int64,2}:</span>
+<a name="rest_code_1df5f5be2895428bac343fe3a45066d3-3"></a><span class="go"> 1  2  3</span>
+<a name="rest_code_1df5f5be2895428bac343fe3a45066d3-4"></a><span class="go"> 4  5  6</span>
 </pre></li>
 <li><p class="first">由另一个 list 或 matrix 变形而来</p>
-<pre class="code jlcon"><a name="rest_code_a3f2a65fb925401e893929e36af14f77-1"></a><span class="gp">julia&gt;</span> <span class="n">reshape</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<a name="rest_code_a3f2a65fb925401e893929e36af14f77-2"></a><span class="go">2x3 Array{Int64,2}:</span>
-<a name="rest_code_a3f2a65fb925401e893929e36af14f77-3"></a><span class="go"> 1  2  3</span>
-<a name="rest_code_a3f2a65fb925401e893929e36af14f77-4"></a><span class="go"> 4  5  6</span>
+<pre class="code jlcon"><a name="rest_code_b294e1ac4b864e4c9a2ce37bc9da2464-1"></a><span class="gp">julia&gt;</span> <span class="n">reshape</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_b294e1ac4b864e4c9a2ce37bc9da2464-2"></a><span class="go">2x3 Array{Int64,2}:</span>
+<a name="rest_code_b294e1ac4b864e4c9a2ce37bc9da2464-3"></a><span class="go"> 1  2  3</span>
+<a name="rest_code_b294e1ac4b864e4c9a2ce37bc9da2464-4"></a><span class="go"> 4  5  6</span>
 </pre></li>
 </ol>
 <div class="admonition note">
@@ -572,13 +574,13 @@
 <li><p class="first"><tt class="docutils literal">count(predicate, A)</tt> 返回所有满足 <tt class="docutils literal">predicate</tt> 的元素数量. 如 <tt class="docutils literal">count(isodd, exampleArray)</tt> 返回 <tt class="docutils literal">5</tt>.</p>
 </li>
 <li><p class="first"><tt class="docutils literal">find(predicate, A)</tt> Return a vector of the linear indexes of <tt class="docutils literal">A</tt> where <tt class="docutils literal">predicate</tt> returns <tt class="docutils literal">true</tt>.</p>
-<pre class="code jlcon"><a name="rest_code_cfe178a75b06484694cf5d6536545eae-1"></a><span class="gp">julia&gt;</span> <span class="n">find</span><span class="p">(</span><span class="n">iseven</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span>
-<a name="rest_code_cfe178a75b06484694cf5d6536545eae-2"></a><span class="go">5-element Array{Int64,1}:</span>
-<a name="rest_code_cfe178a75b06484694cf5d6536545eae-3"></a><span class="go">2</span>
-<a name="rest_code_cfe178a75b06484694cf5d6536545eae-4"></a><span class="go">4</span>
-<a name="rest_code_cfe178a75b06484694cf5d6536545eae-5"></a><span class="go">6</span>
-<a name="rest_code_cfe178a75b06484694cf5d6536545eae-6"></a><span class="go">8</span>
-<a name="rest_code_cfe178a75b06484694cf5d6536545eae-7"></a><span class="go">10</span>
+<pre class="code jlcon"><a name="rest_code_ee55a54661204081bec8ee6868273657-1"></a><span class="gp">julia&gt;</span> <span class="n">find</span><span class="p">(</span><span class="n">iseven</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span>
+<a name="rest_code_ee55a54661204081bec8ee6868273657-2"></a><span class="go">5-element Array{Int64,1}:</span>
+<a name="rest_code_ee55a54661204081bec8ee6868273657-3"></a><span class="go">2</span>
+<a name="rest_code_ee55a54661204081bec8ee6868273657-4"></a><span class="go">4</span>
+<a name="rest_code_ee55a54661204081bec8ee6868273657-5"></a><span class="go">6</span>
+<a name="rest_code_ee55a54661204081bec8ee6868273657-6"></a><span class="go">8</span>
+<a name="rest_code_ee55a54661204081bec8ee6868273657-7"></a><span class="go">10</span>
 </pre><p>如果找不到，则会返回 <tt class="docutils literal">0</tt>. 常用的内置判断函数有 <tt class="docutils literal">iseven</tt>, <tt class="docutils literal">isodd</tt>, <tt class="docutils literal">isinteger</tt>, <tt class="docutils literal">isreal</tt>, <tt class="docutils literal">isprime</tt>, 还可以用 lambda 表达式自定义函数。</p>
 </li>
 <li><p class="first"><tt class="docutils literal">findfirst</tt> 常用用法 (<tt class="docutils literal">findlast</tt> 用法类似)：</p>
@@ -593,7 +595,17 @@
 </li>
 </ul>
 <p>注意，<tt class="docutils literal">find</tt>, <tt class="docutils literal">findfirst</tt>, <tt class="docutils literal">findlast</tt> 返回的值都是 index，因此想要拿到对应的值就应该用 <tt class="docutils literal">A[findfirst(predicate,A)]</tt> 类似的形式。</p>
-<ul class="simple">
+<p>例子：两个 array (大小可能不同), <tt class="docutils literal">A</tt> 和 <tt class="docutils literal">B</tt>, 现在需要找出 <tt class="docutils literal">B</tt> 中每个元素落在 <tt class="docutils literal">A</tt> 的哪个区间，比如 <tt class="docutils literal">A = [1,3,5,7]</tt>, <tt class="docutils literal">B = [1.2,5.5]</tt>,
+则会返回 <tt class="docutils literal">B</tt> 中每个元素在 <tt class="docutils literal">A</tt> 中的相应位置 <tt class="docutils literal">1</tt> (即 <tt class="docutils literal">1.2</tt> 属于区间 <tt class="docutils literal">[1,3]</tt>) 和 <tt class="docutils literal">3</tt> (<tt class="docutils literal">5.5</tt> 属于区间 <tt class="docutils literal">[5,7]</tt>). Mathematica 中可以使用 <tt class="docutils literal">LengthWhile</tt> 来做，
+Julia 中有两个函数可以完成: <tt class="docutils literal">findlast</tt> (定义在 &quot;array.jl&quot; 中) 与 <tt class="docutils literal">count</tt> (定义在 &quot;reduce.jl&quot; 中)，而经多次测试，前者更快且使用的内存更少。</p>
+<pre class="code jlcon"><a name="rest_code_2f213775628c490bb740e957191a2e6a-1"></a><span class="gp">julia&gt;</span> <span class="n">atest</span><span class="o">=</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="n">btest</span><span class="o">=</span><span class="n">rand</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<a name="rest_code_2f213775628c490bb740e957191a2e6a-2"></a>
+<a name="rest_code_2f213775628c490bb740e957191a2e6a-3"></a><span class="gp">julia&gt;</span> <span class="p">@</span><span class="n">time</span> <span class="p">[</span><span class="n">findlast</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span> <span class="n">v</span> <span class="o">&gt;=</span><span class="n">x</span><span class="p">,</span> <span class="n">atest</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="k">in</span> <span class="n">btest</span><span class="p">];</span>
+<a name="rest_code_2f213775628c490bb740e957191a2e6a-4"></a><span class="go">  0.011628 seconds (251.14 k allocations: 4.978 MB)</span>
+<a name="rest_code_2f213775628c490bb740e957191a2e6a-5"></a>
+<a name="rest_code_2f213775628c490bb740e957191a2e6a-6"></a><span class="gp">julia&gt;</span> <span class="p">@</span><span class="n">time</span> <span class="p">[</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span> <span class="n">v</span> <span class="o">&gt;=</span><span class="n">x</span><span class="p">,</span> <span class="n">atest</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="k">in</span> <span class="n">btest</span><span class="p">];</span>
+<a name="rest_code_2f213775628c490bb740e957191a2e6a-7"></a><span class="go">  0.303605 seconds (10.15 M allocations: 155.992 MB, 20.96% gc time)</span>
+</pre><ul class="simple">
 <li><tt class="docutils literal">filter</tt> 与 <tt class="docutils literal">find</tt> 作用相似，不同点是 <tt class="docutils literal">filter</tt> 直接返回的是元素值而 <tt class="docutils literal">find</tt> 返回的是对应的脚标。同时 <tt class="docutils literal">filter!</tt> 可以直接将原来的array改变，只保留满足条件的值。</li>
 <li>使用 broadcasting 与 indexing. 如 <tt class="docutils literal"><span class="pre">A[A.&gt;4]</span></tt> 与 <tt class="docutils literal"><span class="pre">filter(x-&gt;x&gt;4,</span> A)</tt> 作用相同; <tt class="docutils literal"><span class="pre">A[isodd.(A)]</span></tt> 与 <tt class="docutils literal">filter(isodd, A)</tt> 作用相同 (<tt class="docutils literal"><span class="pre">isodd.(A)</span></tt> 这种写法仅Julia 0.5版本之后支持).
 注意，<tt class="docutils literal"><span class="pre">A[A%3.==0]</span></tt> 是正确写法而 <tt class="docutils literal"><span class="pre">A[A.%3==0]</span></tt> 是不正确的。(实践发现当 <tt class="docutils literal">A</tt> 元素比较多时，0.4版本这种方式比 <tt class="docutils literal">filter</tt> 要更快一些。但在另一机器上0.5版本测试结果各有胜负)</li>
@@ -621,78 +633,78 @@
 <h2><a class="toc-backref" href="#id33">4.4&nbsp;&nbsp;&nbsp;Array of arrays</a></h2>
 <ul>
 <li><p class="first">基本例子：</p>
-<pre class="code jlcon"><a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
-<a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-2"></a><span class="go">2-element Array{Array{T,N},1}:</span>
-<a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-3"></a><span class="go"> [1,2,3]</span>
-<a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-4"></a><span class="go"> [4,5,6]</span>
-<a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-5"></a>
-<a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-6"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
-<a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-7"></a><span class="go">2-element Array{Array{T,N},1}:</span>
-<a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-8"></a><span class="go"> [1,2]</span>
-<a name="rest_code_9cbb2e3581be459ebdf0d27d14ef56e6-9"></a><span class="go"> [3,4]</span>
+<pre class="code jlcon"><a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-2"></a><span class="go">2-element Array{Array{T,N},1}:</span>
+<a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-3"></a><span class="go"> [1,2,3]</span>
+<a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-4"></a><span class="go"> [4,5,6]</span>
+<a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-5"></a>
+<a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-6"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+<a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-7"></a><span class="go">2-element Array{Array{T,N},1}:</span>
+<a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-8"></a><span class="go"> [1,2]</span>
+<a name="rest_code_2a042bfab0304d5b88535dd60dda73e8-9"></a><span class="go"> [3,4]</span>
 </pre></li>
 <li><p class="first">Create an empty array of arrays:</p>
-<pre class="code jlcon"><a name="rest_code_eb3ef709c17441bba1f4a7e38f519dad-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">}[]</span>
-<a name="rest_code_eb3ef709c17441bba1f4a7e38f519dad-2"></a><span class="go">0-element Array{Array{Int64,N},1}</span>
-<a name="rest_code_eb3ef709c17441bba1f4a7e38f519dad-3"></a>
-<a name="rest_code_eb3ef709c17441bba1f4a7e38f519dad-4"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">2</span><span class="p">}[]</span>
-<a name="rest_code_eb3ef709c17441bba1f4a7e38f519dad-5"></a><span class="go">0-element Array{Array{Int64,2},1}</span>
-<a name="rest_code_eb3ef709c17441bba1f4a7e38f519dad-6"></a>
-<a name="rest_code_eb3ef709c17441bba1f4a7e38f519dad-7"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="n">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span><span class="mi">0</span><span class="p">)</span>
-<a name="rest_code_eb3ef709c17441bba1f4a7e38f519dad-8"></a><span class="go">0-element Array{Array{Float64,3},1}</span>
+<pre class="code jlcon"><a name="rest_code_50f05f72dca5497b9df16e6774a37880-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">}[]</span>
+<a name="rest_code_50f05f72dca5497b9df16e6774a37880-2"></a><span class="go">0-element Array{Array{Int64,N},1}</span>
+<a name="rest_code_50f05f72dca5497b9df16e6774a37880-3"></a>
+<a name="rest_code_50f05f72dca5497b9df16e6774a37880-4"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">2</span><span class="p">}[]</span>
+<a name="rest_code_50f05f72dca5497b9df16e6774a37880-5"></a><span class="go">0-element Array{Array{Int64,2},1}</span>
+<a name="rest_code_50f05f72dca5497b9df16e6774a37880-6"></a>
+<a name="rest_code_50f05f72dca5497b9df16e6774a37880-7"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="n">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span><span class="mi">0</span><span class="p">)</span>
+<a name="rest_code_50f05f72dca5497b9df16e6774a37880-8"></a><span class="go">0-element Array{Array{Float64,3},1}</span>
 </pre></li>
 <li><p class="first">Create by specifying the size:</p>
-<pre class="code jlcon"><a name="rest_code_a950654fc7744720a84687264c51aef2-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="n">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span><span class="mi">3</span><span class="p">)</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-2"></a><span class="go">3-element Array{Array{Int64,2},1}:</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-3"></a><span class="go"> #undef</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-4"></a><span class="go"> #undef</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-5"></a><span class="go"> #undef</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-6"></a>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-7"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="n">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span> <span class="mi">2</span><span class="p">}}(</span><span class="mi">3</span><span class="p">)</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-8"></a><span class="go">3-element Array{Array{Int64,2},1}:</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-9"></a><span class="go"> #undef</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-10"></a><span class="go"> #undef</span>
-<a name="rest_code_a950654fc7744720a84687264c51aef2-11"></a><span class="go"> #undef</span>
+<pre class="code jlcon"><a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-1"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">(</span><span class="n">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span><span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-2"></a><span class="go">3-element Array{Array{Int64,2},1}:</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-3"></a><span class="go"> #undef</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-4"></a><span class="go"> #undef</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-5"></a><span class="go"> #undef</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-6"></a>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-7"></a><span class="gp">julia&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="n">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span> <span class="mi">2</span><span class="p">}}(</span><span class="mi">3</span><span class="p">)</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-8"></a><span class="go">3-element Array{Array{Int64,2},1}:</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-9"></a><span class="go"> #undef</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-10"></a><span class="go"> #undef</span>
+<a name="rest_code_7534703a04ca45a0a54d5ccdc14c8059-11"></a><span class="go"> #undef</span>
 </pre></li>
 <li><p class="first">Use <tt class="docutils literal">hcat()</tt> or <tt class="docutils literal">vcat()</tt> to convert an array to a matrix (Refer to <a class="reference external" href="http://docs.julialang.org/en/stable/manual/faq/#what-does-the-operator-do">slurping and splatting</a>)</p>
-<pre class="code jlcon"><a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-1"></a><span class="gp">julia&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-2"></a><span class="go">3-element Array{Array{T,N},1}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-3"></a><span class="go"> [1,2]</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-4"></a><span class="go"> [3,4]</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-5"></a><span class="go"> [5,6]</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-6"></a>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-7"></a><span class="gp">julia&gt;</span> <span class="n">hcat</span><span class="p">(</span><span class="n">a</span><span class="o">...</span><span class="p">)</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-8"></a><span class="go">2x3 Array{Int64,2}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-9"></a><span class="go"> 1  3  5</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-10"></a><span class="go"> 2  4  6</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-11"></a>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-12"></a><span class="gp">julia&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">a</span><span class="o">...</span><span class="p">)</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-13"></a><span class="go">6-element Array{Int64,1}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-14"></a><span class="go"> 1</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-15"></a><span class="go"> 2</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-16"></a><span class="go"> 3</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-17"></a><span class="go"> 4</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-18"></a><span class="go"> 5</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-19"></a><span class="go"> 6</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-20"></a>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-21"></a><span class="gp">julia&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Array</span><span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span> <span class="mi">6</span><span class="p">]]</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-22"></a><span class="go">3-element Array{Array{T,N},1}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-23"></a><span class="go"> 1x2 Array{Int64,2}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-24"></a><span class="go"> 1  2</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-25"></a><span class="go"> 1x2 Array{Int64,2}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-26"></a><span class="go"> 3  4</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-27"></a><span class="go"> 1x2 Array{Int64,2}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-28"></a><span class="go"> 5  6</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-29"></a>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-30"></a><span class="gp">julia&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">b</span><span class="o">...</span><span class="p">)</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-31"></a><span class="go">3x2 Array{Int64,2}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-32"></a><span class="go"> 1  2</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-33"></a><span class="go"> 3  4</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-34"></a><span class="go"> 5  6</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-35"></a>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-36"></a><span class="gp">julia&gt;</span> <span class="n">hcat</span><span class="p">(</span><span class="n">b</span><span class="o">...</span><span class="p">)</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-37"></a><span class="go">1x6 Array{Int64,2}:</span>
-<a name="rest_code_8e03540f1fc4436b8336bbbd910fdb05-38"></a><span class="go"> 1  2  3  4  5  6</span>
+<pre class="code jlcon"><a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-1"></a><span class="gp">julia&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-2"></a><span class="go">3-element Array{Array{T,N},1}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-3"></a><span class="go"> [1,2]</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-4"></a><span class="go"> [3,4]</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-5"></a><span class="go"> [5,6]</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-6"></a>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-7"></a><span class="gp">julia&gt;</span> <span class="n">hcat</span><span class="p">(</span><span class="n">a</span><span class="o">...</span><span class="p">)</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-8"></a><span class="go">2x3 Array{Int64,2}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-9"></a><span class="go"> 1  3  5</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-10"></a><span class="go"> 2  4  6</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-11"></a>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-12"></a><span class="gp">julia&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">a</span><span class="o">...</span><span class="p">)</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-13"></a><span class="go">6-element Array{Int64,1}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-14"></a><span class="go"> 1</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-15"></a><span class="go"> 2</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-16"></a><span class="go"> 3</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-17"></a><span class="go"> 4</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-18"></a><span class="go"> 5</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-19"></a><span class="go"> 6</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-20"></a>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-21"></a><span class="gp">julia&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Array</span><span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span> <span class="mi">6</span><span class="p">]]</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-22"></a><span class="go">3-element Array{Array{T,N},1}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-23"></a><span class="go"> 1x2 Array{Int64,2}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-24"></a><span class="go"> 1  2</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-25"></a><span class="go"> 1x2 Array{Int64,2}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-26"></a><span class="go"> 3  4</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-27"></a><span class="go"> 1x2 Array{Int64,2}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-28"></a><span class="go"> 5  6</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-29"></a>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-30"></a><span class="gp">julia&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">b</span><span class="o">...</span><span class="p">)</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-31"></a><span class="go">3x2 Array{Int64,2}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-32"></a><span class="go"> 1  2</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-33"></a><span class="go"> 3  4</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-34"></a><span class="go"> 5  6</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-35"></a>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-36"></a><span class="gp">julia&gt;</span> <span class="n">hcat</span><span class="p">(</span><span class="n">b</span><span class="o">...</span><span class="p">)</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-37"></a><span class="go">1x6 Array{Int64,2}:</span>
+<a name="rest_code_4e6215158315483eb8a7cb5ab86c5623-38"></a><span class="go"> 1  2  3  4  5  6</span>
 </pre></li>
 </ul>
 </div>

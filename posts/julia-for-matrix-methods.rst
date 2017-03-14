@@ -35,6 +35,8 @@ Basic arithmetric & mathematical functions
 
   Swap two variables: ``a,b=b,a``
 
+- convert float to int: ``Int64(3.0)`` 相当于 ``convert(Int64, 3.0``), ``ceil(Int64, 2.5)``, ``round(Int64, 2.5)``, ``floor(Int64, 2.5)``
+
 Tuples
 ---------
 
@@ -589,6 +591,20 @@ Useful functions
   还有一个相似的函数 ``findprev``.
 
 注意，``find``, ``findfirst``, ``findlast`` 返回的值都是 index，因此想要拿到对应的值就应该用 ``A[findfirst(predicate,A)]`` 类似的形式。
+
+例子：两个 array (大小可能不同), ``A`` 和 ``B``, 现在需要找出 ``B`` 中每个元素落在 ``A`` 的哪个区间，比如 ``A = [1,3,5,7]``, ``B = [1.2,5.5]``,
+则会返回 ``B`` 中每个元素在 ``A`` 中的相应位置 ``1`` (即 ``1.2`` 属于区间 ``[1,3]``) 和 ``3`` (``5.5`` 属于区间 ``[5,7]``). Mathematica 中可以使用 ``LengthWhile`` 来做，
+Julia 中有两个函数可以完成: ``findlast`` (定义在 "array.jl" 中) 与 ``count`` (定义在 "reduce.jl" 中)，而经多次测试，前者更快且使用的内存更少。
+
+.. code:: jlcon
+
+   julia> atest=rand(1000);btest=rand(10000);
+
+   julia> @time [findlast(x-> v >=x, atest) for v in btest];
+     0.011628 seconds (251.14 k allocations: 4.978 MB)
+
+   julia> @time [count(x-> v >=x, atest) for v in btest];
+     0.303605 seconds (10.15 M allocations: 155.992 MB, 20.96% gc time)
 
 - ``filter`` 与 ``find`` 作用相似，不同点是 ``filter`` 直接返回的是元素值而 ``find`` 返回的是对应的脚标。同时 ``filter!`` 可以直接将原来的array改变，只保留满足条件的值。
 - 使用 broadcasting 与 indexing. 如 ``A[A.>4]`` 与 ``filter(x->x>4, A)`` 作用相同; ``A[isodd.(A)]`` 与 ``filter(isodd, A)`` 作用相同 (``isodd.(A)`` 这种写法仅Julia 0.5版本之后支持).
