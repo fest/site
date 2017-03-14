@@ -15,9 +15,11 @@
 
 .. class:: alert alert-info pull-right
 
-.. admonition:: Source
+.. admonition:: References:
 
-   `Introduction to Matrix Methods <http://stanford.edu/class/ee103/julia.html>`_
+   - `Introduction to Matrix Methods <http://stanford.edu/class/ee103/julia.html>`_
+   - `Performance Tips <http://docs.julialang.org/en/stable/manual/performance-tips/>`_
+
 
 
 Introduction
@@ -590,21 +592,7 @@ Useful functions
 
   还有一个相似的函数 ``findprev``.
 
-注意，``find``, ``findfirst``, ``findlast`` 返回的值都是 index，因此想要拿到对应的值就应该用 ``A[findfirst(predicate,A)]`` 类似的形式。
-
-例子：两个 array (大小可能不同), ``A`` 和 ``B``, 现在需要找出 ``B`` 中每个元素落在 ``A`` 的哪个区间，比如 ``A = [1,3,5,7]``, ``B = [1.2,5.5]``,
-则会返回 ``B`` 中每个元素在 ``A`` 中的相应位置 ``1`` (即 ``1.2`` 属于区间 ``[1,3]``) 和 ``3`` (``5.5`` 属于区间 ``[5,7]``). Mathematica 中可以使用 ``LengthWhile`` 来做，
-Julia 中有两个函数可以完成: ``findlast`` (定义在 "array.jl" 中) 与 ``count`` (定义在 "reduce.jl" 中)，而经多次测试，前者更快且使用的内存更少。
-
-.. code:: jlcon
-
-   julia> atest=rand(1000);btest=rand(10000);
-
-   julia> @time [findlast(x-> v >=x, atest) for v in btest];
-     0.011628 seconds (251.14 k allocations: 4.978 MB)
-
-   julia> @time [count(x-> v >=x, atest) for v in btest];
-     0.303605 seconds (10.15 M allocations: 155.992 MB, 20.96% gc time)
+  注意，``find``, ``findfirst``, ``findlast`` 返回的值都是 index，因此想要拿到对应的值就应该用 ``A[findfirst(predicate,A)]`` 类似的形式。
 
 - ``filter`` 与 ``find`` 作用相似，不同点是 ``filter`` 直接返回的是元素值而 ``find`` 返回的是对应的脚标。同时 ``filter!`` 可以直接将原来的array改变，只保留满足条件的值。
 - 使用 broadcasting 与 indexing. 如 ``A[A.>4]`` 与 ``filter(x->x>4, A)`` 作用相同; ``A[isodd.(A)]`` 与 ``filter(isodd, A)`` 作用相同 (``isodd.(A)`` 这种写法仅Julia 0.5版本之后支持).
@@ -715,3 +703,191 @@ Array of arrays
       julia> hcat(b...)
       1x6 Array{Int64,2}:
        1  2  3  4  5  6
+
+Performance
+===============
+
+参考 `Reddit Link <https://www.reddit.com/r/Julia/comments/3vhv8l/neat_little_speed_comparison_between_forloops_and/>`_ 中的写法
+以及 `Performance Tips <http://docs.julialang.org/en/stable/manual/performance-tips/>`_, 在比较运行效率时，最好把例子都写进同一个函数。
+
+List comprehension vs ``for`` loop vs ``map``
+-------------------------------------------------
+
+.. code:: julia
+
+   function test_loop()
+       atest = rand(1000)
+       btest = rand(30000)
+
+       tic()
+       list1 = [count(x-> v >=x, atest) for v in btest]
+       list_untyped = toq()
+
+       tic()
+       list2 = Int64[count(x-> v >=x, atest) for v in btest]
+       list_typed = toq()
+
+       tic()
+       len = length(btest)
+       list3 = Array(Int64, len)
+       for i in 1:len
+           list3[i]=count(x-> btest[i] >=x, atest)
+       end
+       forloop = toq()
+
+       tic()
+       list4 = map(v->count(x-> v >=x, atest), btest)
+       mapfun = toq()
+
+       print("
+       list_untyped: $list_untyped
+       list_typed: $list_typed
+       forloop: $forloop
+       mapfun: $mapfun
+       ")
+   end
+
+
+下面是 Julia 0.4.7 运行第二次的结果（第一次结果未编绎不准确，故不能用作标准）, 0.5 版本结果一致。因此这种情况下 ``map`` 要稍快一些。
+
+.. code:: jlcon
+
+   julia> test_loop()
+
+     list_untyped: 0.848853296
+     list_typed: 0.875462525
+     forloop: 1.561129306
+     mapfun: 0.836571566
+
+
+``findlast`` faster than ``count``
+---------------------------------------
+
+例子：两个 array (大小可能不同), ``A`` 和 ``B``, 现在需要找出 ``B`` 中每个元素落在 ``A`` 的哪个区间，比如 ``A = [1,3,5,7]``, ``B = [1.2,5.5]``,
+则会返回 ``B`` 中每个元素在 ``A`` 中的相应位置 ``1`` (即 ``1.2`` 属于区间 ``[1,3]``) 和 ``3`` (``5.5`` 属于区间 ``[5,7]``). Mathematica 中可以使用 ``LengthWhile`` 来做，
+Julia 中有两个函数可以完成: ``findlast`` (定义在 "array.jl" 中) 与 ``count`` (定义在 "reduce.jl" 中)，而经多次测试，前者更快且使用的内存更少。
+
+.. code:: julia
+
+   function test_findlast_count()
+       atest = rand(1000)
+       btest = rand(30000)
+
+       tic()
+       list1 = Int64[findlast(x-> v >=x, atest) for v in btest]
+       findlast_time = toq()
+
+       tic()
+       list2 = Int64[count(x-> v >=x, atest) for v in btest]
+       count_time = toq()
+
+       print("
+       findlast_time: $findlast_time
+       count_time: $count_time
+       ")
+   end
+
+.. code:: jlcon
+
+   julia> test_findlast_count()
+
+     findlast_time: 0.002317571
+     count_time: 0.866425052
+
+关于求最值
+--------------
+
+- single array: ``for`` loop vs ``maximum``
+
+  ``maximum()`` is faster.
+
+  .. code:: julia
+
+     function test_singarray_max()
+         arr = rand(100000000)
+
+         tic()
+         max_arr = 0.0
+         for x in arr
+             if max_arr < x
+                 max_arr = x
+             end
+         end
+         single_array_forloop = toq()
+
+         tic()
+         max_arr2 = maximum(arr)
+         single_array_maximum = toq()
+
+         print("
+         single_array_forloop: $single_array_forloop
+         single_array_maximum: $single_array_maximum
+         ")
+     end
+
+  .. code:: jlcon
+
+     julia> test_singarray_max()
+
+       single_array_forloop: 0.177215175
+       single_array_maximum: 0.077552238
+
+- multiple arrays: different versions of ``for`` loop vs ``maximum``
+
+  ``for`` loop using indexing is the fatest.
+
+  .. code:: julia
+
+     function test_multiarray_max()
+         arr1=rand(100000000)
+         arr2=rand(100000000)
+
+         tic()
+         max_arr = 0.0
+         for x in arr1-arr2 # a temporary array arr1-arr2 is generated here
+             if max_arr < x
+                 max_arr = x
+             end
+         end
+         multiarray_forloop_temp = toq()
+
+         tic()
+         max_arr = 0.0
+         for i in 1:length(arr1)
+             temp = arr1[i] - arr2[i]
+             if max_arr < temp
+                 max_arr = temp
+             end
+         end
+         multiarray_forloop_index = toq()
+
+         tic()
+         max_arr = 0.0
+         for (a,b) in zip(arr1,arr2)
+             temp = a-b
+             if max_arr < temp
+                 max_arr = temp
+             end
+         end
+         multiarray_forloop_zip = toq()
+
+         tic()
+         list = maximum(arr1-arr2)
+         multiarray_maximum = toq()
+
+         print("
+         multiarray_forloop_temp: $multiarray_forloop_temp
+         multiarray_forloop_index: $multiarray_forloop_index
+         multiarray_forloop_zip: $multiarray_forloop_zip
+         multiarray_maximum: $multiarray_maximum
+         ")
+     end
+
+  .. code:: jlcon
+
+     julia> test_multiarray_max()
+
+       multiarray_forloop_temp: 0.434184324
+       multiarray_forloop_index: 0.161199946
+       multiarray_forloop_zip: 0.206321564
+       multiarray_maximum: 0.446215882
