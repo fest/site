@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/archive.html</loc>
-  <lastmod>2017-03-01T06:37:00Z</lastmod>
+  <lastmod>2017-03-19T18:36:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/authors/</loc>
@@ -39,7 +39,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/categories/</loc>
-  <lastmod>2017-03-01T06:37:00Z</lastmod>
+  <lastmod>2017-03-19T18:36:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/categories/algorithm/</loc>
@@ -158,6 +158,10 @@
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>http://yongchen.org/categories/project/</loc>
+  <lastmod>2017-03-19T18:36:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://yongchen.org/categories/python/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
@@ -231,7 +235,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/</loc>
-  <lastmod>2017-03-01T06:37:00Z</lastmod>
+  <lastmod>2017-03-19T18:36:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji/</loc>
@@ -294,6 +298,10 @@
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>http://yongchen.org/posts/ijulia-installation-failed/</loc>
+  <lastmod>2017-03-19T05:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://yongchen.org/posts/index-1.html</loc>
   <lastmod>2017-02-09T07:06:00Z</lastmod>
  </url>
@@ -303,7 +311,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/index-3.html</loc>
-  <lastmod>2017-03-01T06:37:00Z</lastmod>
+  <lastmod>2017-03-19T18:36:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/install-monodevelop-on-ubuntu/</loc>
@@ -314,12 +322,20 @@
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
  <url>
+  <loc>http://yongchen.org/posts/interesting-projects-in-google-summer-of-code-2017/</loc>
+  <lastmod>2017-03-19T18:36:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://yongchen.org/posts/julia-for-matrix-methods/</loc>
   <lastmod>2017-03-01T06:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/julia-notes/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://yongchen.org/posts/julia-packages/</loc>
+  <lastmod>2017-03-18T05:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/lyx-settins-on-windows/</loc>
