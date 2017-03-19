@@ -16,14 +16,10 @@
 cloapp.jl
 ============
 
-``generalClo()``
-#################
-
 Uniform Sampling
 ---------------------
 
 ``lookupTableEven(num::Int64, theta_max, sigma, unitLen)``
-******************************************************************
 
 - Input:
 
@@ -65,14 +61,14 @@ Uniform Sampling
 
   * ``coeff``: an array of bezier coefficients
 
-Nonuniform Sampling
-----------------------------
+
+Adaptive (Nonuniform) Sampling
+----------------------------------
 
 Old Version
-******************
+^^^^^^^^^^^^^^
 
 ``lookupTable(num::Int64, theta_max, sigma, elasticCoeff)``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Input:
 
@@ -96,10 +92,10 @@ Old Version
   * ``coeff``: an array of bezier coefficients
 
 New Version
-*********************
+^^^^^^^^^^^^^^
 
-``lookupTableWithPrecision()``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+基本框架
++++++++++++++++++++++++
 
 对曲线进行迭代分割，方法的基本框架参考 `Adaptive Subdivision of Bezier Curves
 <http://www.antigrain.com/research/adaptive_bezier/index.html#toc0003>`_, 即：
@@ -134,6 +130,44 @@ New Version
 
    计算任意 segment 的逼近误差。误差标准可以是之前提到的位置，角度或是曲率误差。这里我们以 position error 为例。
    参考 **cloerr.jl** 中的 ``errCurT()`` 函数，我们来计算两段 *elementary* 型曲线的估算误差。
+
+``lookupTableWithPrecision(eps, arclength)``
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+This function calls function **recursive_divide** to generate and store a lookup table.
+Apart from eps, another error threshold in **uniArcLengthOne** also affects the running time.
+
+- ``eps``: the given error limit (``0.000672`` is the error upper bound of the example with 30 segments in TRO2014)
+- ``arclength``: the total length of the curve stored in the lookup table
+
+1. Position error w.r.t. scaling ``C``
+
+   TRO 最终例子中，使用的 LUT 中等价误差是 :math:`2.0 \times 10^{-9}`, 而查找表长度 :math:`1.78125` (因限制角度在 :math:`\pi/2` 之内，故长度接近 :math:`\sqrt{\pi}`). 在计算中，使用的误差计算函数
+   ``uniArcLengthOne()`` 中的误差标准采用 ``1.0e-12`` (注，Julia 中的 Float64 型数据最小精度是 ``eps(Float64)=2.220446049250313e-16``, 如果要使用更高精度
+   可以用 BigFloat 类型或第三方 package).
+
+   设 LUT 中曲线长度 :math:`s_{\mathcal{L}}`, 对应的 sharpness 为 1, 而我们实际中使用的长度为 :math:`s`, 则有
+
+   .. math::
+
+      s = C \cdot s_{\mathcal{L}}, \; \text{where } C=\frac{1}{\sigma}
+
+   因此我们可以定义下面的函数来计算某一曲线关于 ``C`` 的误差: :math:`\bar{\epsilon}=2 \times 10^{-9}`
+
+   .. code:: julia
+
+      lookupTableWithPrecision(2.0e-9)
+      errC(C::Float64=1.0) = errCurT(1.78125*C, 1.0/C^2)
+      map(x->errC(x)[1], 10.0.^collect(-5:2:7))
+
+   上面会得到当 ``C = [1.0e-5, 0.001, 0.1, 10.0, 1000.0, 100000.0, 1000000.0, 1.0e7]`` 对应的误差值. 对应 LUT 参数 ``N=8``, ``eps_L = 5.376571241757317e-10``.
+
+   :math:`\bar{\epsilon}=2 \times 10^{-13}` 作为另一个例子.
+
+   使用 BigFloat 计算的例子 ``lookupTableWithPrecision(parse(BigFloat,"9.8e-20"), parse(BigFloat,"6.0"))``
+
+``eps``: 2.0e-9 arclength: 1.78125 epsOne: 1.0e-11 for tro example
+
 
 Results
 ++++++++++++++++++++++
@@ -691,15 +725,3 @@ After test, we found that when ``epsOne <= 1.0e-9``, no matter what value given 
        [:, :, 301] =
         0.750899   0.00710132  0.00032709   …  -1.40303e-7   1.15705e-9
         0.788926  -0.00932203  0.000249165     -9.52757e-8  -1.60735e-9
-
-
-
-该函数内容：
-
-cloerr.jl
-=============
-
-``errCurT()``
-###############
-
-该函数是计算一个 general 曲线所有误差的最重要的函数。

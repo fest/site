@@ -39,6 +39,12 @@ Basic arithmetric & mathematical functions
 
 - convert float to int: ``Int64(3.0)`` 相当于 ``convert(Int64, 3.0``), ``ceil(Int64, 2.5)``, ``round(Int64, 2.5)``, ``floor(Int64, 2.5)``
 
+更高精度
+^^^^^^^^^^^^
+
+对于 Float64 类型，其机器精度 machine epsilon 为 ``eps(Float64) = 2.220446049250313e-16``, 其精度 precision 是 ``precision(Float64) = 53``.
+需要更高精度运算的话，可使用 Julia 自带的 BigFloat 类型或使用第三方 package, 如 "DecFP.jl", "ArbFloats.jl", "DoubleDouble.jl", "DEQuadrature.jl".
+
 Tuples
 ---------
 

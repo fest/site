@@ -1,0 +1,148 @@
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#commands" id="id1">1&nbsp;&nbsp;&nbsp;Commands</a></li>
+<li><a class="reference internal" href="#packages-i-am-using" id="id2">2&nbsp;&nbsp;&nbsp;Packages I Am Using</a><ul class="auto-toc">
+<li><a class="reference internal" href="#benchmarktools" id="id3">2.1&nbsp;&nbsp;&nbsp;BenchmarkTools</a></li>
+<li><a class="reference internal" href="#hdf5" id="id4">2.2&nbsp;&nbsp;&nbsp;HDF5</a></li>
+<li><a class="reference internal" href="#pyplot" id="id5">2.3&nbsp;&nbsp;&nbsp;PyPlot</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#useful-packages" id="id6">3&nbsp;&nbsp;&nbsp;Useful Packages</a><ul class="auto-toc">
+<li><a class="reference internal" href="#general-programming" id="id7">3.1&nbsp;&nbsp;&nbsp;General programming</a></li>
+<li><a class="reference internal" href="#general-math" id="id8">3.2&nbsp;&nbsp;&nbsp;General Math</a></li>
+<li><a class="reference internal" href="#optimization" id="id9">3.3&nbsp;&nbsp;&nbsp;Optimization</a></li>
+<li><a class="reference internal" href="#databases" id="id10">3.4&nbsp;&nbsp;&nbsp;Databases</a></li>
+<li><a class="reference internal" href="#building-uis-and-visualization" id="id11">3.5&nbsp;&nbsp;&nbsp;Building UIs and Visualization</a></li>
+<li><a class="reference internal" href="#deep-learning-and-machine-learning" id="id12">3.6&nbsp;&nbsp;&nbsp;Deep Learning and Machine Learning</a></li>
+<li><a class="reference internal" href="#interoperability-with-other-languages" id="id13">3.7&nbsp;&nbsp;&nbsp;Interoperability with other languages</a></li>
+<li><a class="reference internal" href="#file-and-data-formats" id="id14">3.8&nbsp;&nbsp;&nbsp;File and data formats</a></li>
+<li><a class="reference internal" href="#economics-and-finance" id="id15">3.9&nbsp;&nbsp;&nbsp;Economics and Finance</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- TEASER_END -->
+<div class="section" id="commands">
+<h1><a class="toc-backref" href="#id1">1&nbsp;&nbsp;&nbsp;Commands</a></h1>
+<ul class="simple">
+<li><tt class="docutils literal">Pkg.update()</tt> Update the package database</li>
+<li><tt class="docutils literal">Pkg.status()</tt> List the information of all installed packages</li>
+<li><tt class="docutils literal">Pkg.resolve()</tt> Let Julia resolve package dependencies automatically</li>
+<li><tt class="docutils literal"><span class="pre">Pkg.add(&quot;HDF5&quot;)</span></tt> Install package <tt class="docutils literal">HDF5</tt></li>
+<li><tt class="docutils literal">using HDF5</tt> Include the package <tt class="docutils literal">HDF5</tt> in the current file</li>
+</ul>
+</div>
+<div class="section" id="packages-i-am-using">
+<h1><a class="toc-backref" href="#id2">2&nbsp;&nbsp;&nbsp;Packages I Am Using</a></h1>
+<div class="section" id="benchmarktools">
+<h2><a class="toc-backref" href="#id3">2.1&nbsp;&nbsp;&nbsp;BenchmarkTools</a></h2>
+<p>A benchmarking framework for the Julia language <a class="reference external" href="https://github.com/JuliaCI/BenchmarkTools.jl">GitHub</a></p>
+<ul class="simple">
+<li><tt class="docutils literal">&#64;btime sin(1)</tt> Print the minimum time and memory allocation before returning the value of the expression <tt class="docutils literal">sin(1)</tt></li>
+<li><tt class="docutils literal">&#64;belapsed sin(1)</tt> Simplified version of <tt class="docutils literal">&#64;time</tt>, only print the minimum time (unit: second)</li>
+<li><tt class="docutils literal">&#64;benchmark sin(1)</tt> Full version of <tt class="docutils literal">&#64;btime</tt>, print all the information of the benchmarking</li>
+</ul>
+</div>
+<div class="section" id="hdf5">
+<h2><a class="toc-backref" href="#id4">2.2&nbsp;&nbsp;&nbsp;HDF5</a></h2>
+<p>Saving and loading data in the HDF5 file format <a class="reference external" href="https://github.com/JuliaIO/HDF5.jl">GitHub</a></p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">h5write(&quot;filename.h5&quot;,</span> &quot;/nameA&quot;, A)</tt> Write array <tt class="docutils literal">A</tt> to a dataset named &quot;nameA&quot; inside the root group. Use &quot;mygroup/nameA&quot; to write data inside &quot;mygroup&quot;</p>
+</li>
+<li><p class="first"><tt class="docutils literal">B = <span class="pre">h5read(&quot;filename.h5&quot;,</span> &quot;/nameA&quot;)</tt> Read dataset &quot;nameA&quot; and set the value to <tt class="docutils literal">B</tt>.</p>
+<pre class="code julia"><a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-1"></a><span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="s">&quot;filename.h5&quot;</span><span class="p">)</span> <span class="c"># if the file already exists, delete it</span>
+<a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-2"></a>    <span class="n">rm</span><span class="p">(</span><span class="s">&quot;filename.h5&quot;</span><span class="p">)</span>
+<a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-3"></a><span class="k">end</span>
+<a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-4"></a><span class="n">h5write</span><span class="p">(</span><span class="s">&quot;filename.h5&quot;</span><span class="p">,</span> <span class="s">&quot;/nameA&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span> <span class="c"># write</span>
+<a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-5"></a><span class="n">B</span> <span class="o">=</span> <span class="n">h5read</span><span class="p">(</span><span class="s">&quot;filename.h5&quot;</span><span class="p">,</span> <span class="s">&quot;/nameA&quot;</span><span class="p">)</span> <span class="c"># read</span>
+</pre></li>
+</ul>
+</div>
+<div class="section" id="pyplot">
+<h2><a class="toc-backref" href="#id5">2.3&nbsp;&nbsp;&nbsp;PyPlot</a></h2>
+<p>Plotting for Julia based on matplotlib.pyplot <a class="reference external" href="https://github.com/JuliaPy/PyPlot.jl">GitHub</a></p>
+<ul class="simple">
+<li><tt class="docutils literal">plot(Xdata, Ydata, <span class="pre">&quot;.&quot;)</span></tt></li>
+<li><tt class="docutils literal">plot(Xdata, Ydata, <span class="pre">color=&quot;red&quot;,</span> linewidth=2.0, <span class="pre">linestyle=&quot;--&quot;)</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">title(&quot;A</span> sinusoidally modulated sinusoid&quot;)</tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="useful-packages">
+<h1><a class="toc-backref" href="#id6">3&nbsp;&nbsp;&nbsp;Useful Packages</a></h1>
+<p><a class="reference external" href="https://juliacomputing.com/products/juliapro.html">JuliaPro</a> provides a list of commonly used packages:</p>
+<div class="section" id="general-programming">
+<h2><a class="toc-backref" href="#id7">3.1&nbsp;&nbsp;&nbsp;General programming</a></h2>
+<ul class="simple">
+<li>DataStructures <a class="reference external" href="https://github.com/JuliaLang/DataStructures.jl">GitHub</a></li>
+<li>LightGraphs <a class="reference external" href="https://github.com/JuliaGraphs/LightGraphs.jl">GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="general-math">
+<h2><a class="toc-backref" href="#id8">3.2&nbsp;&nbsp;&nbsp;General Math</a></h2>
+<ul class="simple">
+<li>Calculus <a class="reference external" href="https://github.com/johnmyleswhite/Calculus.jl">GitHub</a></li>
+<li>DataFrames <a class="reference external" href="https://github.com/JuliaStats/DataFrames.jl">GitHub</a></li>
+<li>StatsBase <a class="reference external" href="https://github.com/JuliaStats/StatsBase.jl">GitHub</a></li>
+<li>Distributions <a class="reference external" href="https://github.com/JuliaStats/Distributions.jl">GitHub</a></li>
+<li>HypothesisTests <a class="reference external" href="https://github.com/JuliaStats/HypothesisTests.jl">GitHub</a></li>
+<li>GLM <a class="reference external" href="https://github.com/JuliaStats/GLM.jl">GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="optimization">
+<h2><a class="toc-backref" href="#id9">3.3&nbsp;&nbsp;&nbsp;Optimization</a></h2>
+<ul class="simple">
+<li>JuMP <a class="reference external" href="https://github.com/JuliaOpt/JuMP.jl">GitHub</a></li>
+<li>Optim <a class="reference external" href="https://github.com/JuliaOpt/Optim.jl">GitHub</a></li>
+<li>Roots <a class="reference external" href="https://github.com/JuliaMath/Roots.jl">GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="databases">
+<h2><a class="toc-backref" href="#id10">3.4&nbsp;&nbsp;&nbsp;Databases</a></h2>
+<ul class="simple">
+<li>ODBC <a class="reference external" href="https://github.com/JuliaDB/ODBC.jl">GitHub</a></li>
+<li>JDBC <a class="reference external" href="https://github.com/JuliaDB/JDBC.jl">GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="building-uis-and-visualization">
+<h2><a class="toc-backref" href="#id11">3.5&nbsp;&nbsp;&nbsp;Building UIs and Visualization</a></h2>
+<ul class="simple">
+<li>Gadfly <a class="reference external" href="https://github.com/GiovineItalia/Gadfly.jl">GitHub</a></li>
+<li>PyPlot <a class="reference external" href="https://github.com/JuliaPy/PyPlot.jl">GitHub</a></li>
+<li>Interact <a class="reference external" href="https://github.com/JuliaGizmos/Interact.jl">GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="deep-learning-and-machine-learning">
+<h2><a class="toc-backref" href="#id12">3.6&nbsp;&nbsp;&nbsp;Deep Learning and Machine Learning</a></h2>
+<ul class="simple">
+<li>Mocha <a class="reference external" href="https://github.com/pluskid/Mocha.jl">GitHub</a></li>
+<li>MXNet <a class="reference external" href="https://github.com/dmlc/MXNet.jl">GitHub</a></li>
+<li>Knet <a class="reference external" href="https://github.com/denizyuret/Knet.jl">GitHub</a></li>
+<li>Clustering <a class="reference external" href="https://github.com/JuliaStats/Clustering.jl">GitHub</a></li>
+<li>DecisionTree <a class="reference external" href="https://github.com/bensadeghi/DecisionTree.jl">GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="interoperability-with-other-languages">
+<h2><a class="toc-backref" href="#id13">3.7&nbsp;&nbsp;&nbsp;Interoperability with other languages</a></h2>
+<ul class="simple">
+<li>RCall <a class="reference external" href="https://github.com/JuliaInterop/RCall.jl">GitHub</a></li>
+<li>JavaCall <a class="reference external" href="https://github.com/JuliaInterop/JavaCall.jl">GitHub</a></li>
+<li>PyCall <a class="reference external" href="https://github.com/JuliaPy/PyCall.jl">GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="file-and-data-formats">
+<h2><a class="toc-backref" href="#id14">3.8&nbsp;&nbsp;&nbsp;File and data formats</a></h2>
+<ul class="simple">
+<li>JSON <a class="reference external" href="https://github.com/JuliaIO/JSON.jl">GitHub</a></li>
+<li>HDF5 <a class="reference external" href="https://github.com/JuliaIO/HDF5.jl">GitHub</a></li>
+<li>JLD <a class="reference external" href="https://github.com/JuliaIO/JLD.jl">GitHub</a></li>
+</ul>
+</div>
+<div class="section" id="economics-and-finance">
+<h2><a class="toc-backref" href="#id15">3.9&nbsp;&nbsp;&nbsp;Economics and Finance</a></h2>
+<ul class="simple">
+<li>QuantEcon <a class="reference external" href="https://github.com/QuantEcon/QuantEcon.jl">GitHub</a></li>
+</ul>
+</div>
+</div>

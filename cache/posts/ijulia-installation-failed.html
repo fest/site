@@ -1,0 +1,24 @@
+<p>&quot;IJulia&quot; is the Julia version of &quot;Jupyter&quot;. It works with plotting packages like &quot;Gadfly&quot; and &quot;PyPlot&quot;.
+It shows failure information related to &quot;WinRPM&quot; when installing &quot;IJulia&quot;.</p>
+<p>Environment: Julia 0.5.1 x64 on Windows 10</p>
+<!-- TEASER_END -->
+<div class="section" id="output">
+<h1>Output</h1>
+<p>Output after running <tt class="docutils literal"><span class="pre">Pkg.add(&quot;IJulia&quot;)</span></tt> or <tt class="docutils literal"><span class="pre">Pkg.build(&quot;IJulia&quot;)</span></tt>:</p>
+<pre class="literal-block">
+INFO: Downloading https://cache.julialang.org/http://download.opensuse.org/repositories/windows:/mingw:/win64/openSUSE_42.2/repodata/repomd.xml
+WARNING: Unknown download failure, error code: 2148270088
+WARNING: Retry 1/5 downloading:
+...
+WARNING: Retry 5/5 downloading: https://cache.julialang.org/http://download.opensuse.org/repositories/windows:/mingw:/win64/openSUSE_42.2/repodata/repomd.xml
+WARNING: received error 0 while downloading https://cache.julialang.org/http://download.opensuse.org/repositories/windows:/mingw:/win64/openSUSE_42.2/repodata/repomd.xml
+</pre>
+</div>
+<div class="section" id="solution">
+<h1>Solution</h1>
+<ol class="arabic simple">
+<li>Go to <tt class="docutils literal"><span class="pre">D:\home\.julia\v0.5\WinRPM\sources.list</span></tt></li>
+<li>Delete <tt class="docutils literal"><span class="pre">https://cache.julialang.org/</span></tt> at the beginning of the two entries and save the changes.</li>
+<li>Run <tt class="docutils literal"><span class="pre">Pkg.build(&quot;IJulia&quot;)</span></tt></li>
+</ol>
+</div>
