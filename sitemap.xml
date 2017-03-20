@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://yongchen.org/</loc>
-  <lastmod>2017-02-09T07:06:00Z</lastmod>
+  <lastmod>2017-03-20T03:46:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/2016/</loc>
@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/archive.html</loc>
-  <lastmod>2017-03-19T18:36:00Z</lastmod>
+  <lastmod>2017-03-20T03:45:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/authors/</loc>
@@ -235,7 +235,7 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/</loc>
-  <lastmod>2017-03-19T18:36:00Z</lastmod>
+  <lastmod>2017-03-20T03:46:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/alexa-qian-100-wan-wang-zhan-yu-ming-hou-zhui-tong-ji/</loc>
@@ -303,15 +303,15 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/index-1.html</loc>
-  <lastmod>2017-02-09T07:06:00Z</lastmod>
+  <lastmod>2017-03-20T03:46:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/index-2.html</loc>
-  <lastmod>2017-03-06T19:33:00Z</lastmod>
+  <lastmod>2017-03-20T03:46:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/index-3.html</loc>
-  <lastmod>2017-03-19T18:36:00Z</lastmod>
+  <lastmod>2017-03-20T03:46:00Z</lastmod>
  </url>
  <url>
   <loc>http://yongchen.org/posts/install-monodevelop-on-ubuntu/</loc>
@@ -371,10 +371,6 @@
  </url>
  <url>
   <loc>http://yongchen.org/posts/sagemath-file-exchange-with-windows-via-virtualbox/</loc>
-  <lastmod>2017-02-07T18:20:00Z</lastmod>
- </url>
- <url>
-  <loc>http://yongchen.org/posts/shou-hou-zi-mai-hou-zi-de-gu-shi-jia-qiang-ban/</loc>
   <lastmod>2017-02-07T18:20:00Z</lastmod>
  </url>
  <url>

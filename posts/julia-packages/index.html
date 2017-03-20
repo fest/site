@@ -177,11 +177,11 @@
 </li>
 <li>
 <p class="first"><tt class="docutils literal">B = <span class="pre">h5read("filename.h5",</span> "/nameA")</tt> Read dataset "nameA" and set the value to <tt class="docutils literal">B</tt>.</p>
-<pre class="code julia"><a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-1"></a><span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="s">"filename.h5"</span><span class="p">)</span> <span class="c"># if the file already exists, delete it</span>
-<a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-2"></a>    <span class="n">rm</span><span class="p">(</span><span class="s">"filename.h5"</span><span class="p">)</span>
-<a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-3"></a><span class="k">end</span>
-<a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-4"></a><span class="n">h5write</span><span class="p">(</span><span class="s">"filename.h5"</span><span class="p">,</span> <span class="s">"/nameA"</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span> <span class="c"># write</span>
-<a name="rest_code_4c6ecfd9e09441e6b0ba5a6d6a4599ee-5"></a><span class="n">B</span> <span class="o">=</span> <span class="n">h5read</span><span class="p">(</span><span class="s">"filename.h5"</span><span class="p">,</span> <span class="s">"/nameA"</span><span class="p">)</span> <span class="c"># read</span>
+<pre class="code julia"><a name="rest_code_e61701735cae4478a9e934a45620271f-1"></a><span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="s">"filename.h5"</span><span class="p">)</span> <span class="c"># if the file already exists, delete it</span>
+<a name="rest_code_e61701735cae4478a9e934a45620271f-2"></a>    <span class="n">rm</span><span class="p">(</span><span class="s">"filename.h5"</span><span class="p">)</span>
+<a name="rest_code_e61701735cae4478a9e934a45620271f-3"></a><span class="k">end</span>
+<a name="rest_code_e61701735cae4478a9e934a45620271f-4"></a><span class="n">h5write</span><span class="p">(</span><span class="s">"filename.h5"</span><span class="p">,</span> <span class="s">"/nameA"</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span> <span class="c"># write</span>
+<a name="rest_code_e61701735cae4478a9e934a45620271f-5"></a><span class="n">B</span> <span class="o">=</span> <span class="n">h5read</span><span class="p">(</span><span class="s">"filename.h5"</span><span class="p">,</span> <span class="s">"/nameA"</span><span class="p">)</span> <span class="c"># read</span>
 </pre>
 </li>
 </ul>
